@@ -1,0 +1,12 @@
+# Ignore the 'vendor' directory in the 'social-back' folder
+social-back/vendor
+
+# Ignore the '.env' file in the 'social-back' folder
+social-back/.env
+
+# Ignore the 'node_modules' directory in the 'social-front' folder
+social-front/node_modules
+
+# Add other configuration patterns here
+# For example, to ignore all files with a .log extension:
+# *.log

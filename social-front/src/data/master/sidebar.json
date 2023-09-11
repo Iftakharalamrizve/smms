@@ -1,0 +1,28 @@
+{
+    "navs": [
+        {
+            "title": "master",
+            "menu": [
+                { 
+                    "icon": "dashboard", 
+                    "text": "dashboard",
+                    "submenu": [
+                        { "href": "/", "text": "Social Dashboard" }
+                    ]
+                },
+                { 
+                    "href": "/message",
+                    "icon": "email", 
+                    "text": "messages",
+                    "badge": { "text": "03", "variant": "primary round" }
+                },
+                { 
+                    "href": "/blank-page",
+                    "icon": "class", 
+                    "text": "blank page" 
+                }
+            ]
+        }
+    ]
+
+}
