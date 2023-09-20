@@ -36,35 +36,12 @@ export default function Header() {
             <Box className="mc-header-group">
                 <Box className="mc-header-left">
                     <Button 
-                        icon={ data?.search.icon } 
-                        className="mc-header-icon search" 
-                        onClick={()=> setSearch("show")}
-                    />
-                    <Button 
                         icon={ drawer ? "menu_open" : "menu" } 
                         className="mc-header-icon toggle" 
                         onClick={ toggleDrawer } 
                     />
-                    <Box className={`mc-header-search-group ${ search }`}>
-                        <form className="mc-header-search" ref={ searchRef }>
-                            <Button className="material-icons">{ data?.search.icon }</Button>
-                            <Input type="search" placeholder={ data?.search.placeholder } />
-                        </form>
-                    </Box>
                 </Box>
                 <Box className="mc-header-right">
-                    <Button 
-                        icon={ theme }
-                        title={ data.theme.title }
-                        onClick={ toggleTheme }
-                        className={`mc-header-icon ${ data.theme.addClass }`}
-                    />
-                    <LanguageDropdown  
-                        icon={ data.language.icon }
-                        title={ data.language.title }
-                        addClass={ data.language.addClass }
-                        dropdown={ data.language.dropdown }
-                    />
                     <WidgetDropdown 
                         icon={ data.cart.icon }
                         title={ data.cart.title }

@@ -10,7 +10,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.scss', '.css'], // Remove TypeScript extensions
     alias: {
-    //   '@src': path.resolve(__dirname, 'src/'),
+      '@src': path.resolve(__dirname, 'src/'),
     //   '@assets': path.resolve(__dirname, 'src/assets/'),
     //   '@components': path.resolve(__dirname, 'src/components'),
     //   '@routes': path.resolve(__dirname, 'src/routes'),

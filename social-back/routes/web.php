@@ -34,9 +34,10 @@ Route::group(['middleware' => ['auth']], function () {
 
 
 
-Route::post('login',                            AuthController::class);
+Route::post('/login',                            AuthController::class)->name('login');
+Route::get('/login',                            AuthController::class);
 Route::resource('users',                        UserController::class);
-Route::get('logout',                            [UserController::class, 'logout']);
+Route::get('logout',                            [UserController::class, 'logout'])->name('logout');
 Route::resource('roles',                        RoleController::class);
 Route::resource('permissions',                  PermissionController::class);
 Route::resource('agent',                        AgentController::class);

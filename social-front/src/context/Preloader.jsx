@@ -18,12 +18,12 @@ export const LoaderProvider = ({ children }) => {
                 <Box className="mc-spinner">
                     <Image src="images/logo.webp" aly="logo" />
                     <Box className="mc-spinner-group">
-                        <Heading>Loading</Heading>
+                        <Heading><p style={{color:"black"}}>Loading</p></Heading>
                         <PulseLoader 
-                            color="#0857f5"
+                            color="#d63657"
                             loading={loading} 
                             size={8} 
-                        /> 
+                        />  
                     </Box>
                 </Box>
                 : 

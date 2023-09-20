@@ -8,7 +8,7 @@ export default function Logo({ src, alt, name, href, className }) {
             {name ?
                 <Link to={ href } className={`mc-logo-group ${ className }`}>
                     <Image src={ src } alt={ alt } />
-                    <Text as="span">{ name }</Text>
+                    {/* <Text as="span">{ name }</Text> */}
                 </Link>
             :
                 <Link to={ href } className={`mc-logo ${ className }`}>

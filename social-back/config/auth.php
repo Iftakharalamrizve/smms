@@ -17,10 +17,7 @@ return [
         'guard' => 'web',
         'passwords' => 'users',
     ],
-    'agent' => [
-        'guard' => 'web',
-        'passwords' => 'agents',
-    ],
+    
     'gplex_token' => [
         'webhook_token' => 'gplex-social-hub'
     ],
@@ -47,12 +44,13 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'agent' => [
-            'driver' => 'session',
+        'agent-api' => [
+            'driver' => 'sanctum',
             'provider' => 'agents',
+            'hash' => false,
         ],
         'api' => [
-            'driver' => 'token',
+            'driver' => 'sanctum',
             'provider' => 'users',
             'hash' => false,
         ],

@@ -5,35 +5,36 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
-    main: './src/index.js', // Change the entry file to .js
+    main: './src/index.js',
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.scss', '.css'], // Remove TypeScript extensions
+    // modules: [path.resolve('./src'), path.resolve('./node_modules')],
+    extensions: ['.js', '.jsx', '.scss', '.css'],
     alias: {
-    //   '@src': path.resolve(__dirname, 'src/'),
-    //   '@assets': path.resolve(__dirname, 'src/assets/'),
-    //   '@components': path.resolve(__dirname, 'src/components'),
-    //   '@routes': path.resolve(__dirname, 'src/routes'),
-    //   '@layouts': path.resolve(__dirname, 'src/layouts'),
-    //   '@pages': path.resolve(__dirname, 'src/pages'),
-    //   '@hooks': path.resolve(__dirname, 'src/hooks'),
+      '@src': path.resolve(__dirname, 'src/'),
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@action': path.resolve(__dirname, 'src/store/actions'),
+      '@reducer': path.resolve(__dirname, 'src/store/reducers'),
+      '@pages': path.resolve(__dirname, 'src/pages'),
+      '@hooks': path.resolve(__dirname, 'src/hooks'),
     },
   },
   output: {
     path: path.join(__dirname, './dist'),
     filename: 'app.min.js',
+    clean: true,
   },
   module: {
     rules: [
       {
-        test: /\.jsx?$/, // Match both .js and .jsx files
+        test: /\.jsx?$/,
         exclude: /node_modules/,
-        use: 'babel-loader', // Add babel-loader for JavaScript
+        use: 'babel-loader', 
       },
       {
-        test: /\.js$/, // Change the test to match .js files
+        test: /\.js$/, 
         exclude: /node_modules/,
-        use: 'babel-loader', // Add babel-loader for JavaScript
+        use: 'babel-loader', 
       },
       {
         test: /\.(sa|sc|c)ss$/,

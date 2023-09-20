@@ -1,10 +1,44 @@
-import React from "react";
-import { Box, Form, Heading, Button, Anchor, Image, Text } from "../../components/elements";
-import IconField from "../../components/fields/IconField";
+import React, { useState, useRef } from "react";
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { useIsLoggedIn } from '../../hooks';
+import { Box, Form, Heading, Button, Anchor, Image, Text, Input, Icon } from "../../components/elements";
 import Logo from "../../components/Logo";
 import data from "../../data/master/login.json";
+import { userAuthenticationVerify } from "../../store/actions/authAction";
+
 
 export default function Login() {
+    const form = useRef();
+    const checkBtn = useRef();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const currentUserLoggedInStatus = useIsLoggedIn();
+
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [message, setMessage] = useState("");
+
+    const handleUserNameInputChange = (username) => {
+        setUsername(username);
+    };
+
+    const handlePasswordInputChange = (password) => {
+        setPassword(password);
+    };
+
+    useEffect(() => {
+        if (currentUserLoggedInStatus == true) {
+            navigate('/')
+        }
+    }, [currentUserLoggedInStatus]);
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        dispatch(userAuthenticationVerify({ username, password }));
+    };
+
     return (
         <Box className="mc-auth">
             <Image
@@ -20,34 +54,27 @@ export default function Login() {
                     className = "mc-auth-logo"
                 />
                 <Heading as="h4" className="mc-auth-title">{ data?.title }</Heading>
-                <Form className="mc-auth-form">
-                    {data?.input.map((item, index) => (
-                        <IconField 
-                            key = { index }
-                            icon = { item.icon }
-                            type = { item.type }
-                            option = { item.option }
-                            classes = { item.fieldSize }
-                            placeholder = { item.placeholder }
-                            passwordVisible = { item.passwordVisible }
+                <Form  onSubmit={handleLogin}  className="mc-auth-form">
+                    <Box className={`mc-icon-field ${ "w-100 h-sm" || "w-md h-sm white" }`}>
+                        <Icon type={ 'person' || "account_circle" } />
+                        <Input 
+                            type="text" 
+                            value= {username}
+                            placeholder="Enter user name"
+                            onChange={handleUserNameInputChange}
                         />
-                    ))}
-                    <Button className={`mc-auth-btn ${data?.button.fieldSize}`} type={ data?.button.type }>{ data?.button.text }</Button>
-                    <Anchor className="mc-auth-forgot" href={ data?.forgot.path }>{ data?.forgot.text }</Anchor>
-                    <Box className="mc-auth-divide"><Text as="span">{ data?.divide.text }</Text></Box>
-                    <Box className="mc-auth-connect">
-                        {data?.connect.map((item, index) => (
-                            <Anchor key={ index } href={ item.path } className={ item.classes }>
-                                <i className={ item.icon }></i>
-                                <span>{ item.text }</span>
-                            </Anchor>
-                        ))}
                     </Box>
+                    <Box className={`mc-icon-field ${ "w-100 h-sm" || "w-md h-sm white" }`}>
+                        <Icon type={ 'lock' || "account_circle" } />
+                        <Input 
+                            type="password" 
+                            value= {password}
+                            placeholder="Enter password"
+                            onChange={handlePasswordInputChange}
+                        />
+                    </Box>
+                    <Button className={`mc-auth-btn ${data?.button.fieldSize}`} type='submit'>{ data?.button.text }</Button>
                 </Form>
-                <Box className="mc-auth-navigate">
-                    <Text as="span">{ data?.navigate.title }</Text>
-                    <Anchor href={ data?.navigate.path }>{ data?.navigate.text }</Anchor>
-                </Box>
             </Box>
         </Box>
     );

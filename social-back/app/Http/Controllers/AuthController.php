@@ -58,18 +58,21 @@ class AuthController extends Controller
                 'status'   => 1
             ];
 
-            $concatPass = md5($request->username . $request->password);
-            $agent      = Agent::firstWhere([['agent_id','=',$input['username']],['password','=',DB::raw("SHA2(CONCAT(agent_id, '$concatPass'), 256)")]]);
+            if (Auth::attempt($credentials))  {
 
-            if (Auth::attempt($credentials))
-            {
                 return redirect()->intended('agent');
-            }
 
-            if($agent)
-            {
-                Auth::guard('agent')->login($agent);
-                dd(Auth::guard('agent')->check());
+            } else {
+
+                $concatPass = md5($request->username . $request->password);
+                $agent      = Agent::firstWhere([['agent_id','=',$input['username']],['password','=',DB::raw("SHA2(CONCAT(agent_id, '$concatPass'), 256)")]]);
+
+                if($agent)
+                {
+                    Auth::guard('agent')->login($agent);
+                    return redirect()->intended('agent');
+                }
+
             }
 
             return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');

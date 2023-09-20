@@ -18,3 +18,4 @@ export { default as Heading } from "./Heading";
 export { default as Section } from "./Section";
 export { default as Textarea } from "./Textarea";
 export { default as Fieldset } from "./Fieldset";
+export { default as Loader } from "./Loader";
