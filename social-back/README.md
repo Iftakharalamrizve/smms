@@ -1,41 +1,29 @@
+# API Authentication using Laravel Sanctum
 
-## Project Setup:
+### [Visit Blog](https://techvblogs.com/blog/api-authentication-laravel-sanctum?ref=repo)
 
-Setup timezone from config/App.php as 'Asia/Dhaka'
+#### Install Packages
 
-### 1. Clone the repo to htdocs or www folder
-
-git clone gslgit@192.168.10.63:/home/gslgit/socialHub-v2.0.git
-
-### 2. go to the directory 
-
-cd socialHub-v2.0
-
-### 3. Install Composer
-
+```
 composer install
+```
 
-### 4. Create .env File
+#### Copy .env file
 
-copy .env.example .env
+```
+cp .env.example .env
+```
 
-### 5. Generate Key
+#### Set Database Detail
 
-php artisan key:generate
+#### Start Laravel Project
 
-### 6. Enable Permission (for Linux User)
+```
+php artisan serve
+```
 
-sudo chmod -R 777 storage
+# Connect with Us
 
-### 7. All seeder
-
-php artisan db:seed --class=AllSeeder
-
-## 8. From Browser
-
-http://localhost/socialHub-v2.0/public
-
-body: 
-    username: root
-    password: welcome2244
-
+-   [Site](https://techvblogs.com/?ref=githubrepo)
+-   [Twitter](https://twitter.com/techvblogs)
+-   [Facebook](https://facebook.com/techvblogs)

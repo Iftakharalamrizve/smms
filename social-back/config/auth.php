@@ -17,10 +17,6 @@ return [
         'guard' => 'web',
         'passwords' => 'users',
     ],
-    
-    'gplex_token' => [
-        'webhook_token' => 'gplex-social-hub'
-    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -44,14 +40,15 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'agent-api' => [
-            'driver' => 'sanctum',
-            'provider' => 'agents',
+
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'users',
             'hash' => false,
         ],
-        'api' => [
-            'driver' => 'sanctum',
-            'provider' => 'users',
+        'agentapi' => [
+            'driver' => 'token',
+            'provider' => 'agents',
             'hash' => false,
         ],
     ],
@@ -82,6 +79,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Agent::class,
         ],
+
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -109,10 +107,6 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
-        ],
-        'agents' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Agent::class,
         ],
     ],
 

@@ -71,6 +71,6 @@ interface QueueDataRepositoryInterface{
      * @param string $key The key name of the queue.
      * @return array An array return list of item from redis.
      */
-    public function queueRetriveListByKey($key, $ignoreAgent);
+    public function queueRetriveListByKey($key);
 
 }

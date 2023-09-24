@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
 import { Box, List, Item, Icon, Text, Form, Button, Input } from "../../components/elements";
 import { DotsMenu, DuelText, RoundAvatar } from "../../components";
@@ -6,8 +6,29 @@ import CardLayout from "../../components/cards/CardLayout";
 import IconField from "../../components/fields/IconField"
 import PageLayout from "../../layouts/PageLayout";
 import data from "../../data/master/message.json";
+import { useWebSocket } from '../../context/WebSocketContext';
 
 export default function Message() {
+    const { socketInstance } = useWebSocket();
+    useEffect(() => {
+        async function connectWithChannel() {
+          if(socketInstance){
+            socketInstance.private(`social_chat_room.root`)
+            .listen('.agent_chat_room_event', (event) => {
+                console.log(event);
+            })
+            .listenForWhisper('typing', (e) => {
+                console.log('Received whisper:');
+                console.log(e);
+            })
+            .error((error) => {
+                console.error(error);
+            });
+          }
+        }
+    
+        connectWithChannel();
+      }, [socketInstance]);
     return (
         <PageLayout>
             <Row>

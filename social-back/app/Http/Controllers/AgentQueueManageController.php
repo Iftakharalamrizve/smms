@@ -61,7 +61,7 @@ class AgentQueueManageController extends Controller
         // foreach(Redis::keys('agent_item_queue:*') as $key){
         //     Redis::del($key);
         // }
-        // Redis::rpush('agent_queue','root');
+        Redis::rpush('agent_queue','root');
         // Redis::rpush('agent_queue','agent5');
         // Redis::rpush('agent_queue','agent4');
         // Redis::rpush('agent_queue','agent3');

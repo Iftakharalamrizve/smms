@@ -2,19 +2,17 @@
 
 namespace App\Models;
 
-
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use App\Traits\HasPermissionsTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 
-
-class Agent extends Authenticatable
+class Agent extends Model
 {
-    use HasPermissionsTrait, HasFactory, Notifiable, HasApiTokens;
+    use  HasFactory, Notifiable, HasApiTokens;
+    protected $guard = "agentapi";
+
     protected $primaryKey = 'agent_id';
     protected $hidden = [
         'password',

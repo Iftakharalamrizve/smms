@@ -30,7 +30,7 @@ class WebHookController extends Controller
 
         $this->verifyFBWebHook($this->gplexToken, $request);
 
-        $this->webHookDebugLog($request);
+        // $this->webHookDebugLog($request);
 
     }
 
@@ -72,7 +72,7 @@ class WebHookController extends Controller
     {
         
         $requestData = $request->input();
-        $this->webHookDebugLogDecode($requestData);
+        // $this->webHookDebugLogDecode($requestData);
         if ($requestData['object'] === 'page' && !empty($requestData['entry']) && isset($requestData['entry'][0]['messaging'])) {
             return $this->socialMediaMessageService->processNewMessage($request['entry'][0])->saveAndAssignAgent();
         }

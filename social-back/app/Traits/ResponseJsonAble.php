@@ -87,11 +87,12 @@ trait ResponseJsonAble{
         ]);
     }
 
-    public function respondWithToken($token,$user=NULL,$expiration=NULL)
+    public function respondWithToken($token,$user=NULL,$userType=null,$expiration=NULL)
     {
         return $this->respond([
             'access_token' => $token,
             'user' => $user,
+            'user_type'=>$userType,
             'token_type' => 'bearer',
             'expires_in' => $expiration
         ]);

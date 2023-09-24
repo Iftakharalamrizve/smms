@@ -1,18 +1,20 @@
-import { useEffect, useState } from 'react';
-import { useIsLoggedIn, useUserType, useGetLoaderStatus } from '@src/hooks';
-import Loader from '@components/elements/Loader';
-import { useDispatch } from 'react-redux';
+import { useEffect} from 'react';
+import { useIsLoggedIn} from '@src/hooks';
 import { useNavigate, Outlet } from 'react-router-dom';
+import { useWebSocket } from '../context/WebSocketContext';
 
 export default function  () {
     const currentUserLoggedInStatus = useIsLoggedIn();
+    const { setAuthenticated } = useWebSocket();
     const navigate = useNavigate();
     
-    // useEffect(() => {
-    //     if (currentUserLoggedInStatus == false) {
-    //         navigate('/login');
-    //     }
-    // }, []);
+    useEffect(() => {
+        if (currentUserLoggedInStatus == false) {
+            navigate('/login');
+        }else{
+            setAuthenticated(true);
+        }
+    }, []);
 
     return <><Outlet /></>
 }

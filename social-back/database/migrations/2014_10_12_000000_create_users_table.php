@@ -14,14 +14,18 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->char('id', 20)->primary()->comment('User detail id.');
-            $table->string('username')->unique()->index();
+            $table->char('id', 20)->comment('User detail id.');
+            $table->string('username');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
+            $table->text('two_factor_secret')->nullable();
+            $table->text('two_factor_recovery_codes')->nullable();
+            $table->timestamp('two_factor_confirmed_at')->nullable();
+            $table->string('remember_token', 100)->nullable();
             $table->tinyInteger('status')->comment('0 => Inactive, 1 => Active');
-            $table->softDeletes();
+            $table->timestamp('deleted_at')->nullable();
             $table->timestamps();
+            $table->primary('id'); // Define 'id' as the primary key
         });
     }
 

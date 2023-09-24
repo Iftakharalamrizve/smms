@@ -58,7 +58,7 @@ return [
      * This path will be used to register the necessary routes for the package.
      */
     'path' => 'laravel-websockets',
-
+    // 'timeout' => 120,
     /*
      * Dashboard Routes Middleware
      *
@@ -135,5 +135,6 @@ return [
      * The only requirement is that the class should implement
      * `ChannelManager` interface provided by this package.
      */
+    'exception_handler' => '',
     'channel_manager' => \BeyondCode\LaravelWebSockets\WebSockets\Channels\ChannelManagers\ArrayChannelManager::class,
 ];

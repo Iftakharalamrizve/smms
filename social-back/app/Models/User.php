@@ -3,16 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use App\Traits\HasPermissionsTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-
 class User extends Authenticatable
 {
-    use HasPermissionsTrait, HasFactory, Notifiable, HasApiTokens;
+    use HasFactory, Notifiable, HasApiTokens;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -22,7 +21,6 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
-        'status',
     ];
 
     /**
@@ -43,18 +41,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function userRole()
-    {
-
-        return $this->hasMany(UsersRole::class);
-
-    }
-
-    public function userDetails()
-    {
-
-        return $this->hasOne(UserDetail::class, 'id');
-
-    }
 }

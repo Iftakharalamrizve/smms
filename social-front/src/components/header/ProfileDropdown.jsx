@@ -15,11 +15,11 @@ export default function ProfileDropdown({ name, username, image, dropdown }) {
     const navigate = useNavigate();
     const currentUserLoggedInStatus = useIsLoggedIn();
 
-    // useEffect(() => {
-    //     if (currentUserLoggedInStatus == false) {
-    //         navigate('/login')
-    //     }
-    // }, [currentUserLoggedInStatus]);
+    useEffect(() => {
+        if (currentUserLoggedInStatus == false) {
+            navigate('/login')
+        }
+    }, [currentUserLoggedInStatus]);
 
     function dropdownOnclickEvent(item){
         switch(item.type){

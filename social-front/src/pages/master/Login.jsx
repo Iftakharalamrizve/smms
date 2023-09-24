@@ -2,11 +2,13 @@ import React, { useState, useRef } from "react";
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { useIsLoggedIn } from '../../hooks';
+import { useIsLoggedIn } from '@hooks';
 import { Box, Form, Heading, Button, Anchor, Image, Text, Input, Icon } from "../../components/elements";
 import Logo from "../../components/Logo";
 import data from "../../data/master/login.json";
 import { userAuthenticationVerify } from "../../store/actions/authAction";
+import { useWebSocket } from '../../context/WebSocketContext';
+
 
 
 export default function Login() {
@@ -15,6 +17,7 @@ export default function Login() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const currentUserLoggedInStatus = useIsLoggedIn();
+    const { setAuthenticated } = useWebSocket();
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -32,6 +35,8 @@ export default function Login() {
         if (currentUserLoggedInStatus == true) {
             navigate('/')
         }
+        setAuthenticated(false);
+
     }, [currentUserLoggedInStatus]);
 
     const handleLogin = (e) => {

@@ -1,19 +1,23 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { setLoader } from '../store/reducers/settings'
 
 function useIsLoggedIn() {
-  const isLoggedInStatus = useSelector((state) => state.AuthReducers.isLoggedIn);
-  return isLoggedInStatus;
+  return useSelector((state) => state.AuthReducers.isLoggedIn);
 }
+
 function useUserType() {
-  const userType = useSelector((state) => state.AuthReducers.user_type);
-  return userType;
+  return useSelector((state) => state.AuthReducers.user_type);
 }
 
+function useGetUserInfo(type) {
+  return useSelector((state) => state.AuthReducers.user_info[type]);
+}
 
+function useGetAccessToken() {
+  return useSelector((state) => state.AuthReducers.token);
+}
 
 function useGetLoaderStatus() {
   return useSelector((state) => state.Settings.isLodder);
 }
 
-export { useIsLoggedIn, useUserType, useGetLoaderStatus };
+export { useIsLoggedIn, useUserType, useGetLoaderStatus, useGetAccessToken, useGetUserInfo };
