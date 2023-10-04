@@ -66,6 +66,5 @@ class MessageBroker extends Command
 
             sleep(5);
         }
-        $this->info('Message broker End...');
     }
 }

@@ -262,8 +262,8 @@ class SocialMessageService
     {
         $currentAllSessionList = $this->queueServiceRepository->queueRetriveListByKey($this->agentItemQueueName.':*');
         foreach($currentAllSessionList as $item){
-            $itemSessionInfo = $this->queueServiceRepository->queueListRange($item,0,-1);
-            
+            $itemSessionInfoList = $this->queueServiceRepository->queueListRange($item,0,-1);
+            dd($itemSessionInfoList);
         }
 
     }

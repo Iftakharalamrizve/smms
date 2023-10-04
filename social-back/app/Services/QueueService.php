@@ -283,7 +283,7 @@ class QueueService
         try {
             
             // first check agent is break mode then perform operation
-            $userName = Auth::user()->username;
+            $userName = Auth::user()->agent_id;
             $agentItemQueueKey = "{$this->agentItemQueueName}:{$userName}:*"; 
             $agentQueueStatus = $this->queueServiceRepository->checkItemExistInQueue($this->agentQueueName,$userName);
             $agentItemQueueStatus = $this->listItemInQueue($agentItemQueueKey);

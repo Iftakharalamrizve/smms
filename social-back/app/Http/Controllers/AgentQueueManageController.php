@@ -61,7 +61,8 @@ class AgentQueueManageController extends Controller
         // foreach(Redis::keys('agent_item_queue:*') as $key){
         //     Redis::del($key);
         // }
-        Redis::rpush('agent_queue','root');
+        // dd(Redis::keys('agent_item_queue:*'));
+        // Redis::rpush('agent_queue','root');
         // Redis::rpush('agent_queue','agent5');
         // Redis::rpush('agent_queue','agent4');
         // Redis::rpush('agent_queue','agent3');
@@ -73,10 +74,10 @@ class AgentQueueManageController extends Controller
         try {
             
             $data = [
-                Redis::lrange('agent_item_queue:root:1', 0, -1),
-                Redis::lrange('agent_item_queue:root:2', 0, -1),
-                Redis::lrange('agent_item_queue:root:3', 0, -1),
-                Redis::lrange('agent_item_queue:root:4', 0, -1)
+                // Redis::lrange('agent_item_queue:root:1', 0, -1),
+                // Redis::lrange('agent_item_queue:root:2', 0, -1),
+                // Redis::lrange('agent_item_queue:root:3', 0, -1),
+                // Redis::lrange('agent_item_queue:root:4', 0, -1)
             ];
             
             // AgentChatRoomEvent::dispatch('root');

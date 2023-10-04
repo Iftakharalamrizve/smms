@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Broadcast;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\AgentQueueManageController;
+use App\Http\Controllers\SocialPlatFormController;
+
 
 
 // Only for Agents
@@ -16,6 +18,7 @@ Route::post('/test',[AgentQueueManageController::class, 'checkStatus']);
 
 
 Route::middleware(['auth:sanctum', 'type.agent'])->group(function () {
+    Route::get('/get-session-sms',[SocialPlatFormController::class, 'getCurrentAgentMessageSession']);
     Route::post('/agent-assign-in-queues',[AgentQueueManageController::class, 'agentAssignInQueue']);
     Route::get('/complete',[AgentQueueManageController::class, 'clearMessage']);
 });

@@ -37,6 +37,17 @@
         { "icon": "mark_chat_read", "event": "handleReading", "title": "Reading" },
         { "icon": "account_circle", "event": "handleProfile", "title": "Profile" }
     ],
+    "platforms": [
+        {
+            "icon": "facebook",
+            "title": "Facebook",
+            "key": "fb",
+            "pages":[
+                { "icon": "remove_circle","title": "Gplex Social", "key":"gs" },
+                { "icon": "delete",  "title": "Shop Up", "key":"su" }
+            ]
+        }
+    ],
     "users": [
         {
             "src": "images/avatar/01.webp",
@@ -142,7 +153,7 @@
             }
         },
         {
-            "src": "images/logo.webp",
+            "src": "images/avatar/07.webp",
             "alt": "avatar",
             "name": "gPlex admin",
             "status": "online",
