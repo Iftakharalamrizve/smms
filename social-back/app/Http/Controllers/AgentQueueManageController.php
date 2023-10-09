@@ -22,7 +22,8 @@ class AgentQueueManageController extends Controller
 
     public function agentAssignInQueue()
     {
-        return $this->queueService->agentInitialOperation();
+        $agentInitialResponse = $this->queueService->agentInitialOperation();
+        return $this->respondCreated($agentInitialResponse['message'],$agentInitialResponse['data']);
     }
 
     public function getSms()

@@ -1,10 +1,12 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { useGetAccessToken} from '@src/hooks';
 const WebSocketContext = createContext();
 import Echo from 'laravel-echo';
 import Pusher from 'pusher-js';
 export function WebSocketProvider({ children }) {
     const [authenticated, setAuthenticated] = useState(false);
     const [socketInstance, setSocketInstance] = useState(null);
+    const currentUserAccessToken = useGetAccessToken();
     let socket = null;
       useEffect(() => {
         if(!socket && authenticated){
@@ -19,7 +21,7 @@ export function WebSocketProvider({ children }) {
             authEndpoint: 'http://localhost:8000/api/broadcasting/auth',
             auth: {
               headers: {
-                Authorization: `Bearer 25|cOidUfZhu4zTEgjMxl4CWYMGQEHAkbJw9E8xnPhP`,
+                Authorization: `Bearer ${currentUserAccessToken}`,
               },
             },
           });

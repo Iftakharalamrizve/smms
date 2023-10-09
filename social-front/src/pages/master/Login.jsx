@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -12,8 +12,6 @@ import { useWebSocket } from '../../context/WebSocketContext';
 
 
 export default function Login() {
-    const form = useRef();
-    const checkBtn = useRef();
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const currentUserLoggedInStatus = useIsLoggedIn();

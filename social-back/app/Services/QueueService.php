@@ -289,14 +289,17 @@ class QueueService
             $agentItemQueueStatus = $this->listItemInQueue($agentItemQueueKey);
             if (!$agentItemQueueStatus  && !$agentQueueStatus ) {
                 $this->addDataInQueue($this->agentQueueName, $userName);
-                // agent in ready mode 
-                return response()->json(['status' => true, 'message' => 'Agent Assign In Queue', 'data'=>['agentMode'=> 'ready','name'=>$userName]]);
+                return [
+                    'message' => 'Agent Assign In Queue', 'data'=>['agentMode'=> 'ready','name'=>$userName]
+                ];
             }else if(!$agentItemQueueStatus  && $agentQueueStatus){
-                // agent in ready mode 
-                return response()->json(['status' => true, 'message' => 'Agent Already In Queue', 'data'=>['agentMode'=> 'ready','name'=>$userName]]);
+                return [
+                    'message' => 'Agent Already In Queue', 'data'=>['agentMode'=> 'ready','name'=>$userName]
+                ];
             }else if(!$agentQueueStatus  && $agentItemQueueStatus){
-                // agent in busy mode 
-                return response()->json(['status' => true, 'message' => 'Agent Is Busy Mode', 'data'=>['agentMode'=> 'busy','name'=>$userName]]);
+                return [
+                    'message' => 'Agent Is Busy Mode', 'data'=>['agentMode'=> 'ready','name'=>$userName]
+                ];
             }
             
         } catch (\Exception $e) {

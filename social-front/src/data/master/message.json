@@ -43,8 +43,8 @@
             "title": "Facebook",
             "key": "fb",
             "pages":[
-                { "icon": "remove_circle","title": "Gplex Social", "key":"gs" },
-                { "icon": "delete",  "title": "Shop Up", "key":"su" }
+                { "icon": "remove_circle","title": "Gplex Social", "key":"gs", "id":123 },
+                { "icon": "delete",  "title": "Shop Up", "key":"su", "id":1234 }
             ]
         }
     ],

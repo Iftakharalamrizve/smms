@@ -56,6 +56,8 @@ class SocialPlatFormController extends Controller
             ->get();
 
         $socialMessageData = $socialMessages->groupBy('page_id')->toArray();
+
+        return $this->respondCreated("Agent Assign Session List", $socialMessageData);
         
     }
 
@@ -80,6 +82,7 @@ class SocialPlatFormController extends Controller
                                 ->whereRaw('sm.created_at >= sq.last_message_time - INTERVAL 30 MINUTE');
                         })
                         ->get();
-        return response()->json(['status' => true, 'message' => 'Message List Retrive', 'data'=>$results]);            
+        
+        return $this->respondCreated("Session Message Details", $results);
     }
 }

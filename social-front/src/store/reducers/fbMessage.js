@@ -5,7 +5,7 @@ const initialState = {
     assignSessionList: []
 };
 
-const Settings = createSlice({
+const FbMessage = createSlice({
     name: 'fbmessage',
     initialState,
     reducers: {
@@ -15,11 +15,12 @@ const Settings = createSlice({
     },
     extraReducers: {
         [currentUserMessageSessionList.fulfilled]: (state, action) => {
-          
+            console.log(action.payload)
+            state.assignSessionList= action.payload;
         }
       }
 });
   
-export const { setMessageSession } = Settings.actions;
-export default Settings.reducer;
+export const { setMessageSession } = FbMessage.actions;
+export default FbMessage.reducer;
   

@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Broadcast;
 */
 
 Broadcast::channel('social_chat_room.{userId}', function ($user,$username) {
-    return $user->username == $username;
+    $username = $user->username??$user->agent_id;
+    return $username == $username;
 });
