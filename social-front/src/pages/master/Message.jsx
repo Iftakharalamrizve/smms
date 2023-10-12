@@ -1,14 +1,16 @@
 import React,{ useEffect } from "react";
 import { Row, Col, Tab, Tabs } from "react-bootstrap";
-import { Box, List, Item, Icon, Text, Form, Button, Input, MessageTime } from "../../components/elements";
-import { DotsMenu, DuelText, RoundAvatar,Chat } from "../../components";
+import { Box, List, Item, Icon, Text, Form, Button, Input, MessageTime } from "@components/elements";
+import { DotsMenu, DuelText, RoundAvatar,Chat } from "@components";
 import {CardLayout,TabCard} from "@components/cards";
-import IconField from "../../components/fields/IconField";
-import { useCurrentAgentMessageList} from '@src/hooks';
+import IconField from "@components/fields/IconField";
+import { useCurrentAgentMessageList, useGetUserInfo} from '@src/hooks';
 import PageLayout from "../../layouts/PageLayout"; 
 import data from "../../data/master/message.json";
 import { useWebSocket } from '../../context/WebSocketContext';
 import { currentUserMessageSessionList } from "../../store/actions/fbMessageAction";
+import { agentCurrentModeSetAndGet } from "../../store/actions/agentAction";
+import {setMessageSession} from "@reducer/fbMessage"
 import { useDispatch } from 'react-redux';
 
 
@@ -17,29 +19,30 @@ export default function Message() {
     const { socketInstance } = useWebSocket();
     const dispatch = useDispatch();
     const facebookMessageList = useCurrentAgentMessageList();
+    const currentAgentId = useGetUserInfo('agent_id');
+    
     useEffect(() => {
+        dispatch(agentCurrentModeSetAndGet());
         dispatch(currentUserMessageSessionList());
     },[]);
 
     useEffect(() => {
         async function connectWithChannel() {
           if(socketInstance){
-            socketInstance.private(`social_chat_room.root`)
+            socketInstance.private(`social_chat_room.`+currentAgentId)
             .listen('.agent_chat_room_event', (event) => {
-                console.log(event);
+                dispatch(setMessageSession(event))
             })
             .listenForWhisper('typing', (e) => {
-                console.log('Received whisper:');
-                console.log(e);
+                
             })
             .error((error) => {
                 console.error(error);
             });
           }
         }
-
         connectWithChannel();
-      }, [socketInstance]);
+    }, [socketInstance]);
     
     return (
         <PageLayout>
@@ -80,11 +83,12 @@ export default function Message() {
                                                                                                 <Item key={ index } onClick={()=>{console.log(item)}} className={`mc-message-user-item`} >
                                                                                                     <DuelText 
                                                                                                         title={ item.customer_id }
-                                                                                                        timesTamp={ < MessageTime time= {item.created_at} />}
+                                                                                                        timesTamp={ < MessageTime time= {item.assign_time} />}
                                                                                                         descrip = { item.message_text }
                                                                                                         size={`xs`}
                                                                                                         gap="4px" 
                                                                                                     />
+                                                                                                    { item.un_read_count && <Text as="sup">{ item.un_read_count }</Text> }
                                                                                                 </Item>
                                                                                             ))}
                                                                                         </List>

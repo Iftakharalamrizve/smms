@@ -16,7 +16,7 @@ Route::post('/test',[AgentQueueManageController::class, 'checkStatus']);
 
 
 Route::middleware(['auth:sanctum', 'type.agent'])->group(function () {
-    Route::post('/agent-assign-in-queues',[AgentQueueManageController::class, 'agentAssignInQueue']);
+    Route::get('/agent-assign-in-queues',[AgentQueueManageController::class, 'agentAssignInQueue']);
     Route::get('/get-session-sms-list',[SocialPlatFormController::class, 'getCurrentAgentMessageSession']);
     Route::get('/get-session-sms-details',[SocialPlatFormController::class, 'getSessionMessage']);
     Route::get('/complete',[AgentQueueManageController::class, 'clearMessage']);

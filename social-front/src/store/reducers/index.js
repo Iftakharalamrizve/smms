@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import AuthReducers from './auth';
 import Settings from './settings';
 import FbMessage from './fbMessage';
+import agentOperation from './agentOperation';
 import storage from 'redux-persist/lib/storage';
 import thunkMiddleware from 'redux-thunk';
 import sessionStorage from 'redux-persist/lib/storage/session';
@@ -16,5 +17,6 @@ export const persistDataAuthConfig = {
 export const reducers = combineReducers({
   Settings: Settings,
   FbMessage:FbMessage,
+  agentOperation:agentOperation,
   AuthReducers: persistReducer(persistDataAuthConfig, AuthReducers),
 });

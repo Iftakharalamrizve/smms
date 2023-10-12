@@ -142,6 +142,8 @@ class SocialMessageService
             'page_id' => $saveItem['page_id'],
             'customer_id' => $saveItem['customer_id'],
             'session_id' => $saveItem['session_id'],
+            'read_status' => $saveItem['read_status'],
+            'un_read_count' => 1
         ];
         broadcast(new AgentChatRoomEvent($lastItem->assign_agent, $messageData));
         return response()->json(['message' => 'Sms Broadcast Successful']);

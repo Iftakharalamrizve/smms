@@ -8,8 +8,11 @@ function useUserType() {
   return useSelector((state) => state.AuthReducers.user_type);
 }
 
-function useGetUserInfo(type) {
-  return useSelector((state) => state.AuthReducers.user_info[type]);
+function useGetUserInfo(type = null) {
+  if(type){
+    return useSelector((state) => state.AuthReducers.user_info[type]);
+  }
+  return useSelector((state) => state.AuthReducers.user_info);
 }
 
 function useGetAccessToken() {

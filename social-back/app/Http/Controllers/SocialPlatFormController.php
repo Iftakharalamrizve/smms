@@ -43,11 +43,12 @@ class SocialPlatFormController extends Controller
         LUA;
 
         $sessionIds = Redis::eval($luaScript, 0, $pattern);
-        $subquery = SocialMessage::select('session_id', DB::raw('MAX(created_at) AS max_created_at'))
+        
+        $subquery = SocialMessage::select('session_id', DB::raw('MAX(created_at) AS max_created_at'), DB::raw("SUM(CASE WHEN read_status = 'Un Read' THEN 1 ELSE 0 END) AS un_read_count"))
             ->whereIn('session_id', $sessionIds)
             ->groupBy('session_id');
-        
-        $socialMessages = SocialMessage::select('social_messages.*')
+
+        $socialMessages = SocialMessage::select('id','message_text','direction','start_time as assign_time','attachments','page_id','customer_id','social_messages.session_id','read_status','subquery.un_read_count')
             ->joinSub($subquery, 'subquery', function ($join) {
                 $join->on('social_messages.session_id', '=', 'subquery.session_id')
                     ->whereColumn('social_messages.created_at', '=', 'subquery.max_created_at');

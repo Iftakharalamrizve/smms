@@ -16,6 +16,7 @@ export default function Message() {
             socketInstance.private(`social_chat_room.root`)
             .listen('.agent_chat_room_event', (event) => {
                 console.log(event);
+                
             })
             .listenForWhisper('typing', (e) => {
                 console.log('Received whisper:');

@@ -40,11 +40,9 @@ class SocialMessage extends Model
         parent::boot();
 
         static::creating(function($model) {
-            
             if($model->direction == 'IN'){
                 $model->read_status = "Un Read";
             }
-
         });
     }
 
