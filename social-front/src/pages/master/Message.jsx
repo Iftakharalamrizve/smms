@@ -1,14 +1,14 @@
-import React,{ useEffect } from "react";
+import React,{ useEffect, useState } from "react";
 import { Row, Col, Tab, Tabs } from "react-bootstrap";
 import { Box, List, Item, Icon, Text, Form, Button, Input, MessageTime } from "@components/elements";
 import { DotsMenu, DuelText, RoundAvatar,Chat } from "@components";
 import {CardLayout,TabCard} from "@components/cards";
 import IconField from "@components/fields/IconField";
-import { useCurrentAgentMessageList, useGetUserInfo} from '@src/hooks';
+import { useCurrentAgentMessageList, useGetUserInfo, usecurrentActiveSessionList} from '@src/hooks';
 import PageLayout from "../../layouts/PageLayout"; 
 import data from "../../data/master/message.json";
 import { useWebSocket } from '../../context/WebSocketContext';
-import { currentUserMessageSessionList } from "../../store/actions/fbMessageAction";
+import { currentUserMessageSessionList, sessionMessageHisoty } from "../../store/actions/fbMessageAction";
 import { agentCurrentModeSetAndGet } from "../../store/actions/agentAction";
 import {setMessageSession} from "@reducer/fbMessage"
 import { useDispatch } from 'react-redux';
@@ -20,7 +20,15 @@ export default function Message() {
     const dispatch = useDispatch();
     const facebookMessageList = useCurrentAgentMessageList();
     const currentAgentId = useGetUserInfo('agent_id');
-    
+    const currentActiveSessionList = usecurrentActiveSessionList('activeSessionList');
+    const sessionMessageDetails = usecurrentActiveSessionList('detailsMessageList');
+    const action  = [
+        { "icon": "account_circle", "text": "view profile" },
+        { "icon": "mark_chat_read", "text": "mark as unread" },
+        { "icon": "delete", "text": "delete messages" },
+        { "icon": "remove_circle", "text": "block messages" }
+    ];
+
     useEffect(() => {
         dispatch(agentCurrentModeSetAndGet());
         dispatch(currentUserMessageSessionList());
@@ -31,6 +39,7 @@ export default function Message() {
           if(socketInstance){
             socketInstance.private(`social_chat_room.`+currentAgentId)
             .listen('.agent_chat_room_event', (event) => {
+                console.log(event);
                 dispatch(setMessageSession(event))
             })
             .listenForWhisper('typing', (e) => {
@@ -43,7 +52,44 @@ export default function Message() {
         }
         connectWithChannel();
     }, [socketInstance]);
+
+    const getSessionMessageHistory = (item) =>{
+        const {session_id, page_id} = item;
+        dispatch(sessionMessageHisoty({session_id,page_id}));
+    }
+
+    const generateSessionMessageItemList = (data) => {
+        let itemList = [];
     
+        for (const sessionId in data) {
+            let item = data[sessionId];
+    
+            let SessionItem = (
+                <Item
+                    key={sessionId}
+                    onClick={() => {
+                        getSessionMessageHistory(data[sessionId]);
+                    }}
+                    className={`mc-message-user-item ${item.session_id === currentActiveSessionList[item.page_id] ? 'active' : ''}`}
+                >
+                    <DuelText
+                        title={item.customer_id}
+                        timesTamp={<MessageTime time={item.assign_time} />}
+                        descrip={item.message_text}
+                        size="xs"
+                        gap="4px"
+                    />
+                    {item.un_read_count && <Text as="sup">{item.un_read_count}</Text>}
+                    <DotsMenu dots="more_vert" dropdown={action} />
+                </Item>
+            );
+    
+            itemList.push(SessionItem);
+        }
+    
+        return itemList;
+    }
+ 
     return (
         <PageLayout>
             <Row>
@@ -79,24 +125,13 @@ export default function Message() {
                                                                                             />
                                                                                         </Box>
                                                                                         <List className="mc-message-user-list thin-scrolling">
-                                                                                            {facebookMessageList[list.id]?.map((item, index) => (
-                                                                                                <Item key={ index } onClick={()=>{console.log(item)}} className={`mc-message-user-item`} >
-                                                                                                    <DuelText 
-                                                                                                        title={ item.customer_id }
-                                                                                                        timesTamp={ < MessageTime time= {item.assign_time} />}
-                                                                                                        descrip = { item.message_text }
-                                                                                                        size={`xs`}
-                                                                                                        gap="4px" 
-                                                                                                    />
-                                                                                                    { item.un_read_count && <Text as="sup">{ item.un_read_count }</Text> }
-                                                                                                </Item>
-                                                                                            ))}
+                                                                                            {generateSessionMessageItemList(facebookMessageList[list.id])}
                                                                                         </List>
                                                                                     </Box>
                                                                                 </CardLayout>
                                                                             </Col>
                                                                             <Col md={7} xl={8}>
-                                                                                <Chat chatData="" />
+                                                                                {currentActiveSessionList[list.id]?<Chat chatData={sessionMessageDetails[list.id]} />:<></>}
                                                                             </Col>
                                                                         </Row>
                                                                     </Tab>

@@ -12,17 +12,16 @@ const initialState = {
 const AuthReducer = createSlice({
     name: 'auth',
     initialState,
-    extraReducers: {
-      [userAuthenticationVerify.fulfilled]: (state, action) => {
+    extraReducers: (builder) => {
+      builder.addCase(userAuthenticationVerify.fulfilled, (state, action) => {
         const { access_token, user, user_type } = action.payload;
         state.token = access_token;
         state.isLoggedIn = true;
         state.user_info = user;
         state.user_type = user_type;
-      },
-      [logoutUser.fulfilled]: () => {
-        return initialState;
-      },
+      })
+  
+      builder.addCase(logoutUser.fulfilled, () => initialState)
     }
   });
   

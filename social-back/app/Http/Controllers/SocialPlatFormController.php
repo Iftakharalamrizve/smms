@@ -57,7 +57,6 @@ class SocialPlatFormController extends Controller
             ->get();
 
         $socialMessageData = $socialMessages->groupBy('page_id')->toArray();
-
         return $this->respondCreated("Agent Assign Session List", $socialMessageData);
         
     }
@@ -76,14 +75,15 @@ class SocialPlatFormController extends Controller
     public function getSessionMessage(Request $request)
     {
         $sessionId = $request->input('session_id');
+        $pageId = $request->input('page_id');
         $results = DB::table('social_messages as sm')
                         ->select('sm.id', 'sm.channel_id', 'sm.page_id', 'sm.customer_id', 'sm.message_id', 'sm.message_text', 'sm.assign_agent', 'sm.direction', 'sm.attachments', 'sm.session_id', 'sm.read_status', 'sm.start_time', 'sm.created_at', 'sm.updated_at')
-                        ->join(DB::raw("(SELECT session_id, MAX(created_at) AS last_message_time FROM `social_messages` WHERE session_id = '$sessionId') AS sq"), function ($join) {
+                        ->join(DB::raw("(SELECT session_id, MAX(created_at) AS last_message_time FROM `social_messages` WHERE session_id = '$sessionId' AND  page_id = '$pageId') AS sq"), function ($join) {
                             $join->on('sm.session_id', '=', 'sq.session_id')
                                 ->whereRaw('sm.created_at >= sq.last_message_time - INTERVAL 30 MINUTE');
                         })
                         ->get();
         
-        return $this->respondCreated("Session Message Details", $results);
+        return $this->respondCreated("Session Message Details", ['session_id'=>$sessionId,'page_id'=>$pageId,'list'=> $results]);
     }
 }

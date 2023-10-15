@@ -169,6 +169,7 @@ class SocialMessageService
             'attachments' => $saveItem['attachments'],
             'page_id' => $saveItem['page_id'],
             'customer_id' => $saveItem['customer_id'],
+            'read_status' => $saveItem['read_status']
         ];
 
         $messageQueueLength = $this->queueServiceRepository->queueLengthNumber($this->messageQueueName);
@@ -242,6 +243,7 @@ class SocialMessageService
 
         $messageData['session_id'] = $sessionId;
         $messageData['assign_time'] = $startTime;
+        $messageData['un_read_count'] = 1;
         broadcast(new AgentChatRoomEvent($agentKeyList[1], $messageData));
     }
 

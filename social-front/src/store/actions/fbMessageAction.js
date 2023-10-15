@@ -11,11 +11,14 @@ export const currentUserMessageSessionList = createAsyncThunk(
     },
 );
 
-export const agentCurrentModeSetAndGet = createAsyncThunk(
-    'agent/assign_status',
-    async () => {
-        const response =  await getData(url.SET_CURRENT_AGENT_MODE);
+export const sessionMessageHisoty = createAsyncThunk(
+    'session/message',
+    async (filterData) => {
+        const response =  await getData(url.GET_SESSION_MESSAGE_DETAILS+`?session_id=${filterData.session_id}&&page_id=${filterData.page_id}`);
         return response.data.data;
     },
 );
+
+
+
   

@@ -8,11 +8,11 @@ const initialState = {
 const AgentOperation = createSlice({
     name: 'agentmanage',
     initialState,
-    extraReducers: {
-        [agentCurrentModeSetAndGet.fulfilled]: (state, action) => {
+    extraReducers: (builder) => {
+        builder.addCase(agentCurrentModeSetAndGet.fulfilled, (state, action) => {
             state.currentAgentMode= action.payload.data.agentMode;
-        }
-      }
+        })
+    }
 });
   
 export default AgentOperation.reducer;

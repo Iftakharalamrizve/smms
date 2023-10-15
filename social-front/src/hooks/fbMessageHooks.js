@@ -4,4 +4,8 @@ function useCurrentAgentMessageList() {
   return useSelector((state) => state.FbMessage.assignSessionList);
 }
 
-export { useCurrentAgentMessageList };
+function usecurrentActiveSessionList(type) {
+  return useSelector((state) => state.FbMessage[type]);
+}
+
+export { useCurrentAgentMessageList, usecurrentActiveSessionList };
