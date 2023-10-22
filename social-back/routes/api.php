@@ -14,11 +14,11 @@ Route::post('/login', [AuthenticationController::class, 'login']);
 Route::post('/get-sms',[AgentQueueManageController::class, 'getSms']);
 Route::post('/test',[AgentQueueManageController::class, 'checkStatus']);
 
-
 Route::middleware(['auth:sanctum', 'type.agent'])->group(function () {
     Route::get('/agent-assign-in-queues',[AgentQueueManageController::class, 'agentAssignInQueue']);
     Route::get('/get-session-sms-list',[SocialPlatFormController::class, 'getCurrentAgentMessageSession']);
     Route::get('/get-session-sms-details',[SocialPlatFormController::class, 'getSessionMessage']);
+    Route::post('/message-reply',[SocialPlatFormController::class,'agentReplyMessage']);
     Route::get('/complete',[AgentQueueManageController::class, 'clearMessage']);
 });
 

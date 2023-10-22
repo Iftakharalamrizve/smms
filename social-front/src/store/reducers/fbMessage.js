@@ -7,161 +7,121 @@ const initialState = {
     detailsMessageList:{},
 };
 
-// state.assignSessionList[page_id].map((item) =>
-//                             item.customer_id === customer_id
-//                             ? { ...item, message_text,assign_time,un_read_count: parseInt(item.un_read_count) + 1 }
-//                             : item
-//                         )
-// const FbMessage = createSlice({
-//     name: 'fbmessage',
-//     initialState,
-//     reducers: {
-//         setMessageSession(state, action) {
-//             const { message_text, page_id, customer_id, session_id, direction, assign_time, read_status, un_read_count } = action.payload;
-
-//             if (state.assignSessionList?.[page_id]?.[session_id]) {
-//                 return {
-//                     ...state,
-//                     assignSessionList: {
-//                         ...state.assignSessionList,
-//                         [page_id]: {...state.assignSessionList[page_id],[session_id]:{...state.assignSessionList[page_id][session_id],message_text,assign_time,un_read_count: (state.assignSessionList[page_id][session_id].un_read_count || 0) + 1}},
-//                     },
-//                 };
-//             } else {
-//                 return {
-//                     ...state,
-//                     assignSessionList: {
-//                         ...state.assignSessionList,
-//                         [page_id]: {...state.assignSessionList[page_id],[session_id]:{ message_text, page_id, customer_id, session_id, direction, assign_time, read_status, un_read_count }},
-//                     },
-//                 };
-//             }
-//         },
-//     },
-//     extraReducers: (builder) => {
-//         builder.addCase(currentUserMessageSessionList.fulfilled, (state, action) => {
-//             let data = action.payload;
-//             const formatedMessageSessionList = {};
-//             for (const key in data) {
-//                 if (!formatedMessageSessionList[key]) {
-//                     formatedMessageSessionList[key] = {};
-//                 }
-            
-//                 for (const item of data[key]) {
-//                     formatedMessageSessionList[key][item.session_id] = item;
-//                 }
-//             }
-//             state.assignSessionList= formatedMessageSessionList;
-//         })
-
-//         builder.addCase(sessionMessageHisoty.fulfilled, (state, action) => {
-//             const {page_id, session_id, list} = action.payload;
-//             return {
-//                 ...state,
-//                 detailsMessageList:{
-//                     ...state.detailsMessageList,
-//                     [page_id]:list
-//                 },
-//                 activeSessionList:{
-//                     ...state.activeSessionList,
-//                     [page_id]:session_id
-//                 }
-//             }
-//         })
-//     }
-// });
 const FbMessage = createSlice({
-    name: 'fbmessage',
-    initialState,
-    reducers: {
-      setMessageSession(state, action) {
-        const {
-          message_text,
-          page_id,
-          customer_id,
-          session_id,
-          direction,
-          assign_time,
-          read_status,
-          un_read_count,
-        } = action.payload;
-  
-        if (state.assignSessionList?.[page_id]?.[session_id]) {
-          return {
-            ...state,
-            assignSessionList: {
-              ...state.assignSessionList,
-              [page_id]: {
-                ...state.assignSessionList[page_id],
-                [session_id]: {
-                  ...state.assignSessionList[page_id][session_id],
-                  message_text,
-                  assign_time,
-                  un_read_count: (state.assignSessionList[page_id][session_id]
-                    .un_read_count || 0) + 1,
-                },
-              },
-            },
-          };
-        } else {
-          return {
-            ...state,
-            assignSessionList: {
-              ...state.assignSessionList,
-              [page_id]: {
-                ...state.assignSessionList[page_id],
-                [session_id]: {
-                  message_text,
-                  page_id,
-                  customer_id,
-                  session_id,
-                  direction,
-                  assign_time,
-                  read_status,
-                  un_read_count,
-                },
-              },
-            },
-          };
-        }
-      },
-    },
-    extraReducers: (builder) => {
-      builder.addCase(currentUserMessageSessionList.fulfilled, (state, action) => {
-        const data = action.payload;
-        const formattedMessageSessionList = {};
-  
-        for (const key in data) {
-          if (!formattedMessageSessionList[key]) {
-            formattedMessageSessionList[key] = {};
+  name: 'fbmessage',
+  initialState,
+  reducers: {
+    setMessageSession(state, action) {
+      let unReadIncrementNumber = 1;
+      const {
+        message_text,
+        page_id,
+        customer_id,
+        session_id,
+        direction,
+        start_time,
+        read_status,
+        un_read_count,
+      } = action.payload;
+      let detailsModificationList = {};
+      if (state.assignSessionList?.[page_id]?.[session_id]) {
+        if(state.detailsMessageList.hasOwnProperty(page_id)){
+          if(state.activeSessionList[page_id] == session_id){
+            unReadIncrementNumber = 0;
+            detailsModificationList = {
+              ...state.detailsMessageList,
+              [page_id]: [...state.detailsMessageList[page_id], action.payload],
+            }
+          }else{
+            detailsModificationList = {...state.detailsMessageList}
           }
-  
-          for (const item of data[key]) {
-            formattedMessageSessionList[key][item.session_id] = item;
-          }
+        }else{
+          detailsModificationList = {...state.detailsMessageList}
         }
-        
-        state.assignSessionList = formattedMessageSessionList;
-      });
-  
-      builder.addCase(sessionMessageHistory.fulfilled, (state, action) => {
-        const { page_id, session_id, list } = action.payload;
-  
         return {
           ...state,
-          detailsMessageList: {
-            ...state.detailsMessageList,
-            [page_id]: list,
+          assignSessionList: {
+            ...state.assignSessionList,
+            [page_id]: {
+              ...state.assignSessionList[page_id],
+              [session_id]: {
+                ...state.assignSessionList[page_id][session_id],
+                message_text,
+                start_time,
+                un_read_count: parseInt(state.assignSessionList[page_id][session_id]
+                  .un_read_count || 0) + unReadIncrementNumber,
+              },
+            },
           },
-          activeSessionList: {
-            ...state.activeSessionList,
-            [page_id]: session_id,
+          detailsMessageList: detailsModificationList
+        };
+      } else {
+        return {
+          ...state,
+          assignSessionList: {
+            ...state.assignSessionList,
+            [page_id]: {
+              ...state.assignSessionList[page_id],
+              [session_id]: {
+                message_text,
+                page_id,
+                customer_id,
+                session_id,
+                direction,
+                start_time,
+                read_status,
+                un_read_count,
+              },
+            },
           },
         };
-      });
+      }
     },
-  });
-  
+  },
+  extraReducers: (builder) => {
+    builder.addCase(currentUserMessageSessionList.fulfilled, (state, action) => {
+      const data = action.payload;
+      const formattedMessageSessionList = {};
+
+      for (const key in data) {
+        if (!formattedMessageSessionList[key]) {
+          formattedMessageSessionList[key] = {};
+        }
+        for (const item of data[key]) {
+          formattedMessageSessionList[key][item.session_id] = item;
+        }
+      }
+      
+      state.assignSessionList = formattedMessageSessionList;
+    });
+
+    builder.addCase(sessionMessageHisoty.fulfilled, (state, action) => {
+      const { page_id, session_id, list } = action.payload;
+
+      return {
+        ...state,
+        detailsMessageList: {
+          ...state.detailsMessageList,
+          [page_id]: list,
+        },
+        activeSessionList: {
+          ...state.activeSessionList,
+          [page_id]: session_id,
+        },
+        assignSessionList: {
+          ...state.assignSessionList,
+          [page_id]: {
+            ...state.assignSessionList[page_id],
+            [session_id]: {
+              ...state.assignSessionList[page_id][session_id],
+              un_read_count: 0,
+            },
+          },
+        },
+      };
+    });
+  },
+});
+
 export const { setMessageSession } = FbMessage.actions;
 export default FbMessage.reducer;
-  

@@ -28,25 +28,27 @@ class SocialMessageService
 
     public function processAndSendReply($replyData, $requestData)
     {
-        $replyData['message_text'] = $requestData->reply;
-        $replyData['reply_to'] = Auth::user()->username;
-        $replyData['direction'] = 'OUT';
-        $replyData['session_id'] = $requestData->session_id;
-        $replyData['read_status'] = 'Read';
-        $replyData['sms_state'] = 'Delivered';
-        // $replyData['disposition_id'] = $requestData->disposition_id??null;
-        // $replyData['disposition_by'] = $requestData->disposition_id?Auth::user()->username:null;
-        $saveItem = $this->socialMessageRepository->save( $replyData);
-        if($saveItem){
-            return redirect()->back();
-        }
-        return redirect()->back();
+        $startTime = date('Y-m-d H:i:s');
+
+        $replyProcessData = [
+            'page_id' => $replyData->page_id,
+            'customer_id' => $replyData->customer_id,
+            'message_id' => $replyData->message_id,
+            'assign_agent' => $replyData->assign_agent,
+            'channel_id' => $replyData->channel_id,
+            'message_text' => $requestData->reply,
+            'reply_to' => Auth::user()->username,
+            'session_id' => $requestData->session_id,
+            'direction' => 'OUT',
+            'read_status' => 0,
+            'sms_state' => 'Delivered',
+            'start_time' => $startTime,
+            'end_time' => $startTime,
+        ];
+
+        return $this->socialMessageRepository->save($replyProcessData);
     }
 
-    public function saveAgentReply($replyProcessData)
-    {
-        
-    }
 
     public function processNewMessage($messageData)
     {
@@ -137,7 +139,7 @@ class SocialMessageService
             'id' => $saveItem['id'],
             'message_text' => $saveItem['message_text'],
             'direction' => $saveItem['direction'],
-            'assign_time' => $startTime,
+            'start_time' => $startTime,
             'attachments' => $saveItem['attachments'],
             'page_id' => $saveItem['page_id'],
             'customer_id' => $saveItem['customer_id'],
@@ -165,7 +167,7 @@ class SocialMessageService
             'id' => $saveItem['id'],
             'message_text' => $saveItem['message_text'],
             'direction' => $saveItem['direction'],
-            'assign_time' => $saveItem['created_time'],
+            'start_time' => $saveItem['created_time'],
             'attachments' => $saveItem['attachments'],
             'page_id' => $saveItem['page_id'],
             'customer_id' => $saveItem['customer_id'],
@@ -242,7 +244,7 @@ class SocialMessageService
         ]);
 
         $messageData['session_id'] = $sessionId;
-        $messageData['assign_time'] = $startTime;
+        $messageData['start_time'] = $startTime;
         $messageData['un_read_count'] = 1;
         broadcast(new AgentChatRoomEvent($agentKeyList[1], $messageData));
     }

@@ -1,7 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as url from '@src/api/urls';
-import { getData} from '../../api/apiCore';
+import { setMessageSession } from "@store/reducers/fbMessage";
 
+import { getData,createData} from '../../api/apiCore';
 
 export const currentUserMessageSessionList = createAsyncThunk(
     'agent/message',
@@ -11,6 +12,7 @@ export const currentUserMessageSessionList = createAsyncThunk(
     },
 );
 
+//@TODO Error Handle 
 export const sessionMessageHisoty = createAsyncThunk(
     'session/message',
     async (filterData) => {
@@ -19,6 +21,17 @@ export const sessionMessageHisoty = createAsyncThunk(
     },
 );
 
-
-
-  
+export const messageReply = createAsyncThunk(
+    'reply/message',
+    async (messageData, { dispatch }) => {
+        try {
+            const response = await createData(url.SEND_MESSAGE_REPLY, messageData);
+            const responseData = response.data.data;
+            dispatch(setMessageSession(responseData));
+            return responseData;
+          } catch (error) {
+            console.error('Error in messageReply:', error);
+            throw error;
+          }
+    },
+);

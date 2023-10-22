@@ -41,7 +41,7 @@ class SocialMessage extends Model
 
         static::creating(function($model) {
             if($model->direction == 'IN'){
-                $model->read_status = "Un Read";
+                $model->read_status = 1;
             }
         });
     }

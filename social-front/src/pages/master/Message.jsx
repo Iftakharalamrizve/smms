@@ -39,7 +39,6 @@ export default function Message() {
           if(socketInstance){
             socketInstance.private(`social_chat_room.`+currentAgentId)
             .listen('.agent_chat_room_event', (event) => {
-                console.log(event);
                 dispatch(setMessageSession(event))
             })
             .listenForWhisper('typing', (e) => {
@@ -74,12 +73,12 @@ export default function Message() {
                 >
                     <DuelText
                         title={item.customer_id}
-                        timesTamp={<MessageTime time={item.assign_time} />}
+                        timesTamp={<MessageTime time={item.start_time} />}
                         descrip={item.message_text}
                         size="xs"
                         gap="4px"
                     />
-                    {item.un_read_count && <Text as="sup">{item.un_read_count}</Text>}
+                    {item.un_read_count != 0 ? <Text as="sup">{item.un_read_count}</Text>:null}
                     <DotsMenu dots="more_vert" dropdown={action} />
                 </Item>
             );
@@ -131,7 +130,7 @@ export default function Message() {
                                                                                 </CardLayout>
                                                                             </Col>
                                                                             <Col md={7} xl={8}>
-                                                                                {currentActiveSessionList[list.id]?<Chat chatData={sessionMessageDetails[list.id]} />:<></>}
+                                                                                {currentActiveSessionList[list.id]?<Chat currentActiveSessionId={currentActiveSessionList[list.id]} chatData={sessionMessageDetails[list.id]} pageId = {list.id} />:<></>}
                                                                             </Col>
                                                                         </Row>
                                                                     </Tab>

@@ -44,16 +44,17 @@ class SocialPlatFormController extends Controller
 
         $sessionIds = Redis::eval($luaScript, 0, $pattern);
         
-        $subquery = SocialMessage::select('session_id', DB::raw('MAX(created_at) AS max_created_at'), DB::raw("SUM(CASE WHEN read_status = 'Un Read' THEN 1 ELSE 0 END) AS un_read_count"))
+        $subquery = SocialMessage::select('session_id', DB::raw('MAX(created_at) AS max_created_at'), DB::raw("SUM(CASE WHEN read_status = 1 THEN 1 ELSE 0 END) AS un_read_count"))
             ->whereIn('session_id', $sessionIds)
             ->groupBy('session_id');
 
-        $socialMessages = SocialMessage::select('id','message_text','direction','start_time as assign_time','attachments','page_id','customer_id','social_messages.session_id','read_status','subquery.un_read_count')
+        $socialMessages = SocialMessage::select('id','message_text','direction','start_time as start_time','attachments','page_id','customer_id','social_messages.session_id','read_status','subquery.un_read_count')
             ->joinSub($subquery, 'subquery', function ($join) {
                 $join->on('social_messages.session_id', '=', 'subquery.session_id')
                     ->whereColumn('social_messages.created_at', '=', 'subquery.max_created_at');
             })
             ->whereIn('social_messages.session_id', $sessionIds) 
+            ->orderBy('start_time', 'desc')
             ->get();
 
         $socialMessageData = $socialMessages->groupBy('page_id')->toArray();
@@ -63,12 +64,13 @@ class SocialPlatFormController extends Controller
 
     public function agentReplyMessage(Request $request)
     {
-        $findLastMessage = (array)DB::table('social_messages as sm')
-                                ->select('sm.channel_id', 'sm.page_id', 'sm.customer_id', 'sm.message_id', 'sm.message_text', 'sm.assign_agent', 'sm.direction', 'sm.session_id', 'sm.read_status')
-                                ->where(['session_id'=>$request->session_id,'page_id'=>$request->page_id])
-                                ->orderBy('created_at','DESC')
-                                ->first();
-        return $this->socialMediaMessageService->processAndSendReply($findLastMessage,$request); 
+        $findLastMessage =  DB::table('social_messages as sm')
+                            ->select('sm.channel_id', 'sm.page_id', 'sm.customer_id', 'sm.message_id', 'sm.message_text', 'sm.assign_agent', 'sm.direction', 'sm.session_id', 'sm.read_status')
+                            ->where(['session_id'=>$request->session_id,'page_id'=>$request->page_id])
+                            ->orderBy('created_at','DESC')
+                            ->first();
+        $replyData = $this->socialMediaMessageService->processAndSendReply($findLastMessage,$request);
+        return $this->respondCreated("Agent Reply Delivered", $replyData);
     }
 
 
@@ -76,6 +78,10 @@ class SocialPlatFormController extends Controller
     {
         $sessionId = $request->input('session_id');
         $pageId = $request->input('page_id');
+        DB::table('social_messages')
+            ->where('session_id', $sessionId)
+            ->where('read_status', 1)
+            ->update(['read_status' =>0]);
         $results = DB::table('social_messages as sm')
                         ->select('sm.id', 'sm.channel_id', 'sm.page_id', 'sm.customer_id', 'sm.message_id', 'sm.message_text', 'sm.assign_agent', 'sm.direction', 'sm.attachments', 'sm.session_id', 'sm.read_status', 'sm.start_time', 'sm.created_at', 'sm.updated_at')
                         ->join(DB::raw("(SELECT session_id, MAX(created_at) AS last_message_time FROM `social_messages` WHERE session_id = '$sessionId' AND  page_id = '$pageId') AS sq"), function ($join) {
