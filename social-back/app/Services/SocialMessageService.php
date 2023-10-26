@@ -39,13 +39,14 @@ class SocialMessageService
             'message_text' => $requestData->reply,
             'reply_to' => Auth::user()->username,
             'session_id' => $requestData->session_id,
+            'disposition_id' => $requestData->disposition_id??NULL,
+            'disposition_by' => $requestData->disposition_id?Auth::user()->username:NULL,
             'direction' => 'OUT',
             'read_status' => 0,
             'sms_state' => 'Delivered',
             'start_time' => $startTime,
             'end_time' => $startTime,
         ];
-
         return $this->socialMessageRepository->save($replyProcessData);
     }
 

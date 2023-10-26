@@ -9,4 +9,6 @@ export { default as DivideTitle } from "./DivideTitle";
 export { default as RoundAvatar } from "./RoundAvatar";
 export { default as DropdownMenu } from "./DropdownMenu";
 export { default as RichTextEditor } from "./RichTextEditor";
-export { default as Chat } from "./Message/Chat";
+export { default as Chat } from "./message/Chat";
+export { default as ChatGroupTextItemList } from "./message/ChatGroupTextItemList";
+export { default as DispositionOperation } from "./message/DispositionOperation";

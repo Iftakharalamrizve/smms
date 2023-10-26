@@ -12,7 +12,6 @@ const FbMessage = createSlice({
   initialState,
   reducers: {
     setMessageSession(state, action) {
-      let unReadIncrementNumber = 1;
       const {
         message_text,
         page_id,
@@ -23,24 +22,19 @@ const FbMessage = createSlice({
         read_status,
         un_read_count,
       } = action.payload;
-      let detailsModificationList = {};
       if (state.assignSessionList?.[page_id]?.[session_id]) {
-        if(state.detailsMessageList.hasOwnProperty(page_id)){
-          if(state.activeSessionList[page_id] == session_id){
-            unReadIncrementNumber = 0;
-            detailsModificationList = {
-              ...state.detailsMessageList,
-              [page_id]: [...state.detailsMessageList[page_id], action.payload],
-            }
-          }else{
-            detailsModificationList = {...state.detailsMessageList}
-          }
-        }else{
-          detailsModificationList = {...state.detailsMessageList}
-        }
+        const activeSession = state.activeSessionList[page_id] === session_id;
+        const unReadIncrementNumber = activeSession ? 0 : 1;
+        const isDispostionResponse = action.payload.disposition_id? true: false;
         return {
           ...state,
-          assignSessionList: {
+          assignSessionList: isDispostionResponse?{
+            ...state.assignSessionList,
+            [page_id]: {
+              ...state.assignSessionList[page_id],
+              [session_id]: undefined,
+            }
+          }:{
             ...state.assignSessionList,
             [page_id]: {
               ...state.assignSessionList[page_id],
@@ -53,7 +47,13 @@ const FbMessage = createSlice({
               },
             },
           },
-          detailsMessageList: detailsModificationList
+          detailsMessageList: activeSession?{
+            ...state.detailsMessageList,
+            [page_id]: isDispostionResponse?undefined:activeSession
+              ? [...state.detailsMessageList[page_id], action.payload]
+              : [...state.detailsMessageList[page_id]],
+          }:state.detailsMessageList,
+          activeSessionList: isDispostionResponse?{...state.activeSessionList,[page_id]: undefined}:state.activeSessionList
         };
       } else {
         return {

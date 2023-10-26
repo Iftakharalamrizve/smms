@@ -55,4 +55,7 @@
     background-color: rgba(var(--primaryRGB), 15%);
   }
 
-  
+  .modal-45w {
+    max-width: none!important;
+    width: 45%;
+}
