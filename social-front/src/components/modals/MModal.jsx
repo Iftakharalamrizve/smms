@@ -4,6 +4,7 @@ export default function MModal({onModalChange, modalStatus, title, children }) {
   return (
     <>
       <Modal
+        animation={true}
         show={modalStatus}
         onHide={()=>{onModalChange(false)}}
         dialogClassName="modal-45w"

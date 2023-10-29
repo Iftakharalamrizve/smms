@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import MModal from '../modals/MModal';
 import { Modal, Form, Row, Col, Alert } from "react-bootstrap";
-import { Option, Heading, Box, Anchor, Button, Image, Input, Label, Icon, Text } from "../../components/elements";
+import { Option, Heading, Box, Anchor, Button, Image, Input, Label, Icon, Text, } from "../../components/elements";
 import { LabelField, LabelTextarea } from "../../components/fields";
 import { CardLayout, CardHeader } from "../../components/cards";
 import { messageReply } from "@store/actions/fbMessageAction";
@@ -16,7 +16,6 @@ export default function DispositionOperation({onModalChange , modalStatus, sessi
   const dispatch = useDispatch();
 
   const sendCustomerDispositionReply = () => {
-    console.log(replyText,disposition)
     if(replyText && disposition){
       let messageData = {
         disposition_id: disposition,
@@ -33,7 +32,7 @@ export default function DispositionOperation({onModalChange , modalStatus, sessi
   }
 
   return (
-    <MModal onModalChange={onModalChange} modalStatus ={modalStatus} title={"Message Disposition"}>
+    /*<MModal onModalChange={onModalChange} modalStatus ={modalStatus} title={"Message Disposition"}>
       <Box className="">
           <Row>
               <Col md={{ span: 4, offset: 4 }}>
@@ -65,6 +64,7 @@ export default function DispositionOperation({onModalChange , modalStatus, sessi
               <Button type="button" onClick={() => sendCustomerDispositionReply()} className="btn btn-success">Disposition Reply</Button>
           </Modal.Footer>
       </Box>
-    </MModal>
+    </MModal>*/
+    <></>
   )
 }

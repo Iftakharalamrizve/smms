@@ -19,7 +19,7 @@ export default function Message() {
     const { socketInstance } = useWebSocket();
     const dispatch = useDispatch();
     const facebookMessageList = useCurrentAgentMessageList();
-    console.log(facebookMessageList);
+    console.log(facebookMessageList,"Main Message Data render");
     const currentAgentId = useGetUserInfo('agent_id');
     const currentActiveSessionList = usecurrentActiveSessionList('activeSessionList');
     const sessionMessageDetails = usecurrentActiveSessionList('detailsMessageList');
@@ -63,7 +63,7 @@ export default function Message() {
     
         for (const sessionId in data) {
             let item = data[sessionId];
-            console.log(item,"dsf");
+            console.log(item,data,sessionId,"Test Data");
             let SessionItem = (
                 <Item
                     key={sessionId}
@@ -129,7 +129,6 @@ export default function Message() {
                                                                                 </CardLayout>
                                                                             </Col>
                                                                             <Col md={7} xl={8}>
-                                                                                
                                                                                 {currentActiveSessionList[list.id]?<Chat currentActiveSessionId={currentActiveSessionList[list.id]} chatData={sessionMessageDetails[list.id]} pageId = {list.id} />:<></>}
                                                                             </Col>
                                                                         </Row>

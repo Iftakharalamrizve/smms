@@ -26,14 +26,21 @@ const FbMessage = createSlice({
         const activeSession = state.activeSessionList[page_id] === session_id;
         const unReadIncrementNumber = activeSession ? 0 : 1;
         const isDispostionResponse = action.payload.disposition_id? true: false;
+        const updatedPage = { ...state.assignSessionList[page_id] };
+        const updateActiveSessionList = {...state.activeSessionList};
+        const updateDetailsMessage = { ...state.detailsMessageList};
+        
+        if(isDispostionResponse){
+          delete updatedPage[session_id];
+          delete updateActiveSessionList[page_id]; 
+          delete updateDetailsMessage[page_id];
+        }
+        
         return {
           ...state,
           assignSessionList: isDispostionResponse?{
             ...state.assignSessionList,
-            [page_id]: {
-              ...state.assignSessionList[page_id],
-              [session_id]: undefined,
-            }
+            [page_id]:updatedPage
           }:{
             ...state.assignSessionList,
             [page_id]: {
@@ -47,13 +54,13 @@ const FbMessage = createSlice({
               },
             },
           },
-          detailsMessageList: activeSession?{
+          detailsMessageList: isDispostionResponse?updateDetailsMessage:activeSession?{
             ...state.detailsMessageList,
-            [page_id]: isDispostionResponse?undefined:activeSession
+            [page_id]:activeSession
               ? [...state.detailsMessageList[page_id], action.payload]
               : [...state.detailsMessageList[page_id]],
           }:state.detailsMessageList,
-          activeSessionList: isDispostionResponse?{...state.activeSessionList,[page_id]: undefined}:state.activeSessionList
+          activeSessionList: isDispostionResponse?{...updateActiveSessionList}:state.activeSessionList
         };
       } else {
         return {
