@@ -48,7 +48,7 @@ class QueueService
     /**
      * Get retrive all data from a specified queue.
      * Ignore Agent means retrive all agent except specefic agent item 
-     * Ignore agent use when Item land in one agent, But agent can not responsed . This business item reassign another agent except curretn agent
+     * Ignore agent use when Item land in one agent, But agent can not responsed . This business item re assign another agent except curretn agent
      * 
      * @param string $queueName The name of the queue.
      * @param boolean $pattern 
@@ -119,11 +119,12 @@ class QueueService
      * of remaining items in the queue.
      *
      * @param string $agentItemKey The key of the agent item to be released.
-     * @throws Exception If an error occurs during the release process.
+     * @throws \Exception If an error occurs during the release process.
      * @return mixed A response indicating the success or failure of the release operation.
      */
     public function releaseAgentFromAgentItemQueue(string $agentItemKey)
     {
+
         try {
             $allKeyExplode = explode(':', $agentItemKey);
             $key = "{$allKeyExplode[0]}:{$allKeyExplode[1]}:*";
@@ -134,9 +135,9 @@ class QueueService
 
             if ($totalNumberOfItem == 1) {
                 $this->addDataInQueue($this->agentQueueName, $allKeyExplode[1]);
-                return response()->json(['status' => true, 'message' => "Agent is free and reassigned in queue: {$agentItemKey}"]);
+                // return response()->json(['status' => true, 'message' => "Agent is free and reassigned in queue: {$agentItemKey}"]);
             }
-            return response()->json(['status' => true, 'message' => "Agent is not free: {$agentItemKey}"]);
+            // return response()->json(['status' => true, 'message' => "Agent is not free: {$agentItemKey}"]);
         } catch (\Exception $e) {
             // Handle the exception here, if necessary
 

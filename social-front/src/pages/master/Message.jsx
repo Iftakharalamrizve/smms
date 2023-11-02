@@ -1,4 +1,4 @@
-import React,{ useEffect, useState } from "react";
+import React,{ useEffect, useState, useRef } from "react";
 import { Row, Col, Tab, Tabs } from "react-bootstrap";
 import { Box, List, Item, Icon, Text, Form, Button, Input, MessageTime } from "@components/elements";
 import { DotsMenu, DuelText, RoundAvatar,Chat } from "@components";
@@ -19,7 +19,6 @@ export default function Message() {
     const { socketInstance } = useWebSocket();
     const dispatch = useDispatch();
     const facebookMessageList = useCurrentAgentMessageList();
-    console.log(facebookMessageList,"Main Message Data render");
     const currentAgentId = useGetUserInfo('agent_id');
     const currentActiveSessionList = usecurrentActiveSessionList('activeSessionList');
     const sessionMessageDetails = usecurrentActiveSessionList('detailsMessageList');
@@ -29,6 +28,8 @@ export default function Message() {
         { "icon": "delete", "text": "delete messages" },
         { "icon": "remove_circle", "text": "block messages" }
     ];
+
+    
 
     useEffect(() => {
         dispatch(agentCurrentModeSetAndGet());
@@ -63,7 +64,6 @@ export default function Message() {
     
         for (const sessionId in data) {
             let item = data[sessionId];
-            console.log(item,data,sessionId,"Test Data");
             let SessionItem = (
                 <Item
                     key={sessionId}

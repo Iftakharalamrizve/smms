@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect, useContext } from 'react'
 import { List, Item, MessageTime, Option, Heading, Box, Anchor, Button, Image, Input, Label, Icon, Text } from "@components/elements";
 import { LabelField, LabelTextarea } from "../../components/fields";
-
+import { ThemeContext } from '../../context/Themes';
 import { DuelText, RoundAvatar } from "@components";
 import { Modal, Form, Row, Col, Alert } from "react-bootstrap";
 import { CardLayout } from "@components/cards";
@@ -10,44 +10,8 @@ import { useDispatch } from 'react-redux';
 import { messageReply } from "@store/actions/fbMessageAction";
 
 export default function Chat({ chatData, currentActiveSessionId, pageId }) {
-    // const [dispositionModalStatus, setDispositionStatus] = useState(false);
-    // const [replyText, setAgentReplyText] = useState("");
-    // const [errorMsgShow, setErrorMessage] = useState(false);
-    // const [replyDisText, setAgentDispositionReplyText] = useState("");
-    // const [disposition, setDisposition] = useState("");
 
-    // const sendCustomerGeneralReply = (event) => {
-    //     event.preventDefault();
-    //     if (replyText) {
-    //         let messageData = {
-    //             session_id: currentActiveSessionId,
-    //             page_id: pageId,
-    //             reply: replyText
-    //         }
-    //         dispatch(messageReply(messageData));
-    //         setAgentReplyText("");
-    //     }
-    // }
-    // const sendCustomerDispositionReply = () => {
-    //     if(replyDisText && disposition){
-    //       let messageData = {
-    //         disposition_id: disposition,
-    //         session_id:currentActiveSessionId,
-    //         page_id: pageId,
-    //         reply: replyDisText
-    //       }
-    //       handleStateValue(false);
-    //       dispatch(messageReply(messageData));
-    //       setAgentReplyText("");
-    //       setDisposition("");
-    //     }else{
-    //       setErrorMessage(true);
-    //     }
-    //   }
-
-    // const handleStateValue = (status) => {
-    //     setDispositionStatus(status);  
-    // }
+    const { showTosterMessage } = useContext(ThemeContext);
     const dispatch = useDispatch();
     const [state, setState] = useState({
         dispositionModalStatus: false,
@@ -93,12 +57,15 @@ export default function Chat({ chatData, currentActiveSessionId, pageId }) {
                 page_id: pageId,
                 reply: replyDisText,
             };
-            handleStateValue("dispositionModalStatus",false);
             sendMessage(messageData);
+            handleStateValue("dispositionModalStatus",false);
+            showTosterMessage("Disposition Complete. Session Finished","success");
         } else {
             setState({ ...state, errorMsgShow: true });
         }
     };
+
+    
     return (
         <>
             <CardLayout>

@@ -1,4 +1,5 @@
 export { default as Logo } from "./Logo";
+export { default as Toster } from "./toaster/toastList/ToastList";
 export { default as DotsMenu } from "./DotsMenu";
 export { default as DuelText } from "./DuelText";
 export { default as IconAlert } from "./IconAlert";

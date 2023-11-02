@@ -37,10 +37,10 @@ class SocialMessageService
             'assign_agent' => $replyData->assign_agent,
             'channel_id' => $replyData->channel_id,
             'message_text' => $requestData->reply,
-            'reply_to' => Auth::user()->username,
+            'reply_to' => Auth::user()->agent_id,
             'session_id' => $requestData->session_id,
-            'disposition_id' => $requestData->disposition_id??NULL,
-            'disposition_by' => $requestData->disposition_id?Auth::user()->username:NULL,
+            'disposition_id' => $requestData->disposition_id ?? NULL,
+            'disposition_by' => $requestData->disposition_id ? Auth::user()->agent_id : NULL,
             'direction' => 'OUT',
             'read_status' => 0,
             'sms_state' => 'Delivered',
@@ -55,7 +55,7 @@ class SocialMessageService
     {
         $this->requestMessageData = $messageData;
         $messaging = $this->requestMessageData['messaging'][0] ?? [];
-        
+
         $this->socialFormatMessageData['channel_id'] = 'Facebook';
         $this->socialFormatMessageData['page_id'] = $this->requestMessageData['id'] ?? '';
         $this->socialFormatMessageData['message_id'] = $messaging['message']['mid'] ?? null;
@@ -63,7 +63,7 @@ class SocialMessageService
         $this->socialFormatMessageData['reply_to'] = $messaging['message']['reply_to']['mid'] ?? null;
         $this->socialFormatMessageData['attachments'] = json_encode($messaging['message']['attachments'] ?? '') ?? '';
         $this->socialFormatMessageData['created_time'] = $this->requestMessageData['time'];
-        
+
         $fromId = $messaging['sender']['id'] ?? '';
         $recipientId = $messaging['recipient']['id'] ?? '';
         $this->socialFormatMessageData['customer_id'] = $this->socialFormatMessageData['page_id'] == $fromId ? $recipientId : $fromId;
@@ -114,11 +114,10 @@ class SocialMessageService
     {
         try {
             $sessionId = $this->generateSessionId();
-            $this->queueService->addDataInQueue($agentKey,$sessionId);
-            $currentMessage = $this->socialMessageRepository->getSpecificMessage(['id'=> $messageData['id']]);
+            $this->queueService->addDataInQueue($agentKey, $sessionId);
+            $currentMessage = $this->socialMessageRepository->getSpecificMessage(['id' => $messageData['id']]);
             $this->handleAssignedSms($currentMessage, $agentKey, $sessionId, $messageData);
         } catch (\Throwable $th) {
-           
         }
     }
 
@@ -258,8 +257,8 @@ class SocialMessageService
     private function generateSessionId()
     {
         $uTime = gettimeofday();
-        $refId = $uTime['sec'].$uTime['usec'];
-        $refId = $refId.rand(0,9999);        
+        $refId = $uTime['sec'] . $uTime['usec'];
+        $refId = $refId . rand(0, 9999);
         $refId = str_pad($refId, 20, 0, STR_PAD_RIGHT);
 
         return $refId;
@@ -267,11 +266,28 @@ class SocialMessageService
 
     public function sessionIdleStatusCheckAndReassign()
     {
-        $currentAllSessionList = $this->queueServiceRepository->queueRetriveListByKey($this->agentItemQueueName.':*');
-        foreach($currentAllSessionList as $item){
-            $itemSessionInfoList = $this->queueServiceRepository->queueListRange($item,0,-1);
+        $currentAllSessionList = $this->queueServiceRepository->queueRetriveListByKey($this->agentItemQueueName . ':*');
+        foreach ($currentAllSessionList as $item) {
+            $itemSessionInfoList = $this->queueServiceRepository->queueListRange($item, 0, -1);
             dd($itemSessionInfoList);
+            // check session 
         }
+    }
 
+    public function freeAgentSession($sessionId)
+    {
+
+        
+        $agentId = Auth::user()->agent_id;
+        $currentAllSessionList = $this->queueServiceRepository->queueRetriveListByKey($this->agentItemQueueName . ':' . $agentId . ':*');
+        foreach ($currentAllSessionList as $item) {
+            $itemSessionId = $this->queueServiceRepository->queueListRange($item, 0, -1);
+
+        dd($item==$sessionId,$item,$sessionId);
+            if ($itemSessionId == $sessionId) {
+                $this->queueService->releaseAgentFromAgentItemQueue($item);
+                break;
+            }
+        }
     }
 }

@@ -70,8 +70,15 @@ class SocialPlatFormController extends Controller
                             ->orderBy('created_at','DESC')
                             ->first();
         $replyData = $this->socialMediaMessageService->processAndSendReply($findLastMessage,$request);
+        if(isset($replyData->disposition_by) && isset($replyData->disposition_id)) {
+           $this->socialMediaMessageService->freeAgentSession($request->session_id);
+        }
+        
+
+        dd($replyData->disposition_id);
         return $this->respondCreated("Agent Reply Delivered", $replyData);
     }
+
 
 
     public function getSessionMessage(Request $request)
@@ -92,4 +99,6 @@ class SocialPlatFormController extends Controller
         
         return $this->respondCreated("Session Message Details", ['session_id'=>$sessionId,'page_id'=>$pageId,'list'=> $results]);
     }
+
+    
 }

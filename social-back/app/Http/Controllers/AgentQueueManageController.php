@@ -59,9 +59,9 @@ class AgentQueueManageController extends Controller
         // $this->clearMessage('agent_item_queue:agent2:3');
         // $this->clearMessage('agent_item_queue:agent2:4');
         // Redis::lpop('message_queue');
-        foreach(Redis::keys('agent_item_queue:*') as $key){
-            Redis::del($key);
-        }
+        // foreach(Redis::keys('agent_item_queue:*') as $key){
+        //     Redis::del($key);
+        // }
         // dd(Redis::keys('agent_item_queue:*'));
         // Redis::rpush('agent_queue','1001');
         // Redis::rpush('agent_queue','agent5');

@@ -1,11 +1,12 @@
-import { createContext, useState } from "react";
-
+import { createContext, useState,useEffect } from "react";
+import { Toster} from "@components";
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
 
     const themeGet = localStorage.getItem("theme");
     const themeTag = document.querySelector("html");
+    const [toasterData, setToasterMessage] = useState(null);
     const [theme, setTheme] = useState(themeGet ? themeGet : "light_mode");
 
     if(theme !== "light_mode") themeTag.classList.replace("light_mode", "dark_mode");
@@ -28,9 +29,19 @@ export const ThemeProvider = ({ children }) => {
         else darkTheme();
     }
 
+    const showTosterMessage = (message,type) => {
+        console.log(message,type);
+        setToasterMessage({message,type});
+    }
+
+    useEffect(()=>{
+        console.log("Hello Bangladesh")
+    },[toasterData])
+
     return (
-        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <ThemeContext.Provider value={{ theme, toggleTheme, showTosterMessage }}>
             { children }
+            {toasterData && <Toster data = {toasterData} />}
         </ThemeContext.Provider>
     )
 }
