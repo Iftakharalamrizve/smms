@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Events\AgentChatRoomEvent;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Filesystem\Filesystem;
 use App\Services\QueueService;
 use Illuminate\Support\Facades\Redis;
 use DB;
@@ -62,6 +64,13 @@ class AgentQueueManageController extends Controller
         // foreach(Redis::keys('agent_item_queue:*') as $key){
         //     Redis::del($key);
         // }
+        $pageList = [];
+        // $listData = Cache::pull('sdata');
+        // dd($listData);
+        // foreach($listData as $item) {
+        //     $pageList[] = ['type'=>$item['type'],'contentDetails'=>json_decode($item['contentDetails'])];
+        // }
+        // dd(json_encode($pageList));
         // dd(Redis::keys('agent_item_queue:*'));
         // Redis::rpush('agent_queue','1001');
         // Redis::rpush('agent_queue','agent5');
@@ -69,9 +78,6 @@ class AgentQueueManageController extends Controller
         // Redis::rpush('agent_queue','agent3');
         // Redis::rpush('agent_queue','agent1');
         // Redis::rpush('agent_queue','agent2');
-
-
-
         try {
             
             $data = [

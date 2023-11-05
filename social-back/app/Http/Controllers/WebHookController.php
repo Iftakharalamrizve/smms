@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use App\Services\WebHookService;
 use App\Services\SocialMediaService;
 use App\Services\SocialMessageService;
@@ -72,10 +73,34 @@ class WebHookController extends Controller
     {
         
         $requestData = $request->input();
-        // $this->webHookDebugLogDecode($requestData);
-        if ($requestData['object'] === 'page' && !empty($requestData['entry']) && isset($requestData['entry'][0]['messaging'])) {
-            return $this->socialMediaMessageService->processNewMessage($request['entry'][0])->saveAndAssignAgent();
+        // // $this->webHookDebugLogDecode($requestData);
+        // // Generate a random number between 100 and 1000
+        // $randomNumber = mt_rand(100, 1000);
+
+        // // Create a unique key using the current time and the random number
+        // $key = now()->toDateTimeString() . '-' . $randomNumber;
+        //             // Fixed first key
+        // $firstKey = 'sdata';
+
+        // // Retrieve the data from the cache
+        // $data = Cache::get($firstKey, []);
+
+        // // Update the data with the variable second key and the value
+        $type = $request->input("type");
+        // if($type == 'msg'){
+        //     $content = base64_decode($request->input("contentDetails"));
+        //     $data[$key] = ["type"=> $type,,'contentDetails'=>$content];
+
+        //     // Store the updated data back in the cache
+        //     Cache::put($firstKey, $data); // Replace $minutes with your desired cache duration
+        // }
+        if($type == 'msg'){
+            return $this->socialMediaMessageService->processNewMessage($request['contentDetails'][0])->saveAndAssignAgent();
         }
+        // if ($requestData['object'] === 'page' && !empty($requestData['entry']) && isset($requestData['entry'][0]['messaging'])) {
+            
+        //     return $this->socialMediaMessageService->processNewMessage($request['entry'][0])->saveAndAssignAgent();
+        // }
         $data                       = [];
         $data['pageId']             = !empty($request->entry[0]['id']) ? $request->entry[0]['id'] : '';
         $data['senderId']           = !empty($request->entry[0]['messaging'][0]['sender']['id']) ? $request->entry[0]['messaging'][0]['sender']['id'] : '';

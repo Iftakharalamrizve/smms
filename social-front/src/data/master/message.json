@@ -43,8 +43,8 @@
             "title": "Facebook",
             "key": "fb",
             "pages":[
-                { "icon": "remove_circle","title": "Gplex Social", "key":"gs", "id":123 },
-                { "icon": "delete",  "title": "Shop Up", "key":"su", "id":1234 }
+                { "icon": "remove_circle","title": "Gplex SM", "key":"gs", "id":278796022799015 },
+                { "icon": "delete",  "title": "REDX", "key":"rx", "id":104980981082367 }
             ]
         }
     ],
