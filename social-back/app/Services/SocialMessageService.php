@@ -276,15 +276,11 @@ class SocialMessageService
 
     public function freeAgentSession($sessionId)
     {
-
-        
         $agentId = Auth::user()->agent_id;
         $currentAllSessionList = $this->queueServiceRepository->queueRetriveListByKey($this->agentItemQueueName . ':' . $agentId . ':*');
         foreach ($currentAllSessionList as $item) {
             $itemSessionId = $this->queueServiceRepository->queueListRange($item, 0, -1);
-
-        dd($item==$sessionId,$item,$sessionId);
-            if ($itemSessionId == $sessionId) {
+            if ($itemSessionId[0] == $sessionId) {
                 $this->queueService->releaseAgentFromAgentItemQueue($item);
                 break;
             }

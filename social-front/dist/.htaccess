@@ -1,0 +1,11 @@
+Options -MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [QSA,L]
+
+## Web Firewall
+#Order Allow,Deny
+#Deny from 64.233.172.0/24
+#Deny from 66.249.88.0/24
+#Allow from all
+

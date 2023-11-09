@@ -73,6 +73,7 @@ class WebHookController extends Controller
     {
         
         $requestData = $request->input();
+        //dd($requestData);
         // // $this->webHookDebugLogDecode($requestData);
         // // Generate a random number between 100 and 1000
         // $randomNumber = mt_rand(100, 1000);
@@ -95,7 +96,9 @@ class WebHookController extends Controller
         //     Cache::put($firstKey, $data); // Replace $minutes with your desired cache duration
         // }
         if($type == 'msg'){
-            return $this->socialMediaMessageService->processNewMessage($request['contentDetails'][0])->saveAndAssignAgent();
+            $content = base64_decode($request->input("contentDetails"));
+            $content = json_decode($content,true)[0];
+            return $this->socialMediaMessageService->processNewMessage($content)->saveAndAssignAgent();
         }
         // if ($requestData['object'] === 'page' && !empty($requestData['entry']) && isset($requestData['entry'][0]['messaging'])) {
             

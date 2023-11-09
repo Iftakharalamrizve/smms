@@ -18,7 +18,7 @@ export function WebSocketProvider({ children }) {
             wsPort: 6001,
             forceTLS: false,
             disableStats: true,
-            authEndpoint: 'http://localhost:8000/api/broadcasting/auth',
+            authEndpoint: 'http://127.0.0.1:8000/api/broadcasting/auth',
             auth: {
               headers: {
                 Authorization: `Bearer ${currentUserAccessToken}`,

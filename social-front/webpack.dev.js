@@ -8,7 +8,6 @@ module.exports = {
     main: './src/index.js',
   },
   resolve: {
-    // modules: [path.resolve('./src'), path.resolve('./node_modules')],
     extensions: ['.js', '.jsx', '.scss', '.css'],
     alias: {
       '@src': path.resolve(__dirname, 'src/'),

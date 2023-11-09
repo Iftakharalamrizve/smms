@@ -142,6 +142,7 @@ class QueueRepository implements QueueDataRepositoryInterface
             $status = Redis::executeRaw(['LPOS', $queueKey, $value]);
             return isset($status)? true: false;
         } catch (\Exception $e) {
+            dd($e->getMessage());
             throw new \Exception($e->getMessage());
         }
     }
