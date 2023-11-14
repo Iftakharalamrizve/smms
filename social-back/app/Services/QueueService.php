@@ -79,13 +79,15 @@ class QueueService
     public function assigningInfoInAgentItemQueue(array $data)
     {
         try {
-
+            
             $this->isPriority = $data['priority'];
             $this->priorityAgent = $data['priorityAgent'];
             $freeAgentKey = $this->getFreeAgent();
             if (isset($freeAgentKey)) {
-                $this->addDataInQueue($freeAgentKey,$data['session_id']);
-                return $freeAgentKey;
+                $status = $this->addDataInQueue($freeAgentKey,$data['session_id']);
+                if($status) {
+                    return $freeAgentKey;
+                }
             }
             // return $this->addDataInQueue($this->messageQueueName, json_encode($data['message_info'])); 
             return null;

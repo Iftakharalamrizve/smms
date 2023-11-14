@@ -61,10 +61,15 @@ class AgentQueueManageController extends Controller
         // $this->clearMessage('agent_item_queue:agent2:3');
         // $this->clearMessage('agent_item_queue:agent2:4');
         // Redis::lpop('message_queue');
-        // foreach(Redis::keys('agent_item_queue:*') as $key){
-        //     Redis::del($key);
-        // }
-        $pageList = [];
+        foreach(Redis::keys('message_queue') as $key){
+            Redis::del($key);
+        }
+        foreach(Redis::keys('agent_item_queue:*') as $key){
+            Redis::del($key);
+        }
+        // Redis::lpop("message_queue");
+        // Cache::set('sdata',[]);
+        $listData = Cache::get('sdata');
         // $listData = Cache::pull('sdata');
         // dd($listData);
         // foreach($listData as $item) {
@@ -78,17 +83,17 @@ class AgentQueueManageController extends Controller
         // Redis::rpush('agent_queue','agent3');
         // Redis::rpush('agent_queue','agent1');
         // Redis::rpush('agent_queue','agent2');
+        
         try {
+            $data = [];
+            foreach(Redis::keys('agent_item_queue:*') as $key) {
+                $info = Redis::lrange($key,0,-1);
+                $data[$key] = $info[0];
+            }
             
-            $data = [
-                // Redis::lrange('agent_item_queue:root:1', 0, -1),
-                // Redis::lrange('agent_item_queue:root:2', 0, -1),
-                // Redis::lrange('agent_item_queue:root:3', 0, -1),
-                // Redis::lrange('agent_item_queue:root:4', 0, -1)
-            ];
             
             // AgentChatRoomEvent::dispatch('root');
-        dd(Redis::lrange('message_queue', 0, -1),$data,Redis::lrange('agent_queue', 0, -1),Redis::keys('agent_item_queue:*'));
+        dd(Redis::lrange('message_queue', 0, -1),Redis::lrange('agent_queue', 0, -1),$data);
         // broadcast(new AgentChatRoomEvent('root'));
         return response()->json(['message' => 'Shipment status updated']);
         } catch (\Exception $e) {

@@ -69,92 +69,74 @@ class WebHookController extends Controller
     }
 
 
-    public function fbPageWebHookData(Request $request)
+    public function fbPageWebHookData(Request $request, $id=0)
     {
-        
-        $requestData = $request->input();
-        //dd($requestData);
-        // // $this->webHookDebugLogDecode($requestData);
-        // // Generate a random number between 100 and 1000
-        // $randomNumber = mt_rand(100, 1000);
-
-        // // Create a unique key using the current time and the random number
-        // $key = now()->toDateTimeString() . '-' . $randomNumber;
-        //             // Fixed first key
-        // $firstKey = 'sdata';
-
-        // // Retrieve the data from the cache
-        // $data = Cache::get($firstKey, []);
-
-        // // Update the data with the variable second key and the value
-        $type = $request->input("type");
-        // if($type == 'msg'){
-        //     $content = base64_decode($request->input("contentDetails"));
-        //     $data[$key] = ["type"=> $type,,'contentDetails'=>$content];
-
-        //     // Store the updated data back in the cache
-        //     Cache::put($firstKey, $data); // Replace $minutes with your desired cache duration
-        // }
-        if($type == 'msg'){
-            $content = base64_decode($request->input("contentDetails"));
-            $content = json_decode($content,true)[0];
-            return $this->socialMediaMessageService->processNewMessage($content)->saveAndAssignAgent();
+        try {
+            $type = $request->input("type");
+            if($type == 'msg'){
+                $content = base64_decode($request->input("contentDetails"));
+                $content = json_decode($content,true)[0];
+                return $this->socialMediaMessageService->processNewMessage($content, $id)->saveAndAssignAgent();
+            }
+        } catch (\Exception $e) {
+            return response()->json(['message' => $e->getMessage()]);
         }
+        
         // if ($requestData['object'] === 'page' && !empty($requestData['entry']) && isset($requestData['entry'][0]['messaging'])) {
             
         //     return $this->socialMediaMessageService->processNewMessage($request['entry'][0])->saveAndAssignAgent();
         // }
-        $data                       = [];
-        $data['pageId']             = !empty($request->entry[0]['id']) ? $request->entry[0]['id'] : '';
-        $data['senderId']           = !empty($request->entry[0]['messaging'][0]['sender']['id']) ? $request->entry[0]['messaging'][0]['sender']['id'] : '';
-        $data['platformTime']       = !empty($request->entry[0]['time']) ? $request->entry[0]['time'] : '';
+        // $data                       = [];
+        // $data['pageId']             = !empty($request->entry[0]['id']) ? $request->entry[0]['id'] : '';
+        // $data['senderId']           = !empty($request->entry[0]['messaging'][0]['sender']['id']) ? $request->entry[0]['messaging'][0]['sender']['id'] : '';
+        // $data['platformTime']       = !empty($request->entry[0]['time']) ? $request->entry[0]['time'] : '';
 
 
-        if(isset($request->entry)) {
+        // if(isset($request->entry)) {
            
-            if(isset($request->entry[0]['changes'][0]['field']) && $request->entry[0]['changes'][0]['field']=="feed" && isset($request->entry[0]['changes'][0]['value']['item']) && $request->entry[0]['changes'][0]['value']['item']=="comment") {
+        //     if(isset($request->entry[0]['changes'][0]['field']) && $request->entry[0]['changes'][0]['field']=="feed" && isset($request->entry[0]['changes'][0]['value']['item']) && $request->entry[0]['changes'][0]['value']['item']=="comment") {
 
-                $data['content']    = !empty($request->entry) ? base64_encode(json_encode($request->entry)) : '';
-                $data['type']       = 'comment';
+        //         $data['content']    = !empty($request->entry) ? base64_encode(json_encode($request->entry)) : '';
+        //         $data['type']       = 'comment';
 
-            } else {
+        //     } else {
 
-                if (!empty($data['senderId'] ) && !isset($request->entry[0]['messaging'][0]['read']['watermark']) && !isset($request->entry[0]['messaging'][0]['delivery']['watermark']) && $data['pageId'] != $data['senderId'] ) {
+        //         if (!empty($data['senderId'] ) && !isset($request->entry[0]['messaging'][0]['read']['watermark']) && !isset($request->entry[0]['messaging'][0]['delivery']['watermark']) && $data['pageId'] != $data['senderId'] ) {
                    
-                    $data['content']    = !empty($request->entry) ? base64_encode(json_encode($request->entry)) : '';
-                    $data['type']       = 'msg';
+        //             $data['content']    = !empty($request->entry) ? base64_encode(json_encode($request->entry)) : '';
+        //             $data['type']       = 'msg';
 
-                }
-            }
+        //         }
+        //     }
 
-        }
+        // }
 
-        if(isset($data['content']) && $data['content'] != NULL && $data['content'] != '') {
+        // if(isset($data['content']) && $data['content'] != NULL && $data['content'] != '') {
     
-           $result = $this->storeContent($data);
+        //    $result = $this->storeContent($data);
 
-           if($result == 201) {
+        //    if($result == 201) {
 
-                $socialMedia = $this->socialMediaService->getPageItem($data['pageId'])->data;
+        //         $socialMedia = $this->socialMediaService->getPageItem($data['pageId'])->data;
 
-                //$this->webHookDebugLog("Social media is type: ".gettype($socialMedia));
-                //$this->webHookDebugLog("Social media is data: ".$socialMedia);
+        //         //$this->webHookDebugLog("Social media is type: ".gettype($socialMedia));
+        //         //$this->webHookDebugLog("Social media is data: ".$socialMedia);
 
-                if( $socialMedia[0]->api_url) {
+        //         if( $socialMedia[0]->api_url) {
 
-                    $this->webHookDebugLog("This is social api list : ".$socialMedia[0]->api_url);
-                    $postData = [
-                        'contentDetails'    => $data['content'],
-                        'type'              => $data['type'],
-                        'socialMedia'       => $socialMedia[0]
-                    ];
+        //             $this->webHookDebugLog("This is social api list : ".$socialMedia[0]->api_url);
+        //             $postData = [
+        //                 'contentDetails'    => $data['content'],
+        //                 'type'              => $data['type'],
+        //                 'socialMedia'       => $socialMedia[0]
+        //             ];
 
-                    $this->curlRequest($socialMedia[0]->api_url, [], true,  $postData);
+        //             $this->curlRequest($socialMedia[0]->api_url, [], true,  $postData);
 
-                }
+        //         }
 
-           }
-        }
+        //    }
+        // }
 
 
     }

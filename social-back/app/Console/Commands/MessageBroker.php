@@ -50,14 +50,14 @@ class MessageBroker extends Command
                 if($freeAgentKey){
                     //check any session is land in user but not responsed 
                     $messageData = $queueService->getMessageFromMessageQueue();
+                    $messageData = json_decode($messageData, true);
                     $socialMessageService->handleMessageQueueItem($freeAgentKey, $messageData);
-
                     $this->warn('Message Assign queue'.$freeAgentKey);
                 }else{
                     $this->error('Agent Is Not Free ');
                 }
                 // get current all running session and check,reassign if any session is peanding in certain period of time 
-                $socialMessageService->sessionIdleStatusCheckAndReassign();
+                // $socialMessageService->sessionIdleStatusCheckAndReassign();
                 
             }else{
                 $this->error('Message Not Available...');

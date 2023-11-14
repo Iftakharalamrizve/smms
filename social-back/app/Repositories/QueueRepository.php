@@ -37,7 +37,7 @@ class QueueRepository implements QueueDataRepositoryInterface
      *
      * @param string $queueName The name of the queue.
      * @param string $message The message to be pushed.
-     * @return void
+     * @return boolean
      */
     public function queueRightPush($queueName, $message)
     {
@@ -153,6 +153,17 @@ class QueueRepository implements QueueDataRepositoryInterface
     }
 
     public function setItemSpecificPosition($keyName, $position, $updatedData){
-        Redis::lset($keyName, $position, $updatedData);
+        Redis::lset($keyName, $position, json_encode($updatedData));
+        // Fetch the list
+        // $list = Redis::lrange($keyName, 0, -1);
+
+        // // Modify the value at the specified index
+        // $list[$position] = $updatedData;
+
+        // // Push the modified list back to Redis
+        // Redis::del($keyName); // Clear the list
+        // foreach ($list as $item) {
+        //     Redis::rpush($keyName, $item);
+        // }
     }
 }

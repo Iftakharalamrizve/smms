@@ -73,7 +73,7 @@ export default function Message() {
                     className={`mc-message-user-item ${item.session_id === currentActiveSessionList[item.page_id] ? 'active' : ''}`}
                 >
                     <DuelText
-                        title={item.customer_id}
+                        title={sessionId}
                         timesTamp={<MessageTime time={item.start_time} />}
                         descrip={item.message_text}
                         size="xs"

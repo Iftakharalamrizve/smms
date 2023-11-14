@@ -4,10 +4,11 @@ import { Button, Section, Box, Input } from "../components/elements";
 import { DrawerContext } from '../context/Drawer';
 import { ThemeContext } from '../context/Themes';
 import { Logo } from '../components';
+import { useGetUserInfo} from '@src/hooks';
 import data from "../data/master/header.json";
 
 export default function Header() {
-
+    const currentUserId = useGetUserInfo("agent_id");
     const { drawer, toggleDrawer } = useContext(DrawerContext);
     const { theme, toggleTheme } = useContext(ThemeContext);
     const searchRef = useRef();
@@ -66,7 +67,7 @@ export default function Header() {
                     <ProfileDropdown 
                         name={ data.profile.name }
                         image={ data.profile.image }
-                        username={ data.profile.username }
+                        username={ currentUserId }
                         dropdown={ data.profile.dropdown }
                     />
                 </Box>

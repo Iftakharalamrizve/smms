@@ -51,11 +51,12 @@ class SocialMessageService
     }
 
 
-    public function processNewMessage($messageData)
+    public function processNewMessage($messageData, $id)
     {
         $this->requestMessageData = $messageData;
         $messaging = $this->requestMessageData['messaging'][0] ?? [];
 
+        $this->socialFormatMessageData['s_id'] = $id;
         $this->socialFormatMessageData['channel_id'] = 'Facebook';
         $this->socialFormatMessageData['page_id'] = $this->requestMessageData['id'] ?? '';
         $this->socialFormatMessageData['message_id'] = $messaging['message']['mid'] ?? null;
@@ -81,11 +82,13 @@ class SocialMessageService
     public function saveAndAssignAgent()
     {
         $currentTime = Carbon::now();
-        $thirtyMinutesAgo = $currentTime->subMinutes(30);
+        $thirtyMinutesAgo = $currentTime->subMinutes(30); //@TODO
+        //@TODO Send Last Thirty minutes time for query last 30 minutes latest one message 
         $lastItem = $this->socialMessageRepository->getCustomerLastMessageWithDuration($thirtyMinutesAgo, $this->socialFormatMessageData['customer_id']);
         $isPriority = false;
         $priorityAgent = null;
-
+        
+        //check latest message exist if exist then check have disposition id and by then check last message state in queue if not then decide this message session continute current now 
         if ($lastItem && !$lastItem->disposition_id && !$lastItem->disposition_by && $lastItem->sms_state != 'Queue') {
             return $this->handleAssignedMessage($lastItem);
         }
@@ -100,7 +103,7 @@ class SocialMessageService
             return response()->json(['message' => 'Message Not insert IN Database']);
         }
 
-        return $this->messageAssignAndStoreOnQueue($saveItem, $isPriority, $priorityAgent);
+        return $this->messageAssignAndStoreOnQueue($saveItem, $isPriority, $priorityAgent, $this->socialFormatMessageData['s_id']);
     }
 
 
@@ -147,8 +150,9 @@ class SocialMessageService
             'read_status' => $saveItem['read_status'],
             'un_read_count' => 1
         ];
+        // check message state previous broadcast 
         broadcast(new AgentChatRoomEvent($lastItem->assign_agent, $messageData));
-        return response()->json(['message' => 'Sms Broadcast Successful']);
+        return response()->json(['message' => 'Prev Session Sms Broadcast Successful']);
     }
 
     /**
@@ -160,45 +164,52 @@ class SocialMessageService
      * @param string|null $priorityAgent
      * @return \Illuminate\Http\JsonResponse
      */
-    public function messageAssignAndStoreOnQueue($saveItem, $isPriority, $priorityAgent)
+    public function messageAssignAndStoreOnQueue($saveItem, $isPriority, $priorityAgent , $s)
     {
-        $sessionId = $this->generateSessionId();
-        $messageData = [
-            'id' => $saveItem['id'],
-            'message_text' => $saveItem['message_text'],
-            'direction' => $saveItem['direction'],
-            'start_time' => $saveItem['created_time'],
-            'attachments' => $saveItem['attachments'],
-            'page_id' => $saveItem['page_id'],
-            'customer_id' => $saveItem['customer_id'],
-            'read_status' => $saveItem['read_status']
-        ];
+        try {
+            $sessionId = $this->generateSessionId();
+            $messageData = [
+                'id' => $saveItem['id'],
+                'message_text' => $saveItem['message_text'],
+                'direction' => $saveItem['direction'],
+                'start_time' => $saveItem['created_time'],
+                'attachments' => $saveItem['attachments'],
+                'page_id' => $saveItem['page_id'],
+                'customer_id' => $saveItem['customer_id'],
+                'read_status' => $saveItem['read_status']
+            ];
+            
 
-        $messageQueueLength = $this->queueServiceRepository->queueLengthNumber($this->messageQueueName);
-        if ($messageQueueLength) {
-            $findIndex = $this->findMessageInQueue($messageData);
-
-            if ($findIndex !== null) {
-                $this->queueServiceRepository->setItemSpecificPosition($this->messageQueueName, $findIndex, $messageData);
-                return response()->json(['message' => 'Message Update In Message Queue']);
+            $messageQueueLength = $this->queueServiceRepository->queueLengthNumber($this->messageQueueName);
+            if ($messageQueueLength) {
+                $findIndex = $this->findMessageInQueue($messageData);
+                if ($findIndex !== null) {
+                    $this->queueServiceRepository->setItemSpecificPosition($this->messageQueueName, $findIndex, $messageData);
+                    return response()->json(['message' => 'Message Update In Message Queue']);
+                }
+                $this->queueService->assigningSMSInSMSQueue($messageData);
+                return response()->json(['message' => 'Message Insert In Message Queue']);
             }
+
+            $agentKey = $this->queueService->assigningInfoInAgentItemQueue([
+                'session_id' => $sessionId,
+                'priority' => $isPriority,
+                'priorityAgent' => $priorityAgent,
+            ]);
+
+            if ($agentKey) {
+                $this->handleAssignedSms($saveItem, $agentKey, $sessionId, $messageData);
+                return response()->json(['message' => 'Nwe Sms Broadcast Successful'. "Agent Id:".$agentKey. "Session ID: ".$sessionId,"Message Sl". $s]);
+            }
+
             $this->queueService->assigningSMSInSMSQueue($messageData);
             return response()->json(['message' => 'Message Insert In Message Queue']);
+
+        } catch (\Exception $e) {
+            $info = $e->getMessage() . " Error Trace ". $e->getTraceAsString(). "Line " .$e->getline();
+            return response()->json(['message' => $info]);
         }
-
-        $agentKey = $this->queueService->assigningInfoInAgentItemQueue([
-            'session_id' => $sessionId,
-            'priority' => $isPriority,
-            'priorityAgent' => $priorityAgent,
-        ]);
-
-        if ($agentKey) {
-            $this->handleAssignedSms($saveItem, $agentKey, $sessionId, $messageData);
-            return response()->json(['message' => 'Sms Broadcast Successful']);
-        }
-
-        $this->queueService->assigningSMSInSMSQueue($messageData);
-        return response()->json(['message' => 'Message Insert In Message Queue']);
+        
     }
 
     /**
@@ -233,6 +244,7 @@ class SocialMessageService
      */
     protected function handleAssignedSms($saveItem, $agentKey, $sessionId, $messageData)
     {
+        
         $agentKeyList = explode(':', $agentKey);
         $startTime = date('Y-m-d H:i:s');
 
