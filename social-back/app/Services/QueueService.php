@@ -219,7 +219,12 @@ class QueueService
                 $queueKey = "{$this->agentItemQueueName}:{$this->priorityAgent}";
                 $priorityAgentAllItemKey = $this->queueServiceRepository->queueRetriveListByKey("{$queueKey}:*");
                 if (count( $priorityAgentAllItemKey) < $this->totalAgentQuota) {
-                    return $this->currentServedAgentKeyGenerate($queueKey, $priorityAgentAllItemKey);
+                    $agentBookedSlot = [];
+                    foreach($priorityAgentAllItemKey as $item){
+                        $keyArrayItem = explode(':', $item);
+                        $agentBookedSlot[] = $keyArrayItem[2];
+                    }
+                    return $this->currentServedAgentKeyGenerate($queueKey, $agentBookedSlot);
                 }
             }
         }
@@ -258,6 +263,7 @@ class QueueService
      */
     public function currentServedAgentKeyGenerate($assignAgent, $bookedSlotList)
     {
+        
         $currentServedItem = null;
         for ($i = 1; $i <= $this->totalAgentQuota; $i++) {
             if (!in_array($i, $bookedSlotList)) {
@@ -265,7 +271,6 @@ class QueueService
                 break;
             }
         }
-        
         return "{$assignAgent}:{$currentServedItem}";
     }
 
@@ -309,5 +314,30 @@ class QueueService
             // Handle the exception here, if necessary
         }
         
+    }
+
+
+    public function logAgentSession($key1){
+        $data = [];
+        $agentQueue = Redis::lrange('agent_queue', 0, -1);
+        foreach(Redis::keys('agent_item_queue:*') as $key) {
+            $info = Redis::lrange($key,0,-1);
+            $data[$key] = $info[0];
+        }
+        return [count($data),$data,$agentQueue];
+    }
+    public static function generateApiRequestResponseLog($msg,$data,$data1,$data2,$key=null)
+    {
+        $path = base_path () . DIRECTORY_SEPARATOR . 'log' . DIRECTORY_SEPARATOR ;
+        $log = 'User: ' . $_SERVER[ 'REMOTE_ADDR' ] . ' - ' . date ( 'F j, Y, g:i a' ) ."Time". time() . PHP_EOL .
+            'Message: ' . (json_encode ($msg)) . PHP_EOL .
+            'Data 1: ' . (json_encode ($data)) . PHP_EOL .
+            'Data 2: ' . (json_encode ($data1)) . PHP_EOL .
+            'Data 3: ' . (json_encode ($data2)) . PHP_EOL .
+            'Session Key: ' . $key . PHP_EOL .
+
+            '--------------------------------------------------------------------------------------' . PHP_EOL;
+        //Save string to log, use FILE_APPEND to append.
+        file_put_contents ( $path.'log_' . date ( 'j.n.Y' ) . '.txt' , $log, FILE_APPEND );
     }
 }

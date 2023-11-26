@@ -30,20 +30,27 @@ class SocialPlatFormController extends Controller
     {
         $username = Auth::user()->agent_id;
         $pattern = "agent_item_queue:{$username}:*";
-        $luaScript = <<<LUA
-        local keys = redis.call('keys', ARGV[1])
-        local result = {}
-        for _, key in ipairs(keys) do
-            local items = redis.call('lrange', key, 0, -1)
-            for _, item in ipairs(items) do
-                table.insert(result, item)
-            end
-        end
-        return result
-        LUA;
+        // $luaScript = <<<LUA
+        // local keys = redis.call('keys', ARGV[1])
+        // local result = {}
+        // for _, key in ipairs(keys) do
+        //     local items = redis.call('lrange', key, 0, -1)
+        //     for _, item in ipairs(items) do
+        //         table.insert(result, item)
+        //     end
+        // end
+        // return result
+        // LUA;
 
-        $sessionIds = Redis::eval($luaScript, 0, $pattern);
-        
+
+        // $sessionIds = Redis::eval($luaScript, 0, $pattern);
+        // return $sessionIds;
+
+        $sessionIds = [];
+        foreach(Redis::keys($pattern) as $key) {
+            $info = Redis::lrange($key,0,-1);
+            $sessionIds[] = $info[0];
+        }
         $subquery = SocialMessage::select('session_id', DB::raw('MAX(created_at) AS max_created_at'), DB::raw("SUM(CASE WHEN read_status = 1 THEN 1 ELSE 0 END) AS un_read_count"))
             ->whereIn('session_id', $sessionIds)
             ->groupBy('session_id');

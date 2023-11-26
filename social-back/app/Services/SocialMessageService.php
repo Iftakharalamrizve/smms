@@ -6,6 +6,7 @@ use App\Repositories\SocialMessageRepository;
 use App\Repositories\QueueRepository;
 use App\Services\QueueService;
 use App\Events\AgentChatRoomEvent;
+use Illuminate\Support\Facades\Redis;
 use Carbon\Carbon;
 use Auth;
 
@@ -83,21 +84,23 @@ class SocialMessageService
     {
         $currentTime = Carbon::now();
         $thirtyMinutesAgo = $currentTime->subMinutes(30); //@TODO
+
         //@TODO Send Last Thirty minutes time for query last 30 minutes latest one message 
         $lastItem = $this->socialMessageRepository->getCustomerLastMessageWithDuration($thirtyMinutesAgo, $this->socialFormatMessageData['customer_id']);
-        $isPriority = false;
-        $priorityAgent = null;
+        $isPriority = false; $priorityAgent = null;
         
         //check latest message exist if exist then check have disposition id and by then check last message state in queue if not then decide this message session continute current now 
         if ($lastItem && !$lastItem->disposition_id && !$lastItem->disposition_by && $lastItem->sms_state != 'Queue') {
             return $this->handleAssignedMessage($lastItem);
         }
 
+        // We can set this message go to priority if has any message between last 30 minutes and agent alreday give disposition
         if ($lastItem && $lastItem->sms_state != 'Queue') {
             $isPriority = true;
             $priorityAgent = $lastItem->assign_agent;
         }
 
+        //@TODO need to handle error this section 
         $saveItem = $this->socialMessageRepository->save($this->socialFormatMessageData);
         if (!$saveItem) {
             return response()->json(['message' => 'Message Not insert IN Database']);
@@ -298,4 +301,28 @@ class SocialMessageService
             }
         }
     }
+
+    public function logAgentSession($key){
+        $data = [];
+        foreach(Redis::keys($key) as $key) {
+            $info = Redis::lrange($key,0,-1);
+            $data[] = $info[0];
+        }
+        return [count($data),$data];
+    }
+    public static function generateApiRequestResponseLog($msg,$data,$data1,$data2,$key=null)
+    {
+        $path = base_path () . DIRECTORY_SEPARATOR . 'log' . DIRECTORY_SEPARATOR ;
+        $log = 'User: ' . $_SERVER[ 'REMOTE_ADDR' ] . ' - ' . date ( 'F j, Y, g:i a' ) ."Time". time() . PHP_EOL .
+            'Message: ' . (json_encode ($msg)) . PHP_EOL .
+            'Data 1: ' . (json_encode ($data)) . PHP_EOL .
+            'Data 2: ' . (json_encode ($data1)) . PHP_EOL .
+            'Data 3: ' . (json_encode ($data2)) . PHP_EOL .
+            'Session Key: ' . $key . PHP_EOL .
+
+            '--------------------------------------------------------------------------------------' . PHP_EOL;
+        //Save string to log, use FILE_APPEND to append.
+        file_put_contents ( $path.'log_' . date ( 'j.n.Y' ) . '.txt' , $log, FILE_APPEND );
+    }
+
 }

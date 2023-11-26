@@ -796,7 +796,7 @@ let time = 0;
 function sendRequest(item,index) {
     const options = {
         method: 'POST',
-        url: 'http://127.0.0.1:8000/fb-page-webhook',
+        url: 'http://127.0.0.1:8000/fb-page-webhook/'+index,
         headers: {
             'Content-Type': 'application/json'
         },

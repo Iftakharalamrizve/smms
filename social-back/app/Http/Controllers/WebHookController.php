@@ -81,64 +81,6 @@ class WebHookController extends Controller
         } catch (\Exception $e) {
             return response()->json(['message' => $e->getMessage()]);
         }
-        
-        // if ($requestData['object'] === 'page' && !empty($requestData['entry']) && isset($requestData['entry'][0]['messaging'])) {
-            
-        //     return $this->socialMediaMessageService->processNewMessage($request['entry'][0])->saveAndAssignAgent();
-        // }
-        // $data                       = [];
-        // $data['pageId']             = !empty($request->entry[0]['id']) ? $request->entry[0]['id'] : '';
-        // $data['senderId']           = !empty($request->entry[0]['messaging'][0]['sender']['id']) ? $request->entry[0]['messaging'][0]['sender']['id'] : '';
-        // $data['platformTime']       = !empty($request->entry[0]['time']) ? $request->entry[0]['time'] : '';
-
-
-        // if(isset($request->entry)) {
-           
-        //     if(isset($request->entry[0]['changes'][0]['field']) && $request->entry[0]['changes'][0]['field']=="feed" && isset($request->entry[0]['changes'][0]['value']['item']) && $request->entry[0]['changes'][0]['value']['item']=="comment") {
-
-        //         $data['content']    = !empty($request->entry) ? base64_encode(json_encode($request->entry)) : '';
-        //         $data['type']       = 'comment';
-
-        //     } else {
-
-        //         if (!empty($data['senderId'] ) && !isset($request->entry[0]['messaging'][0]['read']['watermark']) && !isset($request->entry[0]['messaging'][0]['delivery']['watermark']) && $data['pageId'] != $data['senderId'] ) {
-                   
-        //             $data['content']    = !empty($request->entry) ? base64_encode(json_encode($request->entry)) : '';
-        //             $data['type']       = 'msg';
-
-        //         }
-        //     }
-
-        // }
-
-        // if(isset($data['content']) && $data['content'] != NULL && $data['content'] != '') {
-    
-        //    $result = $this->storeContent($data);
-
-        //    if($result == 201) {
-
-        //         $socialMedia = $this->socialMediaService->getPageItem($data['pageId'])->data;
-
-        //         //$this->webHookDebugLog("Social media is type: ".gettype($socialMedia));
-        //         //$this->webHookDebugLog("Social media is data: ".$socialMedia);
-
-        //         if( $socialMedia[0]->api_url) {
-
-        //             $this->webHookDebugLog("This is social api list : ".$socialMedia[0]->api_url);
-        //             $postData = [
-        //                 'contentDetails'    => $data['content'],
-        //                 'type'              => $data['type'],
-        //                 'socialMedia'       => $socialMedia[0]
-        //             ];
-
-        //             $this->curlRequest($socialMedia[0]->api_url, [], true,  $postData);
-
-        //         }
-
-        //    }
-        // }
-
-
     }
 
 
