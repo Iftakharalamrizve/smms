@@ -67,9 +67,12 @@ class AgentQueueManageController extends Controller
         // foreach(Redis::keys('agent_item_queue:*') as $key){
         //     Redis::del($key);
         // }
+        // // Redis::del($key);
+        // foreach(Redis::keys('agent_queue') as $key){
+        //     Redis::del($key);
+        // }
         // Redis::lpop("message_queue");
         // Cache::set('sdata',[]);
-        $listData = Cache::get('sdata');
         // $listData = Cache::pull('sdata');
         // dd($listData);
         // foreach($listData as $item) {
@@ -78,12 +81,14 @@ class AgentQueueManageController extends Controller
         // dd(json_encode($pageList));
         // dd(Redis::keys('agent_item_queue:*'));
         // Redis::rpush('agent_queue','1001');
+        // Redis::rpush('agent_queue','1016');
         // Redis::rpush('agent_queue','agent5');
         // Redis::rpush('agent_queue','agent4');
         // Redis::rpush('agent_queue','agent3');
         // Redis::rpush('agent_queue','agent1');
         // Redis::rpush('agent_queue','agent2');
-        
+        // Redis::lrem('agent_queue', 0, 1016);
+        // dd(Redis::lrange('message_queue',0, 0)[0]);
         try {
             $data = [];
             foreach(Redis::keys('agent_item_queue:*') as $key) {
@@ -93,8 +98,7 @@ class AgentQueueManageController extends Controller
             
             
             // AgentChatRoomEvent::dispatch('root');
-        dd(Redis::lrange('message_queue', 0, -1),Redis::lrange('agent_queue', 0, -1),$data);
-        // broadcast(new AgentChatRoomEvent('root'));
+            dd(Redis::lrange('message_queue', 0, -1),Redis::lrange('agent_queue', 0, -1),count($data),$data);
         return response()->json(['message' => 'Shipment status updated']);
         } catch (\Exception $e) {
             dd($e->getMessage());

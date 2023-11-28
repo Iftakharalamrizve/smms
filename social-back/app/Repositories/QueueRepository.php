@@ -152,6 +152,11 @@ class QueueRepository implements QueueDataRepositoryInterface
         return Redis::llen($queueKey);
     }
 
+    public function queueListSpecificItemRemove($queueName,$value)
+    {
+        return Redis::lrem($queueName, 0, $value);
+    }
+
     public function setItemSpecificPosition($keyName, $position, $updatedData){
         Redis::lset($keyName, $position, json_encode($updatedData));
         // Fetch the list

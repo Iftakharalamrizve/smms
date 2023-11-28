@@ -45,14 +45,10 @@ class MessageBroker extends Command
         while (true) {
             $this->info('Message broker Continue...');
             $queueMessageItem = $queueService->messageQueueLength();
-            if($queueMessageItem){ 
-                $freeAgentKey = $queueService->getFreeAgent();
-                if($freeAgentKey){
-                    //check any session is land in user but not responsed 
-                    $messageData = $queueService->getMessageFromMessageQueue();
-                    $messageData = json_decode($messageData, true);
-                    $socialMessageService->handleMessageQueueItem($freeAgentKey, $messageData);
-                    $this->warn('Message Assign queue'.$freeAgentKey);
+            if($queueMessageItem){
+                $messageOperationInfo = $socialMessageService->queuMessageOperation();
+                if($messageOperationInfo['status']){
+                    $this->warn('Message Assign queue'.$messageOperationInfo['agent']);
                 }else{
                     $this->error('Agent Is Not Free ');
                 }
@@ -62,8 +58,6 @@ class MessageBroker extends Command
             }else{
                 $this->error('Message Not Available...');
             }
-            
-
             sleep(5);
         }
     }

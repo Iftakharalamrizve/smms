@@ -74,40 +74,98 @@ class SocialMessageService
         return $this;
     }
 
+    private function getLastMessageAndPriority($customerId)
+    {
+        $currentTime = Carbon::now()->subMinutes(30);
+        $lastItem = $this->socialMessageRepository->getCustomerLastMessageWithDuration($currentTime, $customerId);
+        self::generateApiRequestResponseLog(['Last Item getLastMessageAndPriority'=>$lastItem]);
+        $isPriority = $lastItem && $lastItem->sms_state != 'Queue';
+        $priorityAgent = $isPriority ? $lastItem->assign_agent : null;
+        self::generateApiRequestResponseLog(['Last Item getLastMessageAndPriority'=>$lastItem,'isPriority'=>$isPriority,'$priorityAgent'=>$priorityAgent]);
+        return ['lastItem' => $lastItem, 'isPriority' => $isPriority, 'priorityAgent' => $priorityAgent];
+    }
+
+    public function saveAndAssignAgent()
+    {
+        $result = $this->getLastMessageAndPriority($this->socialFormatMessageData['customer_id']);
+
+        $lastItem = $result['lastItem'];
+        $isPriority = $result['isPriority'];
+        $priorityAgent = $result['priorityAgent'];
+
+        // check latest message existence and disposition
+        if ($lastItem && !$lastItem->disposition_id && !$lastItem->disposition_by && $lastItem->sms_state != 'Queue') {
+            return $this->handleAssignedMessage($lastItem);
+        }
+
+        $saveItem = $this->socialMessageRepository->save($this->socialFormatMessageData);
+        if (!$saveItem) {
+            return response()->json(['message' => 'Message not inserted in the database']);
+        }
+
+        return $this->messageAssignAndStoreOnQueue($saveItem, $isPriority, $priorityAgent, $this->socialFormatMessageData['s_id']);
+    }
+
+    public function queuMessageOperation()
+    {
+        $messageData = json_decode($this->queueServiceRepository->queueListRange($this->messageQueueName, 0, 0)[0], true);
+        self::generateApiRequestResponseLog(['queuMessageOperation messageData'=>$messageData,'customer_id'=>$messageData['customer_id']]);
+        $result = $this->getLastMessageAndPriority($messageData['customer_id']);
+        $isPriority = $result['isPriority'];
+        $priorityAgent = $result['priorityAgent'];
+
+        $sessionId = $this->generateSessionId();
+        $deliveryStatus = false;
+        self::generateApiRequestResponseLog(['queuMessageOperation result'=>$result,'sessionId'=>$sessionId]);
+
+        $agentKey = $this->queueService->assigningInfoInAgentItemQueue([
+            'session_id' => $sessionId,
+            'priority' => $isPriority,
+            'priorityAgent' => $priorityAgent,
+        ]);
+        self::generateApiRequestResponseLog(['agentKey'=>$agentKey,'sessionId'=>$sessionId]);
+        if ($agentKey) {
+            $this->queueService->getMessageFromMessageQueue();
+            $this->handleMessageQueueItem($agentKey, $messageData);
+            $deliveryStatus = true;
+        }
+
+        return ['status' => $deliveryStatus, 'agent' => $agentKey];
+    }
 
     /**
      * Save the message and assign an agent.
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function saveAndAssignAgent()
-    {
-        $currentTime = Carbon::now();
-        $thirtyMinutesAgo = $currentTime->subMinutes(30); //@TODO
+    // public function saveAndAssignAgent()
+    // {
+    //     $currentTime = Carbon::now();
+    //     $thirtyMinutesAgo = $currentTime->subMinutes(30); //@TODO
 
-        //@TODO Send Last Thirty minutes time for query last 30 minutes latest one message 
-        $lastItem = $this->socialMessageRepository->getCustomerLastMessageWithDuration($thirtyMinutesAgo, $this->socialFormatMessageData['customer_id']);
-        $isPriority = false; $priorityAgent = null;
+    //     //@TODO Send Last Thirty minutes time for query last 30 minutes latest one message 
+    //     $lastItem = $this->socialMessageRepository->getCustomerLastMessageWithDuration($thirtyMinutesAgo, $this->socialFormatMessageData['customer_id']);
+    //     $isPriority = false; $priorityAgent = null;
         
-        //check latest message exist if exist then check have disposition id and by then check last message state in queue if not then decide this message session continute current now 
-        if ($lastItem && !$lastItem->disposition_id && !$lastItem->disposition_by && $lastItem->sms_state != 'Queue') {
-            return $this->handleAssignedMessage($lastItem);
-        }
+    //     //check latest message exist if exist then check have disposition id and by then check last message state in queue if not then decide this message session continute current now 
+    //     if ($lastItem && !$lastItem->disposition_id && !$lastItem->disposition_by && $lastItem->sms_state != 'Queue') {
+    //         return $this->handleAssignedMessage($lastItem);
+    //     }
 
-        // We can set this message go to priority if has any message between last 30 minutes and agent alreday give disposition
-        if ($lastItem && $lastItem->sms_state != 'Queue') {
-            $isPriority = true;
-            $priorityAgent = $lastItem->assign_agent;
-        }
+    //     // We can set this message go to priority if has any message between last 30 minutes and agent alreday give disposition
+    //     if ($lastItem && $lastItem->sms_state != 'Queue') {
+    //         $isPriority = true;
+    //         $priorityAgent = $lastItem->assign_agent;
+    //     }
 
-        //@TODO need to handle error this section 
-        $saveItem = $this->socialMessageRepository->save($this->socialFormatMessageData);
-        if (!$saveItem) {
-            return response()->json(['message' => 'Message Not insert IN Database']);
-        }
+    //     //@TODO need to handle error this section 
+    //     $saveItem = $this->socialMessageRepository->save($this->socialFormatMessageData);
+    //     if (!$saveItem) {
+    //         return response()->json(['message' => 'Message Not insert IN Database']);
+    //     }
 
-        return $this->messageAssignAndStoreOnQueue($saveItem, $isPriority, $priorityAgent, $this->socialFormatMessageData['s_id']);
-    }
+    //     return $this->messageAssignAndStoreOnQueue($saveItem, $isPriority, $priorityAgent, $this->socialFormatMessageData['s_id']);
+    // }
 
 
     /**
@@ -302,6 +360,41 @@ class SocialMessageService
         }
     }
 
+    /**
+     * Generate a new session ID.
+     *
+     * @return array
+     */
+    // public function queuMessageOperation()
+    // {
+    //     $currentTime = Carbon::now();
+    //     $thirtyMinutesAgo = $currentTime->subMinutes(30);
+
+    //     $messageData = json_decode($this->queueServiceRepository->queueListRange($this->messageQueueName, 0, 0), true);
+
+    //     $lastItem = $this->socialMessageRepository->getCustomerLastMessageWithDuration($thirtyMinutesAgo, $messageData['customer_id']);
+        
+    //     $isPriority = $lastItem && $lastItem->sms_state != 'Queue';
+    //     $priorityAgent = $isPriority ? $lastItem->assign_agent : null;
+
+    //     $sessionId = $this->generateSessionId();
+    //     $deliveryStatus = false;
+
+    //     $agentKey = $this->queueService->assigningInfoInAgentItemQueue([
+    //         'session_id' => $sessionId,
+    //         'priority' => $isPriority,
+    //         'priorityAgent' => $priorityAgent,
+    //     ]);
+
+    //     if ($agentKey) {
+    //         $this->queueService->getMessageFromMessageQueue();
+    //         $this->handleMessageQueueItem($agentKey, $messageData);
+    //         $deliveryStatus = true;
+    //     }
+
+    //     return ['status' => $deliveryStatus, 'agent' => $agentKey];
+    // }
+
     public function logAgentSession($key){
         $data = [];
         foreach(Redis::keys($key) as $key) {
@@ -310,15 +403,11 @@ class SocialMessageService
         }
         return [count($data),$data];
     }
-    public static function generateApiRequestResponseLog($msg,$data,$data1,$data2,$key=null)
+    public static function generateApiRequestResponseLog($data)
     {
         $path = base_path () . DIRECTORY_SEPARATOR . 'log' . DIRECTORY_SEPARATOR ;
-        $log = 'User: ' . $_SERVER[ 'REMOTE_ADDR' ] . ' - ' . date ( 'F j, Y, g:i a' ) ."Time". time() . PHP_EOL .
-            'Message: ' . (json_encode ($msg)) . PHP_EOL .
-            'Data 1: ' . (json_encode ($data)) . PHP_EOL .
-            'Data 2: ' . (json_encode ($data1)) . PHP_EOL .
-            'Data 3: ' . (json_encode ($data2)) . PHP_EOL .
-            'Session Key: ' . $key . PHP_EOL .
+        $log = 'User: ' . date ( 'F j, Y, g:i a' ) ."Time". time() . PHP_EOL .
+            'Message: ' . (json_encode ($data)) . PHP_EOL .
 
             '--------------------------------------------------------------------------------------' . PHP_EOL;
         //Save string to log, use FILE_APPEND to append.

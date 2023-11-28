@@ -47,13 +47,16 @@ class QueueService
 
     /**
      * Get retrive all data from a specified queue.
+     * Pattern have another option for queue configuration
+     * If Pattern Data is true then go pattern block and retrive data 
+     * This method is not only responsible for return status it's also responsible for retrive data
      * Ignore Agent means retrive all agent except specefic agent item 
      * Ignore agent use when Item land in one agent, But agent can not responsed . This business item re assign another agent except curretn agent
      * 
      * @param string $queueName The name of the queue.
      * @param boolean $pattern 
      * @param string $ignoreAgent If have any 
-     * @return array|null The data from the queue, or null if the queue is empty.
+     * @return array|null|bool The data from the queue, or null if the queue is empty.
      */
     public function queueDataRetriveByKey($queueName , $pattern = false, $ignoreAgent=null)
     {
@@ -82,9 +85,12 @@ class QueueService
             
             $this->isPriority = $data['priority'];
             $this->priorityAgent = $data['priorityAgent'];
+            self::generateApiRequestResponseLog(["before find Free agent step data "=>$data, 'Current Queue Session'=>self::logAgentSession(),"Line"=>__LINE__]);
             $freeAgentKey = $this->getFreeAgent();
+            self::generateApiRequestResponseLog(["Find Free Agent"=>$freeAgentKey,"Line"=>__LINE__]);
             if (isset($freeAgentKey)) {
                 $status = $this->addDataInQueue($freeAgentKey,$data['session_id']);
+                self::generateApiRequestResponseLog(["Insert Data In Agent Item queue status "=>$status, 'Current Queue Session'=>self::logAgentSession(),"Line"=>__LINE__]);
                 if($status) {
                     return $freeAgentKey;
                 }
@@ -179,17 +185,21 @@ class QueueService
     /**
      * Checks if the agent item is not present in any queue.
      *
-     * This method verifies if the agent item is not present in the agent queue or item queue.
+     * This method verifies if the agent item is not present in the agent queue or agent service item queue.
      * If the agent item is not in any queue, it returns true; otherwise, it returns false.
      *
-     * @param string $key The key of the agent item to check.
-     * @return bool True if the agent item is not in any queue, false otherwise.
+     * @param string $key or value The key of the agent item to check.
+     * @return array True if the agent item is not in any queue, false otherwise.
      */
-    public function agentItemIsNotInQueue(string $key)
+    public function agentItemQueueInfo(string $key)
     {
+        $agentItemQueueStatus = $agentQueueStatus = false;
         $agentQueueStatus = $this->queueServiceRepository->checkItemExistInQueue($this->agentQueueName, $key);
-        $agentItemQueueStatus = $this->queueServiceRepository->queueItemStatus($key);
-        return !$agentQueueStatus && !$agentItemQueueStatus;
+        if(!$agentQueueStatus){
+            $agentItemQueueKey = "{$this->agentItemQueueName}:{$key}:*";
+            $agentItemQueueStatus = $this->listItemInQueue($agentItemQueueKey);
+        }        
+        return [ 'inQueue'=> !($agentItemQueueStatus === false && $agentQueueStatus === false),  'agentQueueStatus'=>$agentQueueStatus, 'agentItemQueueStatus'=>$agentItemQueueStatus];
     }
 
 
@@ -211,28 +221,41 @@ class QueueService
      */
     public function getFreeAgent()
     {
-        if($this->isPriority){  
-            $priorityAgentExistInAgentQueue = $this->queueServiceRepository->queueItemStatus($this->priorityAgent);
-            if($priorityAgentExistInAgentQueue){
-                return "{$this->agentItemQueueName}:{$this->priorityAgent}:1";
-            }else{
-                $queueKey = "{$this->agentItemQueueName}:{$this->priorityAgent}";
-                $priorityAgentAllItemKey = $this->queueServiceRepository->queueRetriveListByKey("{$queueKey}:*");
-                if (count( $priorityAgentAllItemKey) < $this->totalAgentQuota) {
-                    $agentBookedSlot = [];
-                    foreach($priorityAgentAllItemKey as $item){
-                        $keyArrayItem = explode(':', $item);
-                        $agentBookedSlot[] = $keyArrayItem[2];
+        if($this->isPriority){
+            $agentItemQueueInfo = $this->agentItemQueueInfo($this->priorityAgent);
+            self::generateApiRequestResponseLog(["Priority Infomration agentItemQueueInfo "=> [$agentItemQueueInfo,$this->priorityAgent],'Current Queue Session'=>self::logAgentSession(), "Line"=>__LINE__]);
+            if( $agentItemQueueInfo['inQueue']){
+                $priorityAgentExistInAgentQueue = $agentItemQueueInfo['agentQueueStatus'];
+                if($priorityAgentExistInAgentQueue){
+                    $removeStatus = $this->queueServiceRepository->queueListSpecificItemRemove($this->agentQueueName, $this->priorityAgent);
+                    if($removeStatus){
+                        self::generateApiRequestResponseLog(["Priority Infomration priorityAgentExistInAgentQueue "=> "{$this->agentItemQueueName}:{$this->priorityAgent}:1", "Line"=>__LINE__]);
+                        return "{$this->agentItemQueueName}:{$this->priorityAgent}:1";
                     }
-                    return $this->currentServedAgentKeyGenerate($queueKey, $agentBookedSlot);
+                    self::generateApiRequestResponseLog(["Priority Infomration removeStatus "=> "False So Back Main Queue and try",'Current Queue Session'=>self::logAgentSession(), "Line"=>__LINE__]);
+                }else{
+                    $queueKey = "{$this->agentItemQueueName}:{$this->priorityAgent}";
+                    self::generateApiRequestResponseLog(["Priority Infomration queueKey "=> $queueKey, "Line"=>__LINE__]);
+                    $priorityAgentAllItemKey = $this->queueServiceRepository->queueRetriveListByKey("{$queueKey}:*");
+                    self::generateApiRequestResponseLog(["Priority Infomration  priorityAgentAllItemKey "=>  $priorityAgentAllItemKey, "Line"=>__LINE__]);
+                    if (count( $priorityAgentAllItemKey) < $this->totalAgentQuota) {
+                        $agentBookedSlot = [];
+                        foreach($priorityAgentAllItemKey as $item){
+                            $keyArrayItem = explode(':', $item);
+                            $agentBookedSlot[] = $keyArrayItem[2];
+                        }
+                        return $this->currentServedAgentKeyGenerate($queueKey, $agentBookedSlot);
+                    }
                 }
             }
         }
         $agent = $this->getDataInQueue($this->agentQueueName);
+        self::generateApiRequestResponseLog(["Not Priority Infomration  agent getDataInQueue"=> $agent, "Line"=>__LINE__]);
         if ($agent) {
             return "{$this->agentItemQueueName}:{$agent}:1";
         } else {
             $allItemKey = $this->queueDataRetriveByKey($this->agentItemQueueName.':*',true);
+            self::generateApiRequestResponseLog(["Not Priority Infomration  allItemKey"=> $allItemKey, "Line"=>__LINE__]);
             $groupKey = [];
             $agentBookedSlot = [];
             foreach ($allItemKey as $itemKey) {
@@ -241,11 +264,13 @@ class QueueService
                 $agentBookedSlot[$key][] = $keyArrayItem[2];
                 $groupKey[$key] = ($groupKey[$key] ?? 0) + 1;
             }
-
+            self::generateApiRequestResponseLog(["Not Priority Infomration  groupKey"=> $groupKey, "Line"=>__LINE__]);
             $minimumServedItemNumber = min($groupKey);
             $bestIdleAgentFromBusyMode = array_search($minimumServedItemNumber, $groupKey);
+            self::generateApiRequestResponseLog(["bestIdleAgentFromBusyMode"=> $bestIdleAgentFromBusyMode, "Line"=>__LINE__]);
             if ($groupKey[$bestIdleAgentFromBusyMode] < $this->totalAgentQuota) {
                 $speceficAgentBookedSlotList = $agentBookedSlot[$bestIdleAgentFromBusyMode];
+                self::generateApiRequestResponseLog(["speceficAgentBookedSlotList"=> $speceficAgentBookedSlotList, "Line"=>__LINE__]);
                 return $this->currentServedAgentKeyGenerate($bestIdleAgentFromBusyMode, $speceficAgentBookedSlotList);
             }
         }
@@ -263,7 +288,7 @@ class QueueService
      */
     public function currentServedAgentKeyGenerate($assignAgent, $bookedSlotList)
     {
-        
+        self::generateApiRequestResponseLog(["currentServedAgentKeyGenerate assignAgent "=>$assignAgent, 'Current Queue Session'=>self::logAgentSession(),"Line"=>__LINE__]);
         $currentServedItem = null;
         for ($i = 1; $i <= $this->totalAgentQuota; $i++) {
             if (!in_array($i, $bookedSlotList)) {
@@ -271,6 +296,7 @@ class QueueService
                 break;
             }
         }
+        self::generateApiRequestResponseLog(["currentServedAgentKeyGenerate "=> "{$assignAgent}:{$currentServedItem}",'Current Queue Session'=>self::logAgentSession(),"Line"=>__LINE__]);
         return "{$assignAgent}:{$currentServedItem}";
     }
 
@@ -317,7 +343,7 @@ class QueueService
     }
 
 
-    public function logAgentSession($key1){
+    public function logAgentSession(){
         $data = [];
         $agentQueue = Redis::lrange('agent_queue', 0, -1);
         foreach(Redis::keys('agent_item_queue:*') as $key) {
@@ -326,16 +352,11 @@ class QueueService
         }
         return [count($data),$data,$agentQueue];
     }
-    public static function generateApiRequestResponseLog($msg,$data,$data1,$data2,$key=null)
+    public static function generateApiRequestResponseLog($data)
     {
         $path = base_path () . DIRECTORY_SEPARATOR . 'log' . DIRECTORY_SEPARATOR ;
-        $log = 'User: ' . $_SERVER[ 'REMOTE_ADDR' ] . ' - ' . date ( 'F j, Y, g:i a' ) ."Time". time() . PHP_EOL .
-            'Message: ' . (json_encode ($msg)) . PHP_EOL .
-            'Data 1: ' . (json_encode ($data)) . PHP_EOL .
-            'Data 2: ' . (json_encode ($data1)) . PHP_EOL .
-            'Data 3: ' . (json_encode ($data2)) . PHP_EOL .
-            'Session Key: ' . $key . PHP_EOL .
-
+        $log = 'User: ' .  ' - ' . date ( 'F j, Y, g:i a' ) ."Time". time() . PHP_EOL .
+            'Message: ' . (json_encode ($data)) . PHP_EOL .
             '--------------------------------------------------------------------------------------' . PHP_EOL;
         //Save string to log, use FILE_APPEND to append.
         file_put_contents ( $path.'log_' . date ( 'j.n.Y' ) . '.txt' , $log, FILE_APPEND );

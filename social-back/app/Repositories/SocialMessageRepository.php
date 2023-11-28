@@ -11,6 +11,7 @@ class SocialMessageRepository
     {
         $lastMessage = SocialMessage::where('customer_id', $customerId)
                     ->where('created_at', '>=', $durationCondition)
+                    ->where('sms_state','!=','Queue')
                     ->latest('created_at')
                     ->first();
         return $lastMessage;
