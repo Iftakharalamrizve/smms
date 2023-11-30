@@ -7,9 +7,10 @@ use App\Models\SocialMessage;
 class SocialMessageRepository
 {
 
-    public function getCustomerLastMessageWithDuration($durationCondition, $customerId)
+    public function getCustomerLastMessageWithDuration($durationCondition, $customerId, $pageId)
     {
         $lastMessage = SocialMessage::where('customer_id', $customerId)
+                    ->where('page_id', $pageId)
                     ->where('created_at', '>=', $durationCondition)
                     ->where('sms_state','!=','Queue')
                     ->latest('created_at')

@@ -67,7 +67,6 @@ class AgentQueueManageController extends Controller
         // foreach(Redis::keys('agent_item_queue:*') as $key){
         //     Redis::del($key);
         // }
-        // // Redis::del($key);
         // foreach(Redis::keys('agent_queue') as $key){
         //     Redis::del($key);
         // }
@@ -80,7 +79,7 @@ class AgentQueueManageController extends Controller
         // }
         // dd(json_encode($pageList));
         // dd(Redis::keys('agent_item_queue:*'));
-        // Redis::rpush('agent_queue','1001');
+        // Redis::rpush('agent_queue','1004');
         // Redis::rpush('agent_queue','1016');
         // Redis::rpush('agent_queue','agent5');
         // Redis::rpush('agent_queue','agent4');
@@ -89,6 +88,7 @@ class AgentQueueManageController extends Controller
         // Redis::rpush('agent_queue','agent2');
         // Redis::lrem('agent_queue', 0, 1016);
         // dd(Redis::lrange('message_queue',0, 0)[0]);
+        // Redis::del("agent_item_queue:1004:4");
         try {
             $data = [];
             foreach(Redis::keys('agent_item_queue:*') as $key) {

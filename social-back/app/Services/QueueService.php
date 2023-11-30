@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Helpers\HelperService;
 use App\Repositories\QueueRepository;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redis;
@@ -14,11 +15,12 @@ class QueueService
     protected $agentItemQueueName = 'agent_item_queue';
     protected $isPriority = false;
     protected $priorityAgent;
-    protected $totalAgentQuota = 4;
+    protected $totalAgentQuota;
 
     public function __construct()
     {
         $this->queueServiceRepository = new QueueRepository;
+        $this->totalAgentQuota = HelperService::getAgentConcurrentServiceNumber();
     }
 
     /**
@@ -113,8 +115,9 @@ class QueueService
     * @param array $data An array containing minimum information required for queueing.
     * @throws Exception If an error occurs during the assignment process.
     */
-    public function assigningSMSInSMSQueue(array $data)
+    public function assigningSMSInSMSQueue(array $data,$sessionId)
     {
+        $data['queue_session_id'] = $sessionId;
         $this->addDataInQueue($this->messageQueueName, json_encode($data));
     }
 
@@ -132,7 +135,6 @@ class QueueService
      */
     public function releaseAgentFromAgentItemQueue(string $agentItemKey)
     {
-
         try {
             $allKeyExplode = explode(':', $agentItemKey);
             $key = "{$allKeyExplode[0]}:{$allKeyExplode[1]}:*";

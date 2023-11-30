@@ -9,7 +9,6 @@
         "barryvdh/laravel-cors": "^3.0",
         "beyondcode/laravel-websockets": "^1.14",
         "fideloper/proxy": "^4.4",
-        "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
         "laravel/sanctum": "^2.9",
@@ -31,7 +30,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "app/Helpers/HelperService.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

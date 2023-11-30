@@ -9,7 +9,7 @@ use DB;
 use Illuminate\Contracts\Session\Session;
 use App\Models\Content;
 
-class webHookRepository
+class WebHookRepository
 {
     use QueryTrait;
 

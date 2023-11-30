@@ -23,6 +23,7 @@ class SocialMessage extends Model
         'direction',
         'attachments',
         'session_id',
+        'queue_session_id',
         'read_status',
         'start_time',
         'end_time',
@@ -35,13 +36,15 @@ class SocialMessage extends Model
 
 
 
-    public static function boot() {
+    public static function boot() 
+    {
 
         parent::boot();
 
         static::creating(function($model) {
             if($model->direction == 'IN'){
                 $model->read_status = 1;
+
             }
         });
     }
