@@ -95,9 +95,6 @@ class AgentQueueManageController extends Controller
                 $info = Redis::lrange($key,0,-1);
                 $data[$key] = $info[0];
             }
-            
-            
-            // AgentChatRoomEvent::dispatch('root');
             dd(Redis::lrange('message_queue', 0, -1),Redis::lrange('agent_queue', 0, -1),count($data),$data);
         return response()->json(['message' => 'Shipment status updated']);
         } catch (\Exception $e) {

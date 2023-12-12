@@ -10,6 +10,7 @@ use App\Services\SocialMessageService;
 use Session;
 use Auth;
 use stdClass;
+use Exception;
 
 class WebHookController extends Controller
 {
@@ -69,16 +70,17 @@ class WebHookController extends Controller
     }
 
 
-    public function fbPageWebHookData(Request $request, $id=0)
+    public function fbPageWebHookData(Request $request)
     {
         try {
             $type = $request->input("type");
             if($type == 'msg'){
                 $content = base64_decode($request->input("contentDetails"));
                 $content = json_decode($content,true)[0];
-                return $this->socialMediaMessageService->processNewMessage($content, $id)->saveAndAssignAgent();
+                return $this->socialMediaMessageService->processFacebookNewMessage($content)->saveAndAssignAgent();
+                
             }
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return response()->json(['message' => $e->getMessage()]);
         }
     }

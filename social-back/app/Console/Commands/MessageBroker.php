@@ -51,13 +51,12 @@ class MessageBroker extends Command
                     $this->warn('Message Assign queue'.$messageOperationInfo['agent']);
                 }else{
                     $this->error('Agent Is Not Free ');
-                }
-                // get current all running session and check,reassign if any session is peanding in certain period of time 
-                // $socialMessageService->sessionIdleStatusCheckAndReassign();
-                
+                }                
             }else{
                 $this->error('Message Not Available...');
             }
+            $socialMessageService->sessionIdleStatusCheckAndReassign();
+            $this->warn('Checking complete Session Idle Status');
             sleep(5);
         }
     }

@@ -15,6 +15,7 @@ class QueueService
     protected $agentItemQueueName = 'agent_item_queue';
     protected $isPriority = false;
     protected $priorityAgent;
+    protected $ignoreAgent;
     protected $totalAgentQuota;
 
     public function __construct()
@@ -33,6 +34,18 @@ class QueueService
     public function addDataInQueue($queueName, $data)
     {
         return $this->queueServiceRepository->queueRightPush($queueName, $data);
+    }
+
+    /**
+     * Add data to a specified queue.
+     *
+     * @param string $queueName The name of the queue.
+     * @param mixed $data The data to be added to the queue.
+     * 
+     */
+    public function addDataLeftInQueue($queueName, $data)
+    {
+        return $this->queueServiceRepository->queueLeftPush($queueName, $data);
     }
 
     /**
@@ -87,12 +100,14 @@ class QueueService
             
             $this->isPriority = $data['priority'];
             $this->priorityAgent = $data['priorityAgent'];
-            self::generateApiRequestResponseLog(["before find Free agent step data "=>$data, 'Current Queue Session'=>self::logAgentSession(),"Line"=>__LINE__]);
+            
+            if(isset($data['ignoreAgent'])){
+                $this->ignoreAgent = $data['ignoreAgent'];
+            }
+            
             $freeAgentKey = $this->getFreeAgent();
-            self::generateApiRequestResponseLog(["Find Free Agent"=>$freeAgentKey,"Line"=>__LINE__]);
             if (isset($freeAgentKey)) {
                 $status = $this->addDataInQueue($freeAgentKey,$data['session_id']);
-                self::generateApiRequestResponseLog(["Insert Data In Agent Item queue status "=>$status, 'Current Queue Session'=>self::logAgentSession(),"Line"=>__LINE__]);
                 if($status) {
                     return $freeAgentKey;
                 }
@@ -115,10 +130,14 @@ class QueueService
     * @param array $data An array containing minimum information required for queueing.
     * @throws Exception If an error occurs during the assignment process.
     */
-    public function assigningSMSInSMSQueue(array $data,$sessionId)
+    public function assigningSMSInSMSQueue(array $data,$sessionId,$isIgnoreAgent = false)
     {
         $data['queue_session_id'] = $sessionId;
-        $this->addDataInQueue($this->messageQueueName, json_encode($data));
+        if($isIgnoreAgent){
+            $this->addDataLeftInQueue($this->messageQueueName, json_encode($data));
+        }else{
+            $this->addDataInQueue($this->messageQueueName, json_encode($data));
+        }
     }
 
 
@@ -225,21 +244,16 @@ class QueueService
     {
         if($this->isPriority){
             $agentItemQueueInfo = $this->agentItemQueueInfo($this->priorityAgent);
-            self::generateApiRequestResponseLog(["Priority Infomration agentItemQueueInfo "=> [$agentItemQueueInfo,$this->priorityAgent],'Current Queue Session'=>self::logAgentSession(), "Line"=>__LINE__]);
             if( $agentItemQueueInfo['inQueue']){
                 $priorityAgentExistInAgentQueue = $agentItemQueueInfo['agentQueueStatus'];
                 if($priorityAgentExistInAgentQueue){
                     $removeStatus = $this->queueServiceRepository->queueListSpecificItemRemove($this->agentQueueName, $this->priorityAgent);
                     if($removeStatus){
-                        self::generateApiRequestResponseLog(["Priority Infomration priorityAgentExistInAgentQueue "=> "{$this->agentItemQueueName}:{$this->priorityAgent}:1", "Line"=>__LINE__]);
                         return "{$this->agentItemQueueName}:{$this->priorityAgent}:1";
                     }
-                    self::generateApiRequestResponseLog(["Priority Infomration removeStatus "=> "False So Back Main Queue and try",'Current Queue Session'=>self::logAgentSession(), "Line"=>__LINE__]);
                 }else{
                     $queueKey = "{$this->agentItemQueueName}:{$this->priorityAgent}";
-                    self::generateApiRequestResponseLog(["Priority Infomration queueKey "=> $queueKey, "Line"=>__LINE__]);
                     $priorityAgentAllItemKey = $this->queueServiceRepository->queueRetriveListByKey("{$queueKey}:*");
-                    self::generateApiRequestResponseLog(["Priority Infomration  priorityAgentAllItemKey "=>  $priorityAgentAllItemKey, "Line"=>__LINE__]);
                     if (count( $priorityAgentAllItemKey) < $this->totalAgentQuota) {
                         $agentBookedSlot = [];
                         foreach($priorityAgentAllItemKey as $item){
@@ -252,12 +266,10 @@ class QueueService
             }
         }
         $agent = $this->getDataInQueue($this->agentQueueName);
-        self::generateApiRequestResponseLog(["Not Priority Infomration  agent getDataInQueue"=> $agent, "Line"=>__LINE__]);
         if ($agent) {
             return "{$this->agentItemQueueName}:{$agent}:1";
         } else {
-            $allItemKey = $this->queueDataRetriveByKey($this->agentItemQueueName.':*',true);
-            self::generateApiRequestResponseLog(["Not Priority Infomration  allItemKey"=> $allItemKey, "Line"=>__LINE__]);
+            $allItemKey = $this->queueDataRetriveByKey($this->agentItemQueueName.':*',true,$this->ignoreAgent);
             $groupKey = [];
             $agentBookedSlot = [];
             foreach ($allItemKey as $itemKey) {
@@ -266,13 +278,10 @@ class QueueService
                 $agentBookedSlot[$key][] = $keyArrayItem[2];
                 $groupKey[$key] = ($groupKey[$key] ?? 0) + 1;
             }
-            self::generateApiRequestResponseLog(["Not Priority Infomration  groupKey"=> $groupKey, "Line"=>__LINE__]);
             $minimumServedItemNumber = min($groupKey);
             $bestIdleAgentFromBusyMode = array_search($minimumServedItemNumber, $groupKey);
-            self::generateApiRequestResponseLog(["bestIdleAgentFromBusyMode"=> $bestIdleAgentFromBusyMode, "Line"=>__LINE__]);
             if ($groupKey[$bestIdleAgentFromBusyMode] < $this->totalAgentQuota) {
                 $speceficAgentBookedSlotList = $agentBookedSlot[$bestIdleAgentFromBusyMode];
-                self::generateApiRequestResponseLog(["speceficAgentBookedSlotList"=> $speceficAgentBookedSlotList, "Line"=>__LINE__]);
                 return $this->currentServedAgentKeyGenerate($bestIdleAgentFromBusyMode, $speceficAgentBookedSlotList);
             }
         }
@@ -285,12 +294,11 @@ class QueueService
      * This method generates the agent item key for the current served agent based on the assigned agent and booked slot list.
      *
      * @param string $assignAgent The assigned agent.
-     * @param array $bookedSlotList The list of booked slots for the assigned agent.
+     * @param array $bookedSlotList The list of booked slots for the assigned agent(Current Booking Slot).
      * @return string The agent item key for the current served agent.
      */
     public function currentServedAgentKeyGenerate($assignAgent, $bookedSlotList)
     {
-        self::generateApiRequestResponseLog(["currentServedAgentKeyGenerate assignAgent "=>$assignAgent, 'Current Queue Session'=>self::logAgentSession(),"Line"=>__LINE__]);
         $currentServedItem = null;
         for ($i = 1; $i <= $this->totalAgentQuota; $i++) {
             if (!in_array($i, $bookedSlotList)) {
@@ -298,7 +306,6 @@ class QueueService
                 break;
             }
         }
-        self::generateApiRequestResponseLog(["currentServedAgentKeyGenerate "=> "{$assignAgent}:{$currentServedItem}",'Current Queue Session'=>self::logAgentSession(),"Line"=>__LINE__]);
         return "{$assignAgent}:{$currentServedItem}";
     }
 
@@ -342,25 +349,5 @@ class QueueService
             // Handle the exception here, if necessary
         }
         
-    }
-
-
-    public function logAgentSession(){
-        $data = [];
-        $agentQueue = Redis::lrange('agent_queue', 0, -1);
-        foreach(Redis::keys('agent_item_queue:*') as $key) {
-            $info = Redis::lrange($key,0,-1);
-            $data[$key] = $info[0];
-        }
-        return [count($data),$data,$agentQueue];
-    }
-    public static function generateApiRequestResponseLog($data)
-    {
-        $path = base_path () . DIRECTORY_SEPARATOR . 'log' . DIRECTORY_SEPARATOR ;
-        $log = 'User: ' .  ' - ' . date ( 'F j, Y, g:i a' ) ."Time". time() . PHP_EOL .
-            'Message: ' . (json_encode ($data)) . PHP_EOL .
-            '--------------------------------------------------------------------------------------' . PHP_EOL;
-        //Save string to log, use FILE_APPEND to append.
-        file_put_contents ( $path.'log_' . date ( 'j.n.Y' ) . '.txt' , $log, FILE_APPEND );
     }
 }

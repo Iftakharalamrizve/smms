@@ -30,21 +30,6 @@ class SocialPlatFormController extends Controller
     {
         $username = Auth::user()->agent_id;
         $pattern = "agent_item_queue:{$username}:*";
-        // $luaScript = <<<LUA
-        // local keys = redis.call('keys', ARGV[1])
-        // local result = {}
-        // for _, key in ipairs(keys) do
-        //     local items = redis.call('lrange', key, 0, -1)
-        //     for _, item in ipairs(items) do
-        //         table.insert(result, item)
-        //     end
-        // end
-        // return result
-        // LUA;
-
-
-        // $sessionIds = Redis::eval($luaScript, 0, $pattern);
-        // return $sessionIds;
 
         $sessionIds = [];
         foreach(Redis::keys($pattern) as $key) {
@@ -78,7 +63,7 @@ class SocialPlatFormController extends Controller
                             ->first();
         $replyData = $this->socialMediaMessageService->processAndSendReply($findLastMessage,$request);
         if(isset($replyData->disposition_id)) {
-           $this->socialMediaMessageService->freeAgentSession($request->session_id);
+           $this->socialMediaMessageService->freeAgentSession($request->session_id, Auth::user()->agent_id);
         }
         return $this->respondCreated("Agent Reply Delivered", $replyData);
     }

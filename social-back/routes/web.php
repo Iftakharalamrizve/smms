@@ -14,5 +14,5 @@ use App\Http\Controllers\AgentQueueManageController;
 |
 */
 
-Route::post('fb-page-webhook/{id}',                  [WebHookController::class, 'fbPageWebHookData']);
+Route::post('fb-page-webhook',                  [WebHookController::class, 'fbPageWebHookData']);
 Route::get('/test',[AgentQueueManageController::class, 'checkStatus']);

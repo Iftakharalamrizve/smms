@@ -16,15 +16,17 @@ class AgentChatRoomEvent implements ShouldBroadcast
 
     public $messageInfo;
     public $userName;
+    public $broadCastAs;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($userName, $messageInfo)
+    public function __construct($userName, $messageInfo , $broadCastAs = "agent_chat_room_event")
     {
         $this->messageInfo = $messageInfo;
         $this->userName = $userName;
+        $this->broadCastAs = $broadCastAs;
     }
 
     /**
@@ -50,7 +52,7 @@ class AgentChatRoomEvent implements ShouldBroadcast
 
     public function broadcastAs()
     {
-        return 'agent_chat_room_event';
+        return $this->broadCastAs;
     }
 
 }

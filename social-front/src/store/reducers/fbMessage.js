@@ -84,6 +84,31 @@ const FbMessage = createSlice({
         };
       }
     },
+    reRouteSession(state, action) {
+      const reRouteSessionList = action.payload;
+      console.log(reRouteSessionList);
+      // if(true) {
+      //   return {
+      //     ...state,
+      //     assignSessionList: {
+      //       ...state.assignSessionList,
+      //       [page_id]: {
+      //         ...state.assignSessionList[page_id],
+      //         [session_id]: {
+      //           message_text,
+      //           page_id,
+      //           customer_id,
+      //           session_id,
+      //           direction,
+      //           start_time,
+      //           read_status,
+      //           un_read_count,
+      //         },
+      //       },
+      //     },
+      //   };
+      // }
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(currentUserMessageSessionList.fulfilled, (state, action) => {
@@ -130,5 +155,5 @@ const FbMessage = createSlice({
   },
 });
 
-export const { setMessageSession } = FbMessage.actions;
+export const { setMessageSession, reRouteSession } = FbMessage.actions;
 export default FbMessage.reducer;

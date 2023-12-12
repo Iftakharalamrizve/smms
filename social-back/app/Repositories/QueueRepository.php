@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Helpers\HelperService;
 use App\Interfaces\QueueDataRepositoryInterface;
 use Illuminate\Support\Facades\Redis;
 
@@ -110,12 +111,13 @@ class QueueRepository implements QueueDataRepositoryInterface
      */
     public function queueRetriveListByKey($key, $ignoreAgent=null)
     {
+        HelperService::generateApiRequestResponseLog(["Key which want to pick "=>$key, '$ignoreAgent'=>$ignoreAgent]);
         try {
             if($ignoreAgent){
                 $itemList = Redis::keys($key);
                 $filteredKeys = array_filter($itemList, function ($item) use ($ignoreAgent) {
                     $allKeyExplode = explode(':', $item);
-                    return $allKeyExplode[1] == $ignoreAgent;
+                    return $allKeyExplode[1] != $ignoreAgent;
                 });
                 return $filteredKeys;
             }

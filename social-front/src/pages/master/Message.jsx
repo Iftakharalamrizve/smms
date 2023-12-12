@@ -10,7 +10,7 @@ import data from "../../data/master/message.json";
 import { useWebSocket } from '../../context/WebSocketContext';
 import { currentUserMessageSessionList, sessionMessageHisoty } from "../../store/actions/fbMessageAction";
 import { agentCurrentModeSetAndGet } from "../../store/actions/agentAction";
-import {setMessageSession} from "@reducer/fbMessage"
+import {setMessageSession, reRouteSession} from "@reducer/fbMessage"
 import { useDispatch } from 'react-redux';
 
 
@@ -42,6 +42,9 @@ export default function Message() {
             socketInstance.private(`social_chat_room.`+currentAgentId)
             .listen('.agent_chat_room_event', (event) => {
                 dispatch(setMessageSession(event))
+            })
+            .listen('.agent_re_route_event', (event) => {
+                dispatch(reRouteSession(event));
             })
             .listenForWhisper('typing', (e) => {
                 

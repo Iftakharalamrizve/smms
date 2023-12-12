@@ -25,6 +25,7 @@ class SocialMessage extends Model
         'session_id',
         'queue_session_id',
         'read_status',
+        'created_time',
         'start_time',
         'end_time',
         'disposition_id',

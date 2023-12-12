@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Redis;
 use Carbon\Carbon;
 use Auth;
 
-class SocialMessageService
+class SocialMessageService 
 {
     protected $socialMessageRepository, $queueService;
     protected $messageQueueName = 'message_queue';
@@ -61,7 +61,7 @@ class SocialMessageService
      *
      * @return $this
      */
-    public function processNewMessage(array $messageData, string $id)
+    public function processFacebookNewMessage(array $messageData)
     {
         $this->requestMessageData = $messageData;
         $messaging = $this->requestMessageData['messaging'][0] ?? [];
@@ -134,7 +134,7 @@ class SocialMessageService
         $isPriority = $result['isPriority'];
         $priorityAgent = $result['priorityAgent'];
 
-        // Check if the last message is not complete continue previous session.
+        // Check if the last message is not complete continue previous session that called Continues Dialogue.
         if ($lastItem && $lastItem->sms_state != 'Complete') {
             return $this->handleAssignedMessage($lastItem);
         }
@@ -199,35 +199,59 @@ class SocialMessageService
 
 
     /**
-     * Handle already assigned message.
+     * Handle a queued message item.
      *
-     * @param object $lastItem
+     * This method updates the information for a queued message that has already been assigned to an agent.
+     * It retrieves the current message information from the database using the provided message ID,
+     * then calls another method to update the database and broadcast the changes.
+     *
+     * @param string $agentKey The key of the assigned agent.
+     * @param string $sessionId The session ID associated with the message.
+     * @param array $messageData The information of the queued message.
+     *                           Should include at least 'id' to identify the message.
+     *
      * @return void
      */
     public function handleMessageQueueItem($agentKey, $sessionId, $messageData)
     {
         try {
+            // Retrieve the current message information from the database.
             $currentMessage = $this->socialMessageRepository->getSpecificMessage(['id' => $messageData['id']]);
+
+            // Handle the assigned SMS by updating the database and broadcasting changes.
             $this->handleAssignedSms($currentMessage, $agentKey, $sessionId, $messageData);
         } catch (\Throwable $th) {
-
+            // Handle any exceptions that might occur during the process.
+            // Consider logging or reporting the exception details.
         }
     }
 
     /**
-     * Handle already assigned message.
+     * Handle the current message with previous information.
      *
-     * @param object $lastItem
+     * This method works to handle a continued message session. 
+     * When a new message arrives, it checks if the message has any session. 
+     * This method retrieves the last item of the current message session from the database 
+     * and binds its information with the current message. It then saves the current message in the database.
+     * After saving, it processes the data for agent broadcast.
+     *
+     * @param object $lastItem The last item of the current message session.
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     private function handleAssignedMessage($lastItem)
     {
+        // Set properties based on the last item's information.
         $this->socialFormatMessageData['session_id'] = $lastItem->session_id;
         $this->socialFormatMessageData['assign_agent'] = $lastItem->assign_agent;
         $this->socialFormatMessageData['sms_state'] = 'Delivered';
+        
+        // Set start time and save the current message in the database.
         $startTime = date('Y-m-d H:i:s');
         $this->socialFormatMessageData['start_time'] = $startTime;
         $saveItem = $this->socialMessageRepository->save($this->socialFormatMessageData);
+        
+        // Prepare data for broadcast.
         $messageData = [
             'id' => $saveItem['id'],
             'message_text' => $saveItem['message_text'],
@@ -240,69 +264,93 @@ class SocialMessageService
             'read_status' => $saveItem['read_status'],
             'un_read_count' => 1
         ];
-        // check message state previous broadcast 
+        
+        // Check the message state and broadcast the previous state.
         broadcast(new AgentChatRoomEvent($lastItem->assign_agent, $messageData));
-        return response()->json(['message' => 'Prev Session Sms Broadcast Successful']);
+        
+        return response()->json(['message' => 'Previous Session SMS Broadcast Successful']);
     }
 
     /**
-     * Assign the message to an agent and store it in the queue.
+     * Assigns and stores a message on the queue.
      *
-     * @param array $saveItem
-     * @param string $sessionId
-     * @param bool $isPriority
-     * @param string|null $priorityAgent
+     * This method handles the process of assigning and storing a message in the message queue.
+     * It generates a session ID, formats the message data, checks the message queue's length,
+     * and either updates the existing message in the queue or assigns a new session ID for the message.
+     * It also handles the case where an agent is available and assigns the message to the agent,
+     * or adds the message to the message queue if no agent is available.
+     *
+     * @param array $saveItem The data of the message to be assigned and stored.
+     * @param bool $isPriority Indicates whether the message has priority.
+     * @param string|null $priorityAgent The agent with priority if $isPriority is true.
+     * @param bool $isIgnoreAgent Indicates whether the message has any ignore agent by default false.
+     * @param string|null $ignoreAgent The agent with priority if $isIgnoreAgent is true $ignoreAgent has data.
      * @return \Illuminate\Http\JsonResponse
      */
-    public function messageAssignAndStoreOnQueue($saveItem, $isPriority, $priorityAgent)
+    public function messageAssignAndStoreOnQueue($saveItem, $isPriority, $priorityAgent , $isIgnoreAgent = false , $ignoreAgent = null)
     {
         try {
-            $sessionId = $this->generateSessionId();
+            $sessionId = HelperService::generateSessionId();
             $messageData = [
                 'id' => $saveItem['id'],
                 'message_text' => $saveItem['message_text'],
                 'direction' => $saveItem['direction'],
-                'start_time' => $saveItem['created_time'],
+                'start_time' => $saveItem['start_time'],
                 'attachments' => $saveItem['attachments'],
                 'page_id' => $saveItem['page_id'],
                 'customer_id' => $saveItem['customer_id'],
                 'read_status' => $saveItem['read_status']
             ];
-            
 
+            // Get the current message queue length.
             $messageQueueLength = $this->queueServiceRepository->queueLengthNumber($this->messageQueueName);
+
+            // Check if the message queue has messages.
             if ($messageQueueLength) {
+                // Try to find the current message information in the message queue.
                 $findInformation = $this->findMessageInQueue($messageData);
+
+                // Check if the current message is in the message queue.
                 if ($findInformation['status'] == true) {
-                    $messageData['queue_session_id'] = $findInformation['item']['queue_session_id'];
-                    $this->handleQueueSms($saveItem,$messageData['queue_session_id']);
+                    // Update the database with the message session.
+                    $this->handleQueueSms($saveItem, $findInformation['item']['queue_session_id']);
+                    // Update the current message in the message queue with necessary information.
                     $this->queueServiceRepository->setItemSpecificPosition($this->messageQueueName, $findInformation['key'], $messageData);
-                    return response()->json(['message' => 'Message Update In Message Queue']);
+                    return response()->json(['message' => 'Message Updated In Message Queue']);
                 }
-                $this->handleQueueSms($saveItem,$sessionId);
-                $this->queueService->assigningSMSInSMSQueue($messageData, $sessionId);
-                return response()->json(['message' => 'Message Insert In Message Queue']);
+
+                // If the current message is not in the message queue, update the database with a new queue session ID.
+                $this->handleQueueSms($saveItem, $sessionId);
+                // Assign the message to the message queue with the session ID.
+                $this->queueService->assigningSMSInSMSQueue($messageData, $sessionId, $isIgnoreAgent);
+                return response()->json(['message' => 'Message Inserted In Message Queue']);
             }
 
+            // If the message queue has no messages, try to get an agent key.
             $agentKey = $this->queueService->assigningInfoInAgentItemQueue([
                 'session_id' => $sessionId,
                 'priority' => $isPriority,
                 'priorityAgent' => $priorityAgent,
+                'ignoreAgent' => $isIgnoreAgent ? $ignoreAgent : null
             ]);
 
+            // If an agent key is available, handle the assigned SMS.
             if ($agentKey) {
                 $this->handleAssignedSms($saveItem, $agentKey, $sessionId, $messageData);
-                return response()->json(['message' => 'Nwe Sms Broadcast Successful'. "Agent Id:".$agentKey. "Session ID: ".$sessionId]);
+                return response()->json(['message' => 'New SMS Broadcast Successful' . "Agent Id:" . $agentKey . "Session ID: " . $sessionId]);
             }
-            $this->handleQueueSms($saveItem,$sessionId);
-            $this->queueService->assigningSMSInSMSQueue($messageData,$sessionId);
-            return response()->json(['message' => 'Message Insert In Message Queue']);
+
+            // If the agent key is null, add the message to the message queue and update the current message session ID and agent key.
+            $this->handleQueueSms($saveItem, $sessionId);
+            // Assign the message to the message queue.
+            $this->queueService->assigningSMSInSMSQueue($messageData, $sessionId, $isIgnoreAgent);
+            return response()->json(['message' => 'Message Inserted In Message Queue']);
 
         } catch (\Exception $e) {
-            $info = $e->getMessage() . " Error Trace ". $e->getTraceAsString(). "Line " .$e->getline();
+            // Handle exceptions and return an informative response.
+            $info = $e->getMessage() . " Error Trace " . $e->getTraceAsString() . "Line " . $e->getLine();
             return response()->json(['message' => $info]);
         }
-        
     }
 
     /**
@@ -342,13 +390,12 @@ class SocialMessageService
     protected function handleQueueSms($saveItem, $queueSessionId)
     {
         try {
-            self::generateApiRequestResponseLog(['Queue Session Id item id'=> $saveItem['id'],'queue_session_id'=>$queueSessionId]);
             $this->socialMessageRepository->update($saveItem, [
                 'queue_session_id'=> $queueSessionId
             ]);
         } catch (\Throwable $th) {
             //throw $th;
-            self::generateApiRequestResponseLog(['Error'=> $saveItem['id'],'queue_session_id'=>$queueSessionId]);
+            HelperService::generateApiRequestResponseLog(['Error'=> $saveItem['id'],'queue_session_id'=>$queueSessionId]);
         }
         
     }
@@ -356,19 +403,27 @@ class SocialMessageService
 
 
     /**
-     * Handle assigned SMS and update social message repository.
+     * Handles the assignment of an SMS to an agent.
      *
-     * @param array $saveItem
-     * @param string $agentKey
-     * @param string $sessionId
-     * @param array $messageData
+     * This method updates the database with the assigned agent, session ID, and start time.
+     * It also broadcasts the assigned SMS to the agent's chat room.
+     *
+     * @param array $saveItem The data of the message to be assigned.
+     * @param string $agentKey The key representing the agent and session information.
+     * @param string $sessionId The session ID associated with the assigned message.
+     * @param array $messageData The information of the assigned message.
+     *
+     * @return void
      */
     protected function handleAssignedSms($saveItem, $agentKey, $sessionId, $messageData)
     {
-        
+        // Extract agent key information.
         $agentKeyList = explode(':', $agentKey);
+
+        // Get the current date and time.
         $startTime = date('Y-m-d H:i:s');
 
+        // Update the database with the assigned agent, session ID, and start time.
         $this->socialMessageRepository->update($saveItem, [
             'assign_agent' => $agentKeyList[1],
             'session_id' => $sessionId,
@@ -376,67 +431,62 @@ class SocialMessageService
             'start_time' => $startTime,
         ]);
 
+        // Prepare data for broadcast.
         $messageData['session_id'] = $sessionId;
         $messageData['start_time'] = $startTime;
         $messageData['un_read_count'] = 1;
+
+        // Broadcast the assigned SMS to the agent's chat room.
         broadcast(new AgentChatRoomEvent($agentKeyList[1], $messageData));
     }
-
-    /**
-     * Generate a new session ID.
-     *
-     * @return string
-     */
-    private function generateSessionId()
-    {
-        $uTime = gettimeofday();
-        $refId = $uTime['sec'] . $uTime['usec'];
-        $refId = $refId . rand(0, 9999);
-        $refId = str_pad($refId, 20, 0, STR_PAD_RIGHT);
-
-        return $refId;
-    }
-
     public function sessionIdleStatusCheckAndReassign()
     {
         $currentAllSessionList = $this->queueServiceRepository->queueRetriveListByKey($this->agentItemQueueName . ':*');
-        foreach ($currentAllSessionList as $item) {
-            $itemSessionInfoList = $this->queueServiceRepository->queueListRange($item, 0, -1);
-            dd($itemSessionInfoList);
-            // check session 
-        }
-    }
 
-    public function freeAgentSession($sessionId)
-    {
-        $agentId = Auth::user()->agent_id;
-        $currentAllSessionList = $this->queueServiceRepository->queueRetriveListByKey($this->agentItemQueueName . ':' . $agentId . ':*');
+        $reRouteSessionList = [];
+
         foreach ($currentAllSessionList as $item) {
-            $itemSessionId = $this->queueServiceRepository->queueListRange($item, 0, -1);
-            if ($itemSessionId[0] == $sessionId) {
-                $this->queueService->releaseAgentFromAgentItemQueue($item);
-                break;
+            $assignedAgentKeyArray = explode(':', $item);
+            $itemSessionInfoList = $this->queueServiceRepository->queueListRange($item, 0, -1);
+            $currentSessionId = count($itemSessionInfoList) > 0 ? $itemSessionInfoList[0] : null;
+
+            if ($currentSessionId) {
+                $autoReRouteStatus = HelperService::currentSessionReRouteStatus($currentSessionId);
+
+                if ($autoReRouteStatus) {
+                    $reRouteSessionList[$assignedAgentKeyArray[1]][] = $currentSessionId;
+                }
+            }
+        }
+        HelperService::generateApiRequestResponseLog([$reRouteSessionList]);
+        foreach ($reRouteSessionList as $key => $sessionList) {
+            broadcast(new AgentChatRoomEvent($key,$sessionList,'agent_re_route_event')); 
+            foreach($sessionList as $listItem){
+                // HelperService::generateApiRequestResponseLog(["Before Free Session List" => Redis::keys($this->agentItemQueueName . ':*'),__LINE__,__FILE__]);
+                $this->freeAgentSession($listItem, $key);
+                // HelperService::generateApiRequestResponseLog(["After Free Session List" => Redis::keys($this->agentItemQueueName . ':*'),__LINE__,__FILE__]);
+                $reRouteItem = $this->socialMessageRepository->getSpecificMessage(['session_id'=>$listItem]);
+                $this->messageAssignAndStoreOnQueue($reRouteItem,false, null, true, $key); 
+                // HelperService::generateApiRequestResponseLog(["After Re Route Assign Session List" => Redis::keys($this->agentItemQueueName . ':*'),__LINE__,__FILE__]);
+
             }
         }
     }
 
-    public function logAgentSession($key){
-        $data = [];
-        foreach(Redis::keys($key) as $key) {
-            $info = Redis::lrange($key,0,-1);
-            $data[] = $info[0];
-        }
-        return [count($data),$data];
-    }
-    public static function generateApiRequestResponseLog($data)
+    public function freeAgentSession( $sessionId, $agentId = null)
     {
-        $path = base_path () . DIRECTORY_SEPARATOR . 'log' . DIRECTORY_SEPARATOR ;
-        $log = 'User: ' . date ( 'F j, Y, g:i a' ) ."Time". time() . PHP_EOL .
-            'Message: ' . (json_encode ($data)) . PHP_EOL .
+        $queueKeyPrefix = $this->agentItemQueueName . ':' . $agentId . ':*';
 
-            '--------------------------------------------------------------------------------------' . PHP_EOL;
-        //Save string to log, use FILE_APPEND to append.
-        file_put_contents ( $path.'log_' . date ( 'j.n.Y' ) . '.txt' , $log, FILE_APPEND );
+        $currentAllSessionList = $this->queueServiceRepository->queueRetriveListByKey($queueKeyPrefix);
+
+        foreach ($currentAllSessionList as $item) {
+            $itemSessionId = $this->queueServiceRepository->queueListRange($item, 0, -1);
+
+            if ($itemSessionId[0] == $sessionId) {
+                $this->queueService->releaseAgentFromAgentItemQueue($item);
+                return;
+            }
+        }
     }
 
 }
