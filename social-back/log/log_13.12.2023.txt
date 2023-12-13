@@ -1,0 +1,108 @@
+User: December 13, 2023, 12:08 pmTime1702447714
+Message: [{"id":58,"message_text":"hello - rijwan","direction":"IN","start_time":null,"attachments":"\"\"","page_id":"278796022799015","customer_id":"7101334149909994","read_status":1,"queue_session_id":"17024477142496146558"}]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:08 pmTime1702447720
+Message: [{"status":true,"key":0,"item":{"id":58,"message_text":"hello - rijwan","direction":"IN","start_time":null,"attachments":"\"\"","page_id":"278796022799015","customer_id":"7101334149909994","read_status":1,"queue_session_id":"17024477142496146558"}},343]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:08 pmTime1702447726
+Message: [{"status":true,"key":0,"item":{"id":59,"message_text":"good day","direction":"IN","start_time":null,"attachments":"\"\"","page_id":"278796022799015","customer_id":"7101334149909994","read_status":1,"queue_session_id":"17024477142496146558"}},343]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:08 pmTime1702447732
+Message: [{"status":false,"key":null,"item":{"id":60,"message_text":"good day","direction":"IN","start_time":null,"attachments":"\"\"","page_id":"278796022799015","customer_id":"7101334149909994","read_status":1,"queue_session_id":"17024477142496146558"}},343]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:08 pmTime1702447732
+Message: [{"id":61,"message_text":"Hi","direction":"IN","start_time":null,"attachments":"\"\"","page_id":"104980981082367","customer_id":"7147439065288029","read_status":1,"queue_session_id":"17024477322542219679"}]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:08 pmTime1702447738
+Message: [{"status":true,"key":1,"item":{"id":61,"message_text":"Hi","direction":"IN","start_time":null,"attachments":"\"\"","page_id":"104980981082367","customer_id":"7147439065288029","read_status":1,"queue_session_id":"17024477322542219679"}},343]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:09 pmTime1702447744
+Message: [{"status":true,"key":1,"item":{"id":62,"message_text":null,"direction":"IN","start_time":null,"attachments":"\"\"","page_id":"104980981082367","customer_id":"7147439065288029","read_status":1,"queue_session_id":"17024477322542219679"}},343]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:09 pmTime1702447750
+Message: [{"status":true,"key":1,"item":{"id":63,"message_text":"01701266317","direction":"IN","start_time":null,"attachments":"\"\"","page_id":"104980981082367","customer_id":"7147439065288029","read_status":1,"queue_session_id":"17024477322542219679"}},343]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:09 pmTime1702447756
+Message: [{"status":true,"key":1,"item":{"id":64,"message_text":null,"direction":"IN","start_time":null,"attachments":"\"\"","page_id":"104980981082367","customer_id":"7147439065288029","read_status":1,"queue_session_id":"17024477322542219679"}},343]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:09 pmTime1702447762
+Message: [{"status":false,"key":null,"item":{"id":65,"message_text":null,"direction":"IN","start_time":null,"attachments":"\"\"","page_id":"104980981082367","customer_id":"7147439065288029","read_status":1,"queue_session_id":"17024477322542219679"}},343]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:09 pmTime1702447762
+Message: [{"id":66,"message_text":"hi","direction":"IN","start_time":null,"attachments":"\"\"","page_id":"278796022799015","customer_id":"5605941856109251","read_status":1,"queue_session_id":"17024477622779999333"}]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"1002":["17024475762540951063","17024473962572406770","17024473842514939658","17024475102574864404"],"1004":["17024475582576867780","17024476122539728509","17024474442572449049","17024473902578651004"],"1001":["17024475642504683544","17024474022591927924","17024473722922989800","17024476842493441534"]}]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"status":false,"key":null,"item":{"id":66,"message_text":"hi","direction":"IN","start_time":null,"attachments":"\"\"","page_id":"278796022799015","customer_id":"5605941856109251","read_status":1,"queue_session_id":"17024477622779999333"}},343]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"id":35,"message_text":"\u0986\u09ae\u09bf \u098f\u0995\u099f\u09be \u09aa\u09be\u09b0\u09cd\u09b8\u09c7\u09b2 \u09aa\u09be\u09a0\u09be\u09a4\u09c7 \u099a\u09be\u0987","direction":"IN","start_time":"2023-12-13 12:06:16","attachments":"\"\"","page_id":"104980981082367","customer_id":"6789849844395508","read_status":1,"queue_session_id":"17024480596418915860"}]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"status":false,"key":null,"item":{"id":66,"message_text":"hi","direction":"IN","start_time":null,"attachments":"\"\"","page_id":"278796022799015","customer_id":"5605941856109251","read_status":1,"queue_session_id":"17024477622779999333"}},343]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"id":5,"message_text":"\u0986\u09ae\u09bf \u0986\u09ae\u09be\u09b0 \u099f\u09be\u0995\u09be \u09ab\u09c7\u09b0\u09a4 \u099a\u09be\u0987","direction":"IN","start_time":"2023-12-13 12:03:16","attachments":"\"\"","page_id":"104980981082367","customer_id":"24509897685267980","read_status":1,"queue_session_id":"17024480597611195390"}]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"status":false,"key":null,"item":{"id":66,"message_text":"hi","direction":"IN","start_time":null,"attachments":"\"\"","page_id":"278796022799015","customer_id":"5605941856109251","read_status":1,"queue_session_id":"17024477622779999333"}},343]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"id":3,"message_text":"Gd mrng","direction":"IN","start_time":"2023-12-13 12:03:04","attachments":"\"\"","page_id":"104980981082367","customer_id":"24058442873804348","read_status":1,"queue_session_id":"17024480597988599930"}]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"status":false,"key":null,"item":{"id":66,"message_text":"hi","direction":"IN","start_time":null,"attachments":"\"\"","page_id":"278796022799015","customer_id":"5605941856109251","read_status":1,"queue_session_id":"17024477622779999333"}},343]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"id":24,"message_text":"hlw","direction":"IN","start_time":"2023-12-13 12:05:10","attachments":"\"\"","page_id":"104980981082367","customer_id":"7235399253160090","read_status":1,"queue_session_id":"17024480598371192880"}]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"status":false,"key":null,"item":{"id":66,"message_text":"hi","direction":"IN","start_time":null,"attachments":"\"\"","page_id":"278796022799015","customer_id":"5605941856109251","read_status":1,"queue_session_id":"17024477622779999333"}},343]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"id":32,"message_text":"hello","direction":"IN","start_time":"2023-12-13 12:05:58","attachments":"\"\"","page_id":"104980981082367","customer_id":"6536918566407211","read_status":1,"queue_session_id":"17024480598909917200"}]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"status":false,"key":null,"item":{"id":66,"message_text":"hi","direction":"IN","start_time":null,"attachments":"\"\"","page_id":"278796022799015","customer_id":"5605941856109251","read_status":1,"queue_session_id":"17024477622779999333"}},343]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"id":41,"message_text":null,"direction":"IN","start_time":"2023-12-13 12:06:52","attachments":"[{\"type\":\"image\",\"payload\":{\"url\":\"https:\\\/\\\/scontent.xx.fbcdn.net\\\/v\\\/t39.1997-6\\\/39178562_1505197616293642_5411344281094848512_n.png?stp=cp0_dst-png&_nc_cat=1&ccb=1-7&_nc_sid=fc3f23&_nc_ohc=or7eHGSZtGMAX_224yj&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=00_AfBjbvepsjNbPX53ILY-Vp4G4r78DgoDbfT1FjJpA5TleA&oe=6554678B\",\"sticker_id\":369239263222822}}]","page_id":"104980981082367","customer_id":"5186876368106063","read_status":1,"queue_session_id":"17024480599281536800"}]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"status":false,"key":null,"item":{"id":66,"message_text":"hi","direction":"IN","start_time":null,"attachments":"\"\"","page_id":"278796022799015","customer_id":"5605941856109251","read_status":1,"queue_session_id":"17024477622779999333"}},343]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"id":13,"message_text":"hello","direction":"IN","start_time":"2023-12-13 12:04:04","attachments":"\"\"","page_id":"104980981082367","customer_id":"5138015882989290","read_status":1,"queue_session_id":"17024480599626531360"}]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"status":false,"key":null,"item":{"id":66,"message_text":"hi","direction":"IN","start_time":null,"attachments":"\"\"","page_id":"278796022799015","customer_id":"5605941856109251","read_status":1,"queue_session_id":"17024477622779999333"}},343]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"id":4,"message_text":"Who are you redex","direction":"IN","start_time":"2023-12-13 12:03:10","attachments":"\"\"","page_id":"104980981082367","customer_id":"6152105874892186","read_status":1,"queue_session_id":"17024480591003788058"}]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"status":false,"key":null,"item":{"id":66,"message_text":"hi","direction":"IN","start_time":null,"attachments":"\"\"","page_id":"278796022799015","customer_id":"5605941856109251","read_status":1,"queue_session_id":"17024477622779999333"}},343]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"id":33,"message_text":"\u09b8\u09cd\u099f\u09bf\u09a1 \u09ab\u09be\u09b8\u09cd\u099f \u0986\u09aa\u09a8\u09be\u09a6\u09c7\u09b0 \u09b8\u09bf\u09b2\u09c7\u099f\u09c7\u09b0 \u09ae\u09be\u09b0\u09cd\u0995\u09c7\u099f \u09a8\u09b8\u09cd\u099f \u0995\u09b0\u09c7\u099b\u09c7,,,,\u09a4\u09be\u09b0\u09be \u0985\u09aa\u09cd\u09b0\u099a\u09be\u09b0 \u0995\u09b0\u09c7 \u0993 \u09ae\u09be\u09b0\u09cd\u099a\u09c7\u09a8\u09cd\u099f\u09a6\u09c7\u09b0 \u0989\u09b2\u09cd\u099f\u09be\u09aa\u09be\u09b2\u09cd\u099f\u09be \u0995\u09a5\u09be \u09ac\u09b2\u09c7 \u09b8\u09ac \u09aa\u09be\u09b0\u09cd\u09b8\u09c7\u09b2 \u09a4\u09be\u09a6\u09c7\u09b0 \u09a8\u09be\u09ae\u09c7 \u0995\u09be\u099b\u09c7 \u09a8\u09bf\u09df\u09c7 \u09a8\u09bf\u09df\u09c7\u099b\u09c7","direction":"IN","start_time":"2023-12-13 12:06:04","attachments":"\"\"","page_id":"104980981082367","customer_id":"6683176691780713","read_status":1,"queue_session_id":"17024480591051318692"}]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"status":false,"key":null,"item":{"id":66,"message_text":"hi","direction":"IN","start_time":null,"attachments":"\"\"","page_id":"278796022799015","customer_id":"5605941856109251","read_status":1,"queue_session_id":"17024477622779999333"}},343]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"id":6,"message_text":"Hello","direction":"IN","start_time":"2023-12-13 12:03:22","attachments":"\"\"","page_id":"104980981082367","customer_id":"5322358291173297","read_status":1,"queue_session_id":"17024480591086791896"}]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"status":false,"key":null,"item":{"id":66,"message_text":"hi","direction":"IN","start_time":null,"attachments":"\"\"","page_id":"278796022799015","customer_id":"5605941856109251","read_status":1,"queue_session_id":"17024477622779999333"}},343]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"id":1,"message_text":"hello redex good morning","direction":"IN","start_time":"2023-12-13 12:02:52","attachments":"\"\"","page_id":"104980981082367","customer_id":"7293268410701719","read_status":1,"queue_session_id":"17024480591168062449"}]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"status":false,"key":null,"item":{"id":66,"message_text":"hi","direction":"IN","start_time":null,"attachments":"\"\"","page_id":"278796022799015","customer_id":"5605941856109251","read_status":1,"queue_session_id":"17024477622779999333"}},343]
+--------------------------------------------------------------------------------------
+User: December 13, 2023, 12:14 pmTime1702448059
+Message: [{"id":53,"message_text":"2311A9TH1081DL","direction":"IN","start_time":"2023-12-13 12:08:04","attachments":"\"\"","page_id":"104980981082367","customer_id":"3275431682523790","read_status":1,"queue_session_id":"17024480591283317600"}]
+--------------------------------------------------------------------------------------

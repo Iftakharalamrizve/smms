@@ -16,6 +16,7 @@ class SocialMessageService
     protected $socialMessageRepository, $queueService;
     protected $messageQueueName = 'message_queue';
     protected $agentItemQueueName = 'agent_item_queue';
+    protected $messageRRQueueName = 'message_rr_queue';
     protected $socialFormatMessageData = [];
     protected $requestMessageData = [];
     protected $queueServiceRepository;
@@ -197,6 +198,35 @@ class SocialMessageService
         return ['status' => $deliveryStatus, 'agent' => $agentKey];
     }
 
+    public function queuRRMessageOperation()
+    {
+        // Retrieve and decode message queue data.
+        $messageData = json_decode($this->queueServiceRepository->queueListRange($this->messageRRQueueName, 0, 0)[0], true);
+
+        // Generate a session ID.
+        $sessionId = HelperService::generateSessionId();
+        $deliveryStatus = false;
+
+        // Get the current available agent key, or null if not found.
+        $agentKey = $this->queueService->assigningInfoInAgentItemQueue([
+            'session_id' => $sessionId,
+            'priority' => false,
+            'priorityAgent' => null,
+            'ignoreAgent' => $messageData['ignoreAgent']
+        ]);
+
+        // If an agent key is found, remove the message from the message queue and handle the message queue item.
+        if ($agentKey) {
+            $this->queueService->getMessageFromRRMessageQueue();
+            $this->handleMessageQueueItem($agentKey, $sessionId, $messageData);
+            $deliveryStatus = true;
+        }
+
+        // Return the result as an associative array.
+        return ['status' => $deliveryStatus, 'agent' => $agentKey];
+
+    }
+
 
     /**
      * Handle a queued message item.
@@ -307,17 +337,39 @@ class SocialMessageService
 
             // Check if the message queue has messages.
             if ($messageQueueLength) {
-                // Try to find the current message information in the message queue.
-                $findInformation = $this->findMessageInQueue($messageData);
-
-                // Check if the current message is in the message queue.
+                
+                // Check the first queue
+                $findInformation = $this->findMessageInQueue($messageData, $this->messageQueueName);
                 if ($findInformation['status'] == true) {
-                    // Update the database with the message session.
-                    $this->handleQueueSms($saveItem, $findInformation['item']['queue_session_id']);
-                    // Update the current message in the message queue with necessary information.
-                    $this->queueServiceRepository->setItemSpecificPosition($this->messageQueueName, $findInformation['key'], $messageData);
-                    return response()->json(['message' => 'Message Updated In Message Queue']);
+                    return $this->updateMessageInQueue($saveItem, $messageData, $this->messageQueueName, 'Message Updated In Message Queue');
                 }
+
+                // Check the second queue
+                $findInformation = $this->findMessageInQueue($messageData, $this->messageRRQueueName);
+                if ($findInformation['status'] == true) {
+                    return $this->updateMessageInQueue($saveItem, $messageData, $this->messageQueueName, 'Message Re Route Updated In Message Queue');
+                }
+
+                // Try to find the current message information in the message queue.
+                // $findInformation = $this->findMessageInQueue($messageData, $this->messageQueueName);
+                // if ($findInformation['status'] == true) {
+                //     // Update the database with the message session.
+                //     $this->handleQueueSms($saveItem, $findInformation['item']['queue_session_id']);
+                //     // Update the current message in the message queue with necessary information.
+                //     $messageData['queue_session_id'] = $findInformation['item']['queue_session_id'];
+                //     $this->queueServiceRepository->setItemSpecificPosition($this->messageQueueName, $findInformation['key'], $messageData);
+                //     return response()->json(['message' => 'Message Updated In Message Queue']);
+                // }else{
+                //     $findInformation = $this->findMessageInQueue($messageData, $this->messageRRQueueName);
+                //     if ($findInformation['status'] == true) {
+                //         // Update the database with the message session.
+                //         $this->handleQueueSms($saveItem, $findInformation['item']['queue_session_id']);
+                //         // Update the current message in the message queue with necessary information.
+                //         $messageData['queue_session_id'] = $findInformation['item']['queue_session_id'];
+                //         $this->queueServiceRepository->setItemSpecificPosition($this->messageQueueName, $findInformation['key'], $messageData);
+                //         return response()->json(['message' => 'Message Re Route  Updated In Message Queue']);
+                //     }
+                // }
 
                 // If the current message is not in the message queue, update the database with a new queue session ID.
                 $this->handleQueueSms($saveItem, $sessionId);
@@ -353,15 +405,33 @@ class SocialMessageService
         }
     }
 
+
+    // Function to update the message in the message queue
+    private function updateMessageInQueue($saveItem, $messageData, $queueName, $responseMessage)
+    {
+        $findInformation = $this->findMessageInQueue($messageData, $queueName);
+
+        if ($findInformation['status'] == true) {
+            // Update the database with the message session.
+            $this->handleQueueSms($saveItem, $findInformation['item']['queue_session_id']);
+            // Update the current message in the message queue with necessary information.
+            $messageData['queue_session_id'] = $findInformation['item']['queue_session_id'];
+            $this->queueServiceRepository->setItemSpecificPosition($this->messageQueueName, $findInformation['key'], $messageData);
+            return response()->json(['message' => $responseMessage]);
+        }
+
+        return null;
+    }
+
     /**
      * Find the message in the queue based on customer_id and page_id.
      *
      * @param array $messageData
      * @return array
      */
-    protected function findMessageInQueue(array $messageData)
+    protected function findMessageInQueue(array $messageData , $queueName)
     {
-        $messageQueueDataList = $this->queueServiceRepository->queueListRange($this->messageQueueName, 0, -1);
+        $messageQueueDataList = $this->queueServiceRepository->queueListRange($queueName, 0, -1);
         $status = false;
         $key = null;
         $messageItem = null;

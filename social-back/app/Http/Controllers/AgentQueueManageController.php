@@ -64,6 +64,9 @@ class AgentQueueManageController extends Controller
         // foreach(Redis::keys('message_queue') as $key){
         //     Redis::del($key);
         // }
+        // foreach(Redis::keys('message_rr_queue') as $key){
+        //     Redis::del($key);
+        // }
         // foreach(Redis::keys('agent_item_queue:*') as $key){
         //     Redis::del($key);
         // }
@@ -95,8 +98,8 @@ class AgentQueueManageController extends Controller
                 $info = Redis::lrange($key,0,-1);
                 $data[$key] = $info[0];
             }
-            dd(Redis::lrange('message_queue', 0, -1),Redis::lrange('agent_queue', 0, -1),count($data),$data);
-        return response()->json(['message' => 'Shipment status updated']);
+            dd(Redis::lrange('message_queue', 0, -1),Redis::lrange('agent_queue', 0, -1),count($data),$data,Redis::lrange('message_rr_queue',0,-1));
+            return response()->json(['message' => 'Shipment status updated']);
         } catch (\Exception $e) {
             dd($e->getMessage());
         }

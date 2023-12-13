@@ -77,8 +77,7 @@ class WebHookController extends Controller
             if($type == 'msg'){
                 $content = base64_decode($request->input("contentDetails"));
                 $content = json_decode($content,true)[0];
-                return $this->socialMediaMessageService->processFacebookNewMessage($content)->saveAndAssignAgent();
-                
+                return $this->socialMediaMessageService->processFacebookNewMessage($content)->saveAndAssignAgent(); 
             }
         } catch (Exception $e) {
             return response()->json(['message' => $e->getMessage()]);

@@ -44,17 +44,28 @@ class MessageBroker extends Command
         $this->info('Message broker started...');
         while (true) {
             $this->info('Message broker Continue...');
-            $queueMessageItem = $queueService->messageQueueLength();
-            if($queueMessageItem){
+            $rRqueueMessageItem = $queueService->messageRRQueueLength();
+            if($rRqueueMessageItem){
                 $messageOperationInfo = $socialMessageService->queuMessageOperation();
                 if($messageOperationInfo['status']){
-                    $this->warn('Message Assign queue'.$messageOperationInfo['agent']);
+                    $this->warn('Re Route Message Assign queue'.$messageOperationInfo['agent']);
                 }else{
                     $this->error('Agent Is Not Free ');
-                }                
+                }
             }else{
-                $this->error('Message Not Available...');
+                $queueMessageItem = $queueService->messageQueueLength();
+                if($queueMessageItem){
+                    $messageOperationInfo = $socialMessageService->queuMessageOperation();
+                    if($messageOperationInfo['status']){
+                        $this->warn('Message Assign queue'.$messageOperationInfo['agent']);
+                    }else{
+                        $this->error('Agent Is Not Free ');
+                    }                
+                }else{
+                    $this->error('Message Not Available...');
+                }
             }
+            
             $socialMessageService->sessionIdleStatusCheckAndReassign();
             $this->warn('Checking complete Session Idle Status');
             sleep(5);

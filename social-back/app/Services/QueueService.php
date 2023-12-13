@@ -11,6 +11,7 @@ class QueueService
 {
     protected $queueServiceRepository;
     protected $messageQueueName = 'message_queue';
+    protected $messageRRQueueName = 'message_rr_queue';
     protected $agentQueueName = 'agent_queue';
     protected $agentItemQueueName = 'agent_item_queue';
     protected $isPriority = false;
@@ -133,8 +134,9 @@ class QueueService
     public function assigningSMSInSMSQueue(array $data,$sessionId,$isIgnoreAgent = false)
     {
         $data['queue_session_id'] = $sessionId;
+        HelperService::generateApiRequestResponseLog([$data]);
         if($isIgnoreAgent){
-            $this->addDataLeftInQueue($this->messageQueueName, json_encode($data));
+            $this->addDataInQueue($this->messageRRQueueName, json_encode($data));
         }else{
             $this->addDataInQueue($this->messageQueueName, json_encode($data));
         }
@@ -316,9 +318,19 @@ class QueueService
         return $this->queueServiceRepository->queueLeftPop($this->messageQueueName);
     }
 
+    public function getMessageFromRRMessageQueue()
+    {
+        return $this->queueServiceRepository->queueLeftPop($this->messageRRQueueName);
+    }
+
     public function messageQueueLength()
     {
         return $this->queueServiceRepository->queueLengthNumber($this->messageQueueName);
+    }
+
+    public function messageRRQueueLength()
+    {
+        return $this->queueServiceRepository->queueLengthNumber($this->messageRRQueueName);
     }
 
     public function agentInitialOperation()

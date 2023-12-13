@@ -111,7 +111,6 @@ class QueueRepository implements QueueDataRepositoryInterface
      */
     public function queueRetriveListByKey($key, $ignoreAgent=null)
     {
-        HelperService::generateApiRequestResponseLog(["Key which want to pick "=>$key, '$ignoreAgent'=>$ignoreAgent]);
         try {
             if($ignoreAgent){
                 $itemList = Redis::keys($key);
