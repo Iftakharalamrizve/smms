@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\HelperService;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Services\SocialMessageService;
@@ -78,6 +79,7 @@ class SocialPlatFormController extends Controller
             ->where('session_id', $sessionId)
             ->where('read_status', 1)
             ->update(['read_status' =>0]);
+        // HelperService::lockSessionForAgent($sessionId);
         $results = DB::table('social_messages as sm')
                         ->select('sm.id', 'sm.channel_id', 'sm.page_id', 'sm.customer_id', 'sm.message_id', 'sm.message_text', 'sm.assign_agent', 'sm.direction', 'sm.attachments', 'sm.session_id', 'sm.read_status', 'sm.start_time', 'sm.created_at', 'sm.updated_at')
                         ->join(DB::raw("(SELECT session_id, MAX(created_at) AS last_message_time FROM `social_messages` WHERE session_id = '$sessionId' AND  page_id = '$pageId') AS sq"), function ($join) {

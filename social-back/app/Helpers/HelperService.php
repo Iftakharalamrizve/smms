@@ -7,6 +7,78 @@ use Illuminate\Support\Facades\Redis;
 
 final class HelperService{
     
+    public static function lockSessionForAgent($agentId, $sessionId)
+    {
+        // Redis key for the hash
+        $redisKey = "agent_active_service_sessions";
+
+        // Check if the hash exists
+        if (!Redis::exists($redisKey)) {
+            // Create a new hash if it doesn't exist
+            Redis::hset($redisKey, $agentId, json_encode([$sessionId]));
+        } else {
+            // Retrieve the existing hash
+            $existingHash = Redis::hget($redisKey, $agentId);
+            
+            // Decode the JSON data or initialize an empty array if the hash doesn't contain valid JSON
+            $sessionIds = json_decode($existingHash, true) ?? [];
+
+            // Check if the session ID is not already in the list
+            if (!in_array($sessionId, $sessionIds)) {
+                // Add the session ID to the list
+                $sessionIds[] = $sessionId;
+
+                // Update the hash in Redis
+                Redis::hset($redisKey, $agentId, json_encode($sessionIds));
+            }
+        }
+    }
+
+    public static function unlockSessionForAgent($agentId, $sessionId)
+    {
+        // Redis key for the hash
+        $redisKey = "agent_active_service_sessions";
+
+        // Check if the hash exists
+        if (Redis::exists($redisKey)) {
+            // Retrieve the existing hash
+            $existingHash = Redis::hget($redisKey, $agentId);
+            
+            // Decode the JSON data or initialize an empty array if the hash doesn't contain valid JSON
+            $sessionIds = json_decode($existingHash, true) ?? [];
+
+            // Check if the session ID is in the list
+            $sessionIdIndex = array_search($sessionId, $sessionIds);
+            if ($sessionIdIndex !== false) {
+                // Remove the session ID from the list
+                unset($sessionIds[$sessionIdIndex]);
+
+                // Update the hash in Redis
+                Redis::hset($redisKey, $agentId, json_encode(array_values($sessionIds)));
+            }
+        }
+    }
+
+    public static function isExistInActiveServiceSession($agentId, $sessionId)
+    {
+        // Redis key for the hash
+        $redisKey = "agent_active_service_sessions";
+        // Check if the hash exists
+        if (Redis::exists($redisKey)) {
+            // Retrieve the existing hash
+            $existingHash = Redis::hget($redisKey, $agentId);
+            
+            // Decode the JSON data or initialize an empty array if the hash doesn't contain valid JSON
+            $sessionIds = json_decode($existingHash, true) ?? [];
+
+            // Check if the session ID is not already in the list
+            if (in_array($sessionId, $sessionIds)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static function getAgentConcurrentServiceNumber()
     {
         return 4;
@@ -27,7 +99,7 @@ final class HelperService{
 
     public static function assignChatReRouteTime()
     {
-        return 100;
+        return 1000;
 
     }
 
@@ -47,18 +119,21 @@ final class HelperService{
         return $refId;
     }
 
-    public static function currentSessionReRouteStatus($id)
+    public static function currentSessionReRouteStatus($agentId, $id)
     {
-        $uTime = gettimeofday();
-        $currentTimeStamp = $uTime['sec'];
-        $sessionTimeStamp = substr($id, 0, strlen($currentTimeStamp));
-        $timeDifference = $currentTimeStamp - $sessionTimeStamp;
-        $reRouteDiffSecond  = self::assignChatReRouteTime();
-        if($timeDifference > $reRouteDiffSecond){
-            return true;
+        $isItemExistInActiveSessionList = self::isExistInActiveServiceSession($agentId, $id);
+        if(!$isItemExistInActiveSessionList){
+            $uTime = gettimeofday();
+            $currentTimeStamp = $uTime['sec'];
+            $sessionTimeStamp = substr($id, 0, strlen($currentTimeStamp));
+            $timeDifference = $currentTimeStamp - $sessionTimeStamp;
+            $reRouteDiffSecond  = self::assignChatReRouteTime();
+            if($timeDifference > $reRouteDiffSecond){
+                return true;
+            }
+            return false;
         }
         return false;
-
     }
 
 

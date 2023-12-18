@@ -131,11 +131,11 @@ class QueueService
     * @param array $data An array containing minimum information required for queueing.
     * @throws Exception If an error occurs during the assignment process.
     */
-    public function assigningSMSInSMSQueue(array $data,$sessionId,$isIgnoreAgent = false)
+    public function assigningSMSInSMSQueue(array $data,$sessionId,$isIgnoreAgent = false, $ignoreAgent = null)
     {
         $data['queue_session_id'] = $sessionId;
-        HelperService::generateApiRequestResponseLog([$data]);
         if($isIgnoreAgent){
+            $data['ignoreAgent'] = $ignoreAgent;
             $this->addDataInQueue($this->messageRRQueueName, json_encode($data));
         }else{
             $this->addDataInQueue($this->messageQueueName, json_encode($data));

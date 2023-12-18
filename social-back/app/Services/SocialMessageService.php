@@ -206,7 +206,6 @@ class SocialMessageService
         // Generate a session ID.
         $sessionId = HelperService::generateSessionId();
         $deliveryStatus = false;
-
         // Get the current available agent key, or null if not found.
         $agentKey = $this->queueService->assigningInfoInAgentItemQueue([
             'session_id' => $sessionId,
@@ -338,43 +337,22 @@ class SocialMessageService
             // Check if the message queue has messages.
             if ($messageQueueLength) {
                 
-                // Check the first queue
+                // Check the message queue
                 $findInformation = $this->findMessageInQueue($messageData, $this->messageQueueName);
                 if ($findInformation['status'] == true) {
                     return $this->updateMessageInQueue($saveItem, $messageData, $this->messageQueueName, 'Message Updated In Message Queue');
                 }
 
-                // Check the second queue
+                // Check the re route  queue
                 $findInformation = $this->findMessageInQueue($messageData, $this->messageRRQueueName);
                 if ($findInformation['status'] == true) {
                     return $this->updateMessageInQueue($saveItem, $messageData, $this->messageQueueName, 'Message Re Route Updated In Message Queue');
                 }
 
-                // Try to find the current message information in the message queue.
-                // $findInformation = $this->findMessageInQueue($messageData, $this->messageQueueName);
-                // if ($findInformation['status'] == true) {
-                //     // Update the database with the message session.
-                //     $this->handleQueueSms($saveItem, $findInformation['item']['queue_session_id']);
-                //     // Update the current message in the message queue with necessary information.
-                //     $messageData['queue_session_id'] = $findInformation['item']['queue_session_id'];
-                //     $this->queueServiceRepository->setItemSpecificPosition($this->messageQueueName, $findInformation['key'], $messageData);
-                //     return response()->json(['message' => 'Message Updated In Message Queue']);
-                // }else{
-                //     $findInformation = $this->findMessageInQueue($messageData, $this->messageRRQueueName);
-                //     if ($findInformation['status'] == true) {
-                //         // Update the database with the message session.
-                //         $this->handleQueueSms($saveItem, $findInformation['item']['queue_session_id']);
-                //         // Update the current message in the message queue with necessary information.
-                //         $messageData['queue_session_id'] = $findInformation['item']['queue_session_id'];
-                //         $this->queueServiceRepository->setItemSpecificPosition($this->messageQueueName, $findInformation['key'], $messageData);
-                //         return response()->json(['message' => 'Message Re Route  Updated In Message Queue']);
-                //     }
-                // }
-
                 // If the current message is not in the message queue, update the database with a new queue session ID.
                 $this->handleQueueSms($saveItem, $sessionId);
                 // Assign the message to the message queue with the session ID.
-                $this->queueService->assigningSMSInSMSQueue($messageData, $sessionId, $isIgnoreAgent);
+                $this->queueService->assigningSMSInSMSQueue($messageData, $sessionId, $isIgnoreAgent, $ignoreAgent);
                 return response()->json(['message' => 'Message Inserted In Message Queue']);
             }
 
@@ -395,7 +373,7 @@ class SocialMessageService
             // If the agent key is null, add the message to the message queue and update the current message session ID and agent key.
             $this->handleQueueSms($saveItem, $sessionId);
             // Assign the message to the message queue.
-            $this->queueService->assigningSMSInSMSQueue($messageData, $sessionId, $isIgnoreAgent);
+            $this->queueService->assigningSMSInSMSQueue($messageData, $sessionId, $isIgnoreAgent, $ignoreAgent);
             return response()->json(['message' => 'Message Inserted In Message Queue']);
 
         } catch (\Exception $e) {
@@ -514,20 +492,22 @@ class SocialMessageService
         $currentAllSessionList = $this->queueServiceRepository->queueRetriveListByKey($this->agentItemQueueName . ':*');
 
         $reRouteSessionList = [];
-
         foreach ($currentAllSessionList as $item) {
             $assignedAgentKeyArray = explode(':', $item);
             $itemSessionInfoList = $this->queueServiceRepository->queueListRange($item, 0, -1);
+            
             $currentSessionId = count($itemSessionInfoList) > 0 ? $itemSessionInfoList[0] : null;
 
             if ($currentSessionId) {
-                $autoReRouteStatus = HelperService::currentSessionReRouteStatus($currentSessionId);
+                $autoReRouteStatus = HelperService::currentSessionReRouteStatus($assignedAgentKeyArray[1], $currentSessionId);
 
                 if ($autoReRouteStatus) {
+
                     $reRouteSessionList[$assignedAgentKeyArray[1]][] = $currentSessionId;
                 }
             }
         }
+
         HelperService::generateApiRequestResponseLog([$reRouteSessionList]);
         foreach ($reRouteSessionList as $key => $sessionList) {
             broadcast(new AgentChatRoomEvent($key,$sessionList,'agent_re_route_event')); 
