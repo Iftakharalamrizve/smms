@@ -85,29 +85,20 @@ const FbMessage = createSlice({
       }
     },
     reRouteSession(state, action) {
+
       const reRouteSessionList = action.payload;
-      console.log(reRouteSessionList);
-      // if(true) {
-      //   return {
-      //     ...state,
-      //     assignSessionList: {
-      //       ...state.assignSessionList,
-      //       [page_id]: {
-      //         ...state.assignSessionList[page_id],
-      //         [session_id]: {
-      //           message_text,
-      //           page_id,
-      //           customer_id,
-      //           session_id,
-      //           direction,
-      //           start_time,
-      //           read_status,
-      //           un_read_count,
-      //         },
-      //       },
-      //     },
-      //   };
-      // }
+      console.log("Re Route Session List",reRouteSessionList);
+      const currentAssignSessionList = { ...state };
+      console.log("currentAssignSessionList",currentAssignSessionList.assignSessionList);
+      reRouteSessionList.map((sessionId,index)=>{
+        for (const pageId in currentAssignSessionList.assignSessionList) {
+          if (currentAssignSessionList.assignSessionList[pageId][sessionId]) {
+            console.log("Find Session",pageId,sessionId);
+            const { [sessionId]: removedItem, ...rest } = currentAssignSessionList.assignSessionList[pageId];
+            currentAssignSessionList.assignSessionList[pageId] = rest;
+          }
+        }
+      });
     },
   },
   extraReducers: (builder) => {

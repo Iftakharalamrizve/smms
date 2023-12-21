@@ -16,7 +16,7 @@ export const currentUserMessageSessionList = createAsyncThunk(
 export const sessionMessageHisoty = createAsyncThunk(
     'session/message',
     async (filterData) => {
-        const response =  await getData(url.GET_SESSION_MESSAGE_DETAILS+`?session_id=${filterData.session_id}&&page_id=${filterData.page_id}`);
+        const response =  await getData(url.GET_SESSION_MESSAGE_DETAILS+`?session_id=${filterData.session_id}&&page_id=${filterData.page_id}&&customer_id=${filterData.customer_id}`);
         return response.data.data;
     },
 );

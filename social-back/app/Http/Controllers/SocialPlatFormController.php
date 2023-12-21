@@ -75,18 +75,20 @@ class SocialPlatFormController extends Controller
     {
         $sessionId = $request->input('session_id');
         $pageId = $request->input('page_id');
+        $customerId = $request->input('customer_id');
         DB::table('social_messages')
             ->where('session_id', $sessionId)
             ->where('read_status', 1)
             ->update(['read_status' =>0]);
-        // HelperService::lockSessionForAgent($sessionId);
-        $results = DB::table('social_messages as sm')
-                        ->select('sm.id', 'sm.channel_id', 'sm.page_id', 'sm.customer_id', 'sm.message_id', 'sm.message_text', 'sm.assign_agent', 'sm.direction', 'sm.attachments', 'sm.session_id', 'sm.read_status', 'sm.start_time', 'sm.created_at', 'sm.updated_at')
-                        ->join(DB::raw("(SELECT session_id, MAX(created_at) AS last_message_time FROM `social_messages` WHERE session_id = '$sessionId' AND  page_id = '$pageId') AS sq"), function ($join) {
-                            $join->on('sm.session_id', '=', 'sq.session_id')
-                                ->whereRaw('sm.created_at >= sq.last_message_time - INTERVAL 30 MINUTE');
-                        })
-                        ->get();
+        HelperService::lockSessionForAgent(Auth::user()->agent_id, $sessionId);
+        $results =  DB::table('social_messages as sm')
+                    ->select('sm.id', 'sm.channel_id', 'sm.page_id', 'sm.customer_id', 'sm.message_id', 'sm.message_text', 'sm.assign_agent', 'sm.direction', 'sm.attachments', 'sm.session_id', 'sm.read_status', 'sm.start_time', 'sm.created_at', 'sm.updated_at')
+                    ->join(DB::raw("(SELECT page_id, customer_id, MAX(created_at) AS last_message_time FROM `social_messages` WHERE page_id = '$pageId' AND customer_id = '$customerId') AS sq"), function ($join) {
+                        $join->on('sm.page_id', '=', 'sq.page_id')
+                            ->on('sm.customer_id', '=', 'sq.customer_id')
+                            ->whereRaw('sm.created_at >= sq.last_message_time - INTERVAL 30 MINUTE');
+                    })
+                    ->get();
         
         return $this->respondCreated("Session Message Details", ['session_id'=>$sessionId,'page_id'=>$pageId,'list'=> $results]);
     }

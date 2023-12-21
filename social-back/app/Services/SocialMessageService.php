@@ -367,6 +367,7 @@ class SocialMessageService
             // If an agent key is available, handle the assigned SMS.
             if ($agentKey) {
                 $this->handleAssignedSms($saveItem, $agentKey, $sessionId, $messageData);
+                HelperService::generateApiRequestResponseLog(['generated Session id when assign agent----------------'=>[$agentKey, $sessionId]]);
                 return response()->json(['message' => 'New SMS Broadcast Successful' . "Agent Id:" . $agentKey . "Session ID: " . $sessionId]);
             }
 
@@ -510,14 +511,15 @@ class SocialMessageService
 
         HelperService::generateApiRequestResponseLog([$reRouteSessionList]);
         foreach ($reRouteSessionList as $key => $sessionList) {
+            HelperService::generateApiRequestResponseLog(['BroadCast Item' => [$key,$sessionList],__LINE__,__FILE__]);
             broadcast(new AgentChatRoomEvent($key,$sessionList,'agent_re_route_event')); 
             foreach($sessionList as $listItem){
-                // HelperService::generateApiRequestResponseLog(["Before Free Session List" => Redis::keys($this->agentItemQueueName . ':*'),__LINE__,__FILE__]);
+                HelperService::generateApiRequestResponseLog(["Before Free Session List" => Redis::keys($this->agentItemQueueName . ':*'),'Before Re Route Session Id'=>$listItem,__LINE__,__FILE__]);
                 $this->freeAgentSession($listItem, $key);
-                // HelperService::generateApiRequestResponseLog(["After Free Session List" => Redis::keys($this->agentItemQueueName . ':*'),__LINE__,__FILE__]);
+                HelperService::generateApiRequestResponseLog(["After Free Session List" => Redis::keys($this->agentItemQueueName . ':*'),'After Free Session List Session Id'=>$listItem,__LINE__,__FILE__]);
                 $reRouteItem = $this->socialMessageRepository->getSpecificMessage(['session_id'=>$listItem]);
                 $this->messageAssignAndStoreOnQueue($reRouteItem,false, null, true, $key); 
-                // HelperService::generateApiRequestResponseLog(["After Re Route Assign Session List" => Redis::keys($this->agentItemQueueName . ':*'),__LINE__,__FILE__]);
+                HelperService::generateApiRequestResponseLog(["After Re Route Assign Session List" => Redis::keys($this->agentItemQueueName . ':*'),__LINE__,__FILE__]);
 
             }
         }
@@ -533,6 +535,15 @@ class SocialMessageService
             $itemSessionId = $this->queueServiceRepository->queueListRange($item, 0, -1);
 
             if ($itemSessionId[0] == $sessionId) {
+                HelperService::unlockSessionForAgent($agentId,$sessionId);
+                $trace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2);
+
+            if (isset($trace[1]['function'])) {
+                $callingMethod = $trace[1]['function'];
+                HelperService::generateApiRequestResponseLog( "This function is called by: $callingMethod\n");
+            } else {
+                HelperService::generateApiRequestResponseLog("Unable to determine calling method ");
+            }
                 $this->queueService->releaseAgentFromAgentItemQueue($item);
                 return;
             }

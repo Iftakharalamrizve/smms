@@ -44,8 +44,8 @@ class MessageBroker extends Command
         $this->info('Message broker started...');
         while (true) {
             $this->info('Message broker Continue...');
-            $rRqueueMessageItem = $queueService->messageRRQueueLength();
-            if($rRqueueMessageItem){
+            $reRoutequeueMessageItem = $queueService->messageRRQueueLength();
+            if($reRoutequeueMessageItem){
                 $messageOperationInfo = $socialMessageService->queuRRMessageOperation();
                 if($messageOperationInfo['status']){
                     $this->warn('Re Route Message Assign queue'.$messageOperationInfo['agent']);

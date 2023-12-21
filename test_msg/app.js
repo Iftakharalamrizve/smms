@@ -811,7 +811,7 @@ function sendRequest(item,index) {
 
 // Sending POST requests for each item in the 'data' array
 jsonData.forEach((item,index) => {
-    time += 6000;
+    time += 15000;
     setTimeout(() => {
         sendRequest(item,index);
     }, time);

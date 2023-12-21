@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\HelperService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Events\AgentChatRoomEvent;
@@ -98,7 +99,20 @@ class AgentQueueManageController extends Controller
                 $info = Redis::lrange($key,0,-1);
                 $data[$key] = $info[0];
             }
-            dd(Redis::lrange('message_queue', 0, -1),Redis::lrange('agent_queue', 0, -1),count($data),$data,Redis::lrange('message_rr_queue',0,-1));
+
+            $data2 = [];
+            $redisKey = "agent_active_service_sessions";
+
+            foreach([1001,1002,1003,1004] as $key) {
+                $tt = json_decode(Redis::hget($redisKey,$key));
+                if(is_array($tt)){
+                    foreach ($tt as  $v) {
+                        // HelperService::unlockSessionForAgent($key,$v);
+                    }
+                }
+                $data2[$key] = Redis::hget($redisKey,$key);
+            }
+            dd(Redis::lrange('message_queue', 0, -1),Redis::lrange('agent_queue', 0, -1),count($data),$data,Redis::lrange('message_rr_queue',0,-1), $data2);
             return response()->json(['message' => 'Shipment status updated']);
         } catch (\Exception $e) {
             dd($e->getMessage());

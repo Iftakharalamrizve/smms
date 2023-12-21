@@ -99,7 +99,7 @@ final class HelperService{
 
     public static function assignChatReRouteTime()
     {
-        return 1000;
+        return 100;
 
     }
 
@@ -111,6 +111,7 @@ final class HelperService{
 
     public static function generateSessionId()
     {
+        self::redisLog();
         $uTime = gettimeofday();
         $refId = $uTime['sec'] . $uTime['usec'];
         $refId = $refId . rand(0, 9999);
@@ -137,6 +138,33 @@ final class HelperService{
     }
 
 
+    public static function redisLog(){
+        $data = [];
+        foreach(Redis::keys('agent_item_queue:*') as $key) {
+            $info = Redis::lrange($key,0,-1);
+            $data[$key] = $info[0];
+        }
+
+        $data2 = [];
+        $redisKey = "agent_active_service_sessions";
+
+        foreach([1001,1002,1003,1004] as $key) {
+            $tt = json_decode(Redis::hget($redisKey,$key));
+            if(is_array($tt)){
+                foreach ($tt as  $v) {
+                    // HelperService::unlockSessionForAgent($key,$v);
+                }
+            }
+            $data2[$key] = Redis::hget($redisKey,$key);
+        }
+
+        $agentQueue = Redis::lrange('agent_queue', 0, -1);
+        $mrrQueue = Redis::lrange('message_rr_queue',0,-1);
+        $messageQueue = Redis::lrange('message_queue', 0, -1);
+
+        self::generateApiRequestResponseLog(['Agent Queue'=> $agentQueue,'Re Rotue Queue'=> $mrrQueue, 'Message Queue' =>  $messageQueue, 'Agent Item Queue'=>$data, 'Agent Occofied Session'=>$data2]);
+
+    }
 
     public static function logAgentSession($key){
         $data = [];
@@ -152,7 +180,7 @@ final class HelperService{
         $log = 'User: ' . date ( 'F j, Y, g:i a' ) ."Time". time() . PHP_EOL .
             'Message: ' . (json_encode ($data)) . PHP_EOL .
 
-            '--------------------------------------------------------------------------------------' . PHP_EOL;
+            '----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------' . PHP_EOL;
         //Save string to log, use FILE_APPEND to append.
         file_put_contents ( $path.'log_' . date ( 'j.n.Y' ) . '.txt' , $log, FILE_APPEND );
     }

@@ -14,7 +14,7 @@ export default function Header() {
     const searchRef = useRef();
     const [scroll, setScroll] = useState("fixed");
     const [search, setSearch] = useState("");
-
+    console.log(currentUserId)
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 0) setScroll("sticky");
         else setScroll("fixed");

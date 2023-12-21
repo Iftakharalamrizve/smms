@@ -58,8 +58,8 @@ export default function Message() {
     }, [socketInstance]);
 
     const getSessionMessageHistory = (item) =>{
-        const {session_id, page_id} = item;
-        dispatch(sessionMessageHisoty({session_id,page_id}));
+        const {session_id, page_id, customer_id} = item;
+        dispatch(sessionMessageHisoty({session_id,page_id,customer_id}));
     }
 
     const generateSessionMessageItemList = (data) => {
