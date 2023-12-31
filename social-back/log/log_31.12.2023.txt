@@ -1,0 +1,1557 @@
+User: December 31, 2023, 10:23 amTime1703996618
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996618
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996618
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996618
+Message: {"Every Single Item":["agent_item_queue","1004","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996618
+Message: {"itemSessionInfoList":["17039965992585874590"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996618
+Message: {"17039965992585874590":"17039965992585874590","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996618
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996618
+Message: {"itemSessionInfoList":["17039965842991149280"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996618
+Message: {"17039965842991149280":"17039965842991149280","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996618
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996618
+Message: {"itemSessionInfoList":["17039965544949359000"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996618
+Message: {"17039965544949359000":"17039965544949359000","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996618
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996623
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996623
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996623
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996623
+Message: {"Every Single Item":["agent_item_queue","1004","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996623
+Message: {"itemSessionInfoList":["17039965992585874590"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996623
+Message: {"17039965992585874590":"17039965992585874590","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996623
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996623
+Message: {"itemSessionInfoList":["17039965842991149280"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996623
+Message: {"17039965842991149280":"17039965842991149280","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996623
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996623
+Message: {"itemSessionInfoList":["17039965544949359000"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996623
+Message: {"17039965544949359000":"17039965544949359000","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996623
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996628
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996628
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996628
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996628
+Message: {"Every Single Item":["agent_item_queue","1004","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996628
+Message: {"itemSessionInfoList":["17039965992585874590"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996628
+Message: {"17039965992585874590":"17039965992585874590","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996628
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996628
+Message: {"itemSessionInfoList":["17039965842991149280"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996628
+Message: {"17039965842991149280":"17039965842991149280","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996628
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996628
+Message: {"itemSessionInfoList":["17039965544949359000"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996628
+Message: {"17039965544949359000":"17039965544949359000","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996628
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996628
+Message: {"Agent Queue":[],"Re Rotue Queue":[],"Message Queue":[],"Agent Item Queue":{"agent_item_queue:1004:2":"17039966139950997390","agent_item_queue:1004:1":"17039965992585874590","agent_item_queue:1002:1":"17039965842991149280","agent_item_queue:1001:1":"17039965544949359000"},"Agent Occofied Session":{"1001":"[]","1002":"[]","1003":null,"1004":"[\"17039966139950997390\"]"}}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996628
+Message: {"Ignore Agent":null,"Current Agent":null,"0":278,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/QueueService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996629
+Message: {"generated Session id when assign agent----------------":["agent_item_queue:1002:2","17039966289988233750"]}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996633
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996633
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996633
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996633
+Message: {"Every Single Item":["agent_item_queue","1004","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996633
+Message: {"itemSessionInfoList":["17039965992585874590"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996633
+Message: {"17039965992585874590":"17039965992585874590","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996633
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996633
+Message: {"itemSessionInfoList":["17039966289988233750"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996633
+Message: {"17039966289988233750":"17039966289988233750","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996633
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996633
+Message: {"itemSessionInfoList":["17039965842991149280"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996633
+Message: {"17039965842991149280":"17039965842991149280","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996633
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996633
+Message: {"itemSessionInfoList":["17039965544949359000"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996633
+Message: {"17039965544949359000":"17039965544949359000","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996633
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996638
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996638
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996638
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996638
+Message: {"Every Single Item":["agent_item_queue","1004","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996638
+Message: {"itemSessionInfoList":["17039965992585874590"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996638
+Message: {"17039965992585874590":"17039965992585874590","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996638
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996638
+Message: {"itemSessionInfoList":["17039966289988233750"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996638
+Message: {"17039966289988233750":"17039966289988233750","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996638
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996638
+Message: {"itemSessionInfoList":["17039965842991149280"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996638
+Message: {"17039965842991149280":"17039965842991149280","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996638
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996638
+Message: {"itemSessionInfoList":["17039965544949359000"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996638
+Message: {"17039965544949359000":"17039965544949359000","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:23 amTime1703996638
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996643
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996643
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996643
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996643
+Message: {"Every Single Item":["agent_item_queue","1004","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996643
+Message: {"itemSessionInfoList":["17039965992585874590"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996643
+Message: {"17039965992585874590":"17039965992585874590","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996643
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996643
+Message: {"itemSessionInfoList":["17039966289988233750"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996643
+Message: {"17039966289988233750":"17039966289988233750","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996643
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996643
+Message: {"itemSessionInfoList":["17039965842991149280"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996643
+Message: {"17039965842991149280":"17039965842991149280","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996643
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996643
+Message: {"itemSessionInfoList":["17039965544949359000"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996643
+Message: {"17039965544949359000":"17039965544949359000","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996643
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996648
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996648
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996648
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996648
+Message: {"Every Single Item":["agent_item_queue","1004","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996648
+Message: {"itemSessionInfoList":["17039965992585874590"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996648
+Message: {"17039965992585874590":"17039965992585874590","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996648
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996648
+Message: {"itemSessionInfoList":["17039966289988233750"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996648
+Message: {"17039966289988233750":"17039966289988233750","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996648
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996648
+Message: {"itemSessionInfoList":["17039965842991149280"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996648
+Message: {"17039965842991149280":"17039965842991149280","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996648
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996648
+Message: {"itemSessionInfoList":["17039965544949359000"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996648
+Message: {"17039965544949359000":"17039965544949359000","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996648
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996653
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996653
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996653
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996653
+Message: {"Every Single Item":["agent_item_queue","1004","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996653
+Message: {"itemSessionInfoList":["17039965992585874590"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996653
+Message: {"17039965992585874590":"17039965992585874590","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996653
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996653
+Message: {"itemSessionInfoList":["17039966289988233750"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996653
+Message: {"17039966289988233750":"17039966289988233750","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996653
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996653
+Message: {"itemSessionInfoList":["17039965842991149280"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996653
+Message: {"17039965842991149280":"17039965842991149280","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996653
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996653
+Message: {"itemSessionInfoList":["17039965544949359000"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996653
+Message: {"17039965544949359000":"17039965544949359000","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996653
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: {"Every Single Item":["agent_item_queue","1004","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: {"itemSessionInfoList":["17039965992585874590"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: {"17039965992585874590":"17039965992585874590","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: {"itemSessionInfoList":["17039966289988233750"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: {"17039966289988233750":"17039966289988233750","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: {"itemSessionInfoList":["17039965842991149280"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: {"17039965842991149280":"17039965842991149280","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: {"itemSessionInfoList":["17039965544949359000"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: {"17039965544949359000":"17039965544949359000","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: [{"1001":["17039965544949359000"]}]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: {"BroadCast Item":[1001,["17039965544949359000"]],"0":515,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: {"Before Free Session List":["agent_item_queue:1004:2","agent_item_queue:1004:1","agent_item_queue:1002:2","agent_item_queue:1002:1","agent_item_queue:1001:1"],"Before Re Route Session Id":"17039965544949359000","0":518,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: "This function is called by: sessionIdleStatusCheckAndReassign\n"
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: {"After Free Session List":["agent_item_queue:1004:2","agent_item_queue:1004:1","agent_item_queue:1002:2","agent_item_queue:1002:1"],"After Free Session List Session Id":"17039965544949359000","0":520,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: {"Agent Queue":["1001"],"Re Rotue Queue":[],"Message Queue":[],"Agent Item Queue":{"agent_item_queue:1004:2":"17039966139950997390","agent_item_queue:1004:1":"17039965992585874590","agent_item_queue:1002:2":"17039966289988233750","agent_item_queue:1002:1":"17039965842991149280"},"Agent Occofied Session":{"1001":"[]","1002":"[]","1003":null,"1004":"[\"17039966139950997390\"]"}}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: {"Ignore Agent":1001,"Current Agent":null,"0":278,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/QueueService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: {"generated Session id when assign agent----------------":["agent_item_queue:1004:3","17039966589339562340"]}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996658
+Message: {"After Re Route Assign Session List":["agent_item_queue:1004:2","agent_item_queue:1004:1","agent_item_queue:1004:3","agent_item_queue:1002:2","agent_item_queue:1002:1"],"0":523,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996663
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996663
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996663
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996663
+Message: {"Every Single Item":["agent_item_queue","1004","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996663
+Message: {"itemSessionInfoList":["17039965992585874590"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996663
+Message: {"17039965992585874590":"17039965992585874590","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996663
+Message: {"Every Single Item":["agent_item_queue","1004","3"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996663
+Message: {"itemSessionInfoList":["17039966589339562340"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996663
+Message: {"17039966589339562340":"17039966589339562340","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996663
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996663
+Message: {"itemSessionInfoList":["17039966289988233750"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996663
+Message: {"17039966289988233750":"17039966289988233750","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996663
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996663
+Message: {"itemSessionInfoList":["17039965842991149280"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996663
+Message: {"17039965842991149280":"17039965842991149280","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996663
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996668
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996668
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996668
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996668
+Message: {"Every Single Item":["agent_item_queue","1004","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996668
+Message: {"itemSessionInfoList":["17039965992585874590"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996668
+Message: {"17039965992585874590":"17039965992585874590","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996668
+Message: {"Every Single Item":["agent_item_queue","1004","3"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996668
+Message: {"itemSessionInfoList":["17039966589339562340"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996668
+Message: {"17039966589339562340":"17039966589339562340","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996668
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996668
+Message: {"itemSessionInfoList":["17039966289988233750"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996668
+Message: {"17039966289988233750":"17039966289988233750","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996668
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996668
+Message: {"itemSessionInfoList":["17039965842991149280"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996668
+Message: {"17039965842991149280":"17039965842991149280","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996668
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996673
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996673
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996673
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996673
+Message: {"Every Single Item":["agent_item_queue","1004","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996673
+Message: {"itemSessionInfoList":["17039965992585874590"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996673
+Message: {"17039965992585874590":"17039965992585874590","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996673
+Message: {"Every Single Item":["agent_item_queue","1004","3"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996673
+Message: {"itemSessionInfoList":["17039966589339562340"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996673
+Message: {"17039966589339562340":"17039966589339562340","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996673
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996673
+Message: {"itemSessionInfoList":["17039966289988233750"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996673
+Message: {"17039966289988233750":"17039966289988233750","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996673
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996673
+Message: {"itemSessionInfoList":["17039965842991149280"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996673
+Message: {"17039965842991149280":"17039965842991149280","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996673
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996678
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996678
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996678
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996678
+Message: {"Every Single Item":["agent_item_queue","1004","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996678
+Message: {"itemSessionInfoList":["17039965992585874590"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996678
+Message: {"17039965992585874590":"17039965992585874590","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996678
+Message: {"Every Single Item":["agent_item_queue","1004","3"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996678
+Message: {"itemSessionInfoList":["17039966589339562340"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996678
+Message: {"17039966589339562340":"17039966589339562340","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996678
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996678
+Message: {"itemSessionInfoList":["17039966289988233750"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996678
+Message: {"17039966289988233750":"17039966289988233750","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996678
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996678
+Message: {"itemSessionInfoList":["17039965842991149280"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996678
+Message: {"17039965842991149280":"17039965842991149280","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996678
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996683
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996683
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996683
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996683
+Message: {"Every Single Item":["agent_item_queue","1004","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996683
+Message: {"itemSessionInfoList":["17039965992585874590"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996683
+Message: {"17039965992585874590":"17039965992585874590","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996683
+Message: {"Every Single Item":["agent_item_queue","1004","3"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996683
+Message: {"itemSessionInfoList":["17039966589339562340"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996683
+Message: {"17039966589339562340":"17039966589339562340","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996683
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996683
+Message: {"itemSessionInfoList":["17039966289988233750"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996683
+Message: {"17039966289988233750":"17039966289988233750","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996683
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996683
+Message: {"itemSessionInfoList":["17039965842991149280"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996683
+Message: {"17039965842991149280":"17039965842991149280","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996683
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996688
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996688
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996688
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996688
+Message: {"Every Single Item":["agent_item_queue","1004","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996688
+Message: {"itemSessionInfoList":["17039965992585874590"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996688
+Message: {"17039965992585874590":"17039965992585874590","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996688
+Message: {"Every Single Item":["agent_item_queue","1004","3"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996688
+Message: {"itemSessionInfoList":["17039966589339562340"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996688
+Message: {"17039966589339562340":"17039966589339562340","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996688
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996688
+Message: {"itemSessionInfoList":["17039966289988233750"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996688
+Message: {"17039966289988233750":"17039966289988233750","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996688
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996688
+Message: {"itemSessionInfoList":["17039965842991149280"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996688
+Message: {"17039965842991149280":"17039965842991149280","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996688
+Message: [{"1002":["17039965842991149280"]}]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996688
+Message: {"BroadCast Item":[1002,["17039965842991149280"]],"0":515,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996688
+Message: {"Before Free Session List":["agent_item_queue:1004:2","agent_item_queue:1004:1","agent_item_queue:1004:3","agent_item_queue:1002:2","agent_item_queue:1002:1"],"Before Re Route Session Id":"17039965842991149280","0":518,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996688
+Message: "This function is called by: sessionIdleStatusCheckAndReassign\n"
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996688
+Message: {"After Free Session List":["agent_item_queue:1004:2","agent_item_queue:1004:1","agent_item_queue:1004:3","agent_item_queue:1002:2"],"After Free Session List Session Id":"17039965842991149280","0":520,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996689
+Message: {"Agent Queue":["1001"],"Re Rotue Queue":[],"Message Queue":[],"Agent Item Queue":{"agent_item_queue:1004:2":"17039966139950997390","agent_item_queue:1004:1":"17039965992585874590","agent_item_queue:1004:3":"17039966589339562340","agent_item_queue:1002:2":"17039966289988233750"},"Agent Occofied Session":{"1001":"[]","1002":"[]","1003":null,"1004":"[\"17039966139950997390\"]"}}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996689
+Message: {"Ignore Agent":1002,"Current Agent":"1001","0":278,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/QueueService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996689
+Message: {"generated Session id when assign agent----------------":["agent_item_queue:1001:1","17039966895894684200"]}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996689
+Message: {"After Re Route Assign Session List":["agent_item_queue:1004:2","agent_item_queue:1004:1","agent_item_queue:1004:3","agent_item_queue:1002:2","agent_item_queue:1001:1"],"0":523,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996694
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996694
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996694
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996694
+Message: {"Every Single Item":["agent_item_queue","1004","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996694
+Message: {"itemSessionInfoList":["17039965992585874590"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996694
+Message: {"17039965992585874590":"17039965992585874590","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996694
+Message: {"Every Single Item":["agent_item_queue","1004","3"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996694
+Message: {"itemSessionInfoList":["17039966589339562340"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996694
+Message: {"17039966589339562340":"17039966589339562340","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996694
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996694
+Message: {"itemSessionInfoList":["17039966289988233750"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996694
+Message: {"17039966289988233750":"17039966289988233750","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996694
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996694
+Message: {"itemSessionInfoList":["17039966895894684200"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996694
+Message: {"17039966895894684200":"17039966895894684200","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996694
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996699
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996699
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996699
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996699
+Message: {"Every Single Item":["agent_item_queue","1004","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996699
+Message: {"itemSessionInfoList":["17039965992585874590"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996699
+Message: {"17039965992585874590":"17039965992585874590","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996699
+Message: {"Every Single Item":["agent_item_queue","1004","3"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996699
+Message: {"itemSessionInfoList":["17039966589339562340"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996699
+Message: {"17039966589339562340":"17039966589339562340","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996699
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996699
+Message: {"itemSessionInfoList":["17039966289988233750"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996699
+Message: {"17039966289988233750":"17039966289988233750","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996699
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996699
+Message: {"itemSessionInfoList":["17039966895894684200"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996699
+Message: {"17039966895894684200":"17039966895894684200","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:24 amTime1703996699
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: {"Every Single Item":["agent_item_queue","1004","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: {"itemSessionInfoList":["17039965992585874590"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: {"17039965992585874590":"17039965992585874590","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: {"Every Single Item":["agent_item_queue","1004","3"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: {"itemSessionInfoList":["17039966589339562340"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: {"17039966589339562340":"17039966589339562340","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: {"itemSessionInfoList":["17039966289988233750"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: {"17039966289988233750":"17039966289988233750","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: {"itemSessionInfoList":["17039966895894684200"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: {"17039966895894684200":"17039966895894684200","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: [{"1004":["17039965992585874590"]}]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: {"BroadCast Item":[1004,["17039965992585874590"]],"0":515,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: {"Before Free Session List":["agent_item_queue:1004:2","agent_item_queue:1004:1","agent_item_queue:1004:3","agent_item_queue:1002:2","agent_item_queue:1001:1"],"Before Re Route Session Id":"17039965992585874590","0":518,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: "This function is called by: sessionIdleStatusCheckAndReassign\n"
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: {"After Free Session List":["agent_item_queue:1004:2","agent_item_queue:1004:3","agent_item_queue:1002:2","agent_item_queue:1001:1"],"After Free Session List Session Id":"17039965992585874590","0":520,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: {"Agent Queue":[],"Re Rotue Queue":[],"Message Queue":[],"Agent Item Queue":{"agent_item_queue:1004:2":"17039966139950997390","agent_item_queue:1004:3":"17039966589339562340","agent_item_queue:1002:2":"17039966289988233750","agent_item_queue:1001:1":"17039966895894684200"},"Agent Occofied Session":{"1001":"[]","1002":"[]","1003":null,"1004":"[\"17039966139950997390\"]"}}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: {"Ignore Agent":1004,"Current Agent":null,"0":278,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/QueueService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: {"generated Session id when assign agent----------------":["agent_item_queue:1002:1","17039967044254928780"]}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996704
+Message: {"After Re Route Assign Session List":["agent_item_queue:1004:2","agent_item_queue:1004:3","agent_item_queue:1002:2","agent_item_queue:1002:1","agent_item_queue:1001:1"],"0":523,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996709
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996709
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996709
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996709
+Message: {"Every Single Item":["agent_item_queue","1004","3"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996709
+Message: {"itemSessionInfoList":["17039966589339562340"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996709
+Message: {"17039966589339562340":"17039966589339562340","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996709
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996709
+Message: {"itemSessionInfoList":["17039966289988233750"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996709
+Message: {"17039966289988233750":"17039966289988233750","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996709
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996709
+Message: {"itemSessionInfoList":["17039967044254928780"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996709
+Message: {"17039967044254928780":"17039967044254928780","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996709
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996709
+Message: {"itemSessionInfoList":["17039966895894684200"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996709
+Message: {"17039966895894684200":"17039966895894684200","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996709
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996714
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996714
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996714
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996714
+Message: {"Every Single Item":["agent_item_queue","1004","3"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996714
+Message: {"itemSessionInfoList":["17039966589339562340"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996714
+Message: {"17039966589339562340":"17039966589339562340","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996714
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996714
+Message: {"itemSessionInfoList":["17039966289988233750"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996714
+Message: {"17039966289988233750":"17039966289988233750","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996714
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996714
+Message: {"itemSessionInfoList":["17039967044254928780"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996714
+Message: {"17039967044254928780":"17039967044254928780","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996714
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996714
+Message: {"itemSessionInfoList":["17039966895894684200"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996714
+Message: {"17039966895894684200":"17039966895894684200","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996714
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996719
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996719
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996719
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996719
+Message: {"Every Single Item":["agent_item_queue","1004","3"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996719
+Message: {"itemSessionInfoList":["17039966589339562340"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996719
+Message: {"17039966589339562340":"17039966589339562340","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996719
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996719
+Message: {"itemSessionInfoList":["17039966289988233750"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996719
+Message: {"17039966289988233750":"17039966289988233750","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996719
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996719
+Message: {"itemSessionInfoList":["17039967044254928780"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996719
+Message: {"17039967044254928780":"17039967044254928780","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996719
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996719
+Message: {"itemSessionInfoList":["17039966895894684200"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996719
+Message: {"17039966895894684200":"17039966895894684200","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996719
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996724
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996724
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996724
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996724
+Message: {"Every Single Item":["agent_item_queue","1004","3"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996724
+Message: {"itemSessionInfoList":["17039966589339562340"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996724
+Message: {"17039966589339562340":"17039966589339562340","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996724
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996724
+Message: {"itemSessionInfoList":["17039966289988233750"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996724
+Message: {"17039966289988233750":"17039966289988233750","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996724
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996724
+Message: {"itemSessionInfoList":["17039967044254928780"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996724
+Message: {"17039967044254928780":"17039967044254928780","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996724
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996724
+Message: {"itemSessionInfoList":["17039966895894684200"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996724
+Message: {"17039966895894684200":"17039966895894684200","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996724
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: {"Every Single Item":["agent_item_queue","1004","3"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: {"itemSessionInfoList":["17039966589339562340"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: {"17039966589339562340":"17039966589339562340","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: {"itemSessionInfoList":["17039966289988233750"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: {"17039966289988233750":"17039966289988233750","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: {"itemSessionInfoList":["17039967044254928780"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: {"17039967044254928780":"17039967044254928780","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: {"itemSessionInfoList":["17039966895894684200"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: {"17039966895894684200":"17039966895894684200","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: [{"1002":["17039966289988233750"]}]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: {"BroadCast Item":[1002,["17039966289988233750"]],"0":515,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: {"Before Free Session List":["agent_item_queue:1004:2","agent_item_queue:1004:3","agent_item_queue:1002:2","agent_item_queue:1002:1","agent_item_queue:1001:1"],"Before Re Route Session Id":"17039966289988233750","0":518,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: "This function is called by: sessionIdleStatusCheckAndReassign\n"
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: {"After Free Session List":["agent_item_queue:1004:2","agent_item_queue:1004:3","agent_item_queue:1002:1","agent_item_queue:1001:1"],"After Free Session List Session Id":"17039966289988233750","0":520,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: {"Agent Queue":[],"Re Rotue Queue":[],"Message Queue":[],"Agent Item Queue":{"agent_item_queue:1004:2":"17039966139950997390","agent_item_queue:1004:3":"17039966589339562340","agent_item_queue:1002:1":"17039967044254928780","agent_item_queue:1001:1":"17039966895894684200"},"Agent Occofied Session":{"1001":"[]","1002":"[]","1003":null,"1004":"[\"17039966139950997390\"]"}}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: {"Ignore Agent":1002,"Current Agent":null,"0":278,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/QueueService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: {"generated Session id when assign agent----------------":["agent_item_queue:1001:2","17039967298936586300"]}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996729
+Message: {"After Re Route Assign Session List":["agent_item_queue:1004:2","agent_item_queue:1001:2","agent_item_queue:1004:3","agent_item_queue:1002:1","agent_item_queue:1001:1"],"0":523,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996734
+Message: {"Agent Queue":[],"Re Rotue Queue":[],"Message Queue":[],"Agent Item Queue":{"agent_item_queue:1004:2":"17039966139950997390","agent_item_queue:1001:2":"17039967298936586300","agent_item_queue:1004:3":"17039966589339562340","agent_item_queue:1002:1":"17039967044254928780","agent_item_queue:1001:1":"17039966895894684200"},"Agent Occofied Session":{"1001":"[]","1002":"[]","1003":null,"1004":"[\"17039966139950997390\"]"}}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996734
+Message: {"Ignore Agent":null,"Current Agent":null,"0":278,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/QueueService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996734
+Message: {"generated Session id when assign agent----------------":["agent_item_queue:1002:2","17039967344635488400"]}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996734
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996734
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996734
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996734
+Message: {"Every Single Item":["agent_item_queue","1001","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996734
+Message: {"itemSessionInfoList":["17039967298936586300"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996734
+Message: {"17039967298936586300":"17039967298936586300","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996734
+Message: {"Every Single Item":["agent_item_queue","1004","3"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996734
+Message: {"itemSessionInfoList":["17039966589339562340"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996734
+Message: {"17039966589339562340":"17039966589339562340","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996734
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996734
+Message: {"itemSessionInfoList":["17039967344635488400"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996734
+Message: {"17039967344635488400":"17039967344635488400","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996734
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996734
+Message: {"itemSessionInfoList":["17039967044254928780"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996734
+Message: {"17039967044254928780":"17039967044254928780","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996734
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996734
+Message: {"itemSessionInfoList":["17039966895894684200"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996734
+Message: {"17039966895894684200":"17039966895894684200","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996734
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996739
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996739
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996739
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996739
+Message: {"Every Single Item":["agent_item_queue","1001","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996739
+Message: {"itemSessionInfoList":["17039967298936586300"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996739
+Message: {"17039967298936586300":"17039967298936586300","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996739
+Message: {"Every Single Item":["agent_item_queue","1004","3"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996739
+Message: {"itemSessionInfoList":["17039966589339562340"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996739
+Message: {"17039966589339562340":"17039966589339562340","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996739
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996739
+Message: {"itemSessionInfoList":["17039967344635488400"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996739
+Message: {"17039967344635488400":"17039967344635488400","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996739
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996739
+Message: {"itemSessionInfoList":["17039967044254928780"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996739
+Message: {"17039967044254928780":"17039967044254928780","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996739
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996739
+Message: {"itemSessionInfoList":["17039966895894684200"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996739
+Message: {"17039966895894684200":"17039966895894684200","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996739
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996744
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996744
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996744
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996744
+Message: {"Every Single Item":["agent_item_queue","1001","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996744
+Message: {"itemSessionInfoList":["17039967298936586300"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996744
+Message: {"17039967298936586300":"17039967298936586300","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996744
+Message: {"Every Single Item":["agent_item_queue","1004","3"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996744
+Message: {"itemSessionInfoList":["17039966589339562340"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996744
+Message: {"17039966589339562340":"17039966589339562340","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996744
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996744
+Message: {"itemSessionInfoList":["17039967344635488400"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996744
+Message: {"17039967344635488400":"17039967344635488400","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996744
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996744
+Message: {"itemSessionInfoList":["17039967044254928780"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996744
+Message: {"17039967044254928780":"17039967044254928780","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996744
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996744
+Message: {"itemSessionInfoList":["17039966895894684200"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996744
+Message: {"17039966895894684200":"17039966895894684200","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996744
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996749
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996749
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996749
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996749
+Message: {"Every Single Item":["agent_item_queue","1001","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996749
+Message: {"itemSessionInfoList":["17039967298936586300"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996749
+Message: {"17039967298936586300":"17039967298936586300","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996749
+Message: {"Every Single Item":["agent_item_queue","1004","3"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996749
+Message: {"itemSessionInfoList":["17039966589339562340"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996749
+Message: {"17039966589339562340":"17039966589339562340","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996749
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996749
+Message: {"itemSessionInfoList":["17039967344635488400"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996749
+Message: {"17039967344635488400":"17039967344635488400","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996749
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996749
+Message: {"itemSessionInfoList":["17039967044254928780"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996749
+Message: {"17039967044254928780":"17039967044254928780","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996749
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996749
+Message: {"itemSessionInfoList":["17039966895894684200"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996749
+Message: {"17039966895894684200":"17039966895894684200","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996749
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996754
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996754
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996754
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996754
+Message: {"Every Single Item":["agent_item_queue","1001","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996754
+Message: {"itemSessionInfoList":["17039967298936586300"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996754
+Message: {"17039967298936586300":"17039967298936586300","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996754
+Message: {"Every Single Item":["agent_item_queue","1004","3"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996754
+Message: {"itemSessionInfoList":["17039966589339562340"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996754
+Message: {"17039966589339562340":"17039966589339562340","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996754
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996754
+Message: {"itemSessionInfoList":["17039967344635488400"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996754
+Message: {"17039967344635488400":"17039967344635488400","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996754
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996754
+Message: {"itemSessionInfoList":["17039967044254928780"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996754
+Message: {"17039967044254928780":"17039967044254928780","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996754
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996754
+Message: {"itemSessionInfoList":["17039966895894684200"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996754
+Message: {"17039966895894684200":"17039966895894684200","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996754
+Message: [[]]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"Every Single Item":["agent_item_queue","1004","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"itemSessionInfoList":["17039966139950997390"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"17039966139950997390":"17039966139950997390","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"Every Single Item":["agent_item_queue","1001","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"itemSessionInfoList":["17039967298936586300"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"17039967298936586300":"17039967298936586300","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"Every Single Item":["agent_item_queue","1004","3"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"itemSessionInfoList":["17039966589339562340"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"17039966589339562340":"17039966589339562340","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"Every Single Item":["agent_item_queue","1002","2"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"itemSessionInfoList":["17039967344635488400"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"17039967344635488400":"17039967344635488400","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"Every Single Item":["agent_item_queue","1002","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"itemSessionInfoList":["17039967044254928780"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"17039967044254928780":"17039967044254928780","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"Every Single Item":["agent_item_queue","1001","1"],"0":498,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"itemSessionInfoList":["17039966895894684200"],"0":500,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"17039966895894684200":"17039966895894684200","0":502,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: [{"1004":["17039966589339562340"]}]
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"BroadCast Item":[1004,["17039966589339562340"]],"0":515,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"Before Free Session List":["agent_item_queue:1004:2","agent_item_queue:1001:2","agent_item_queue:1004:3","agent_item_queue:1002:2","agent_item_queue:1002:1","agent_item_queue:1001:1"],"Before Re Route Session Id":"17039966589339562340","0":518,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: "This function is called by: sessionIdleStatusCheckAndReassign\n"
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"After Free Session List":["agent_item_queue:1004:2","agent_item_queue:1001:2","agent_item_queue:1002:2","agent_item_queue:1002:1","agent_item_queue:1001:1"],"After Free Session List Session Id":"17039966589339562340","0":520,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"Agent Queue":[],"Re Rotue Queue":[],"Message Queue":[],"Agent Item Queue":{"agent_item_queue:1004:2":"17039966139950997390","agent_item_queue:1001:2":"17039967298936586300","agent_item_queue:1002:2":"17039967344635488400","agent_item_queue:1002:1":"17039967044254928780","agent_item_queue:1001:1":"17039966895894684200"},"Agent Occofied Session":{"1001":"[]","1002":"[]","1003":null,"1004":"[\"17039966139950997390\"]"}}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"Ignore Agent":1004,"Current Agent":null,"0":278,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/QueueService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"generated Session id when assign agent----------------":["agent_item_queue:1001:3","17039967591544881703"]}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------
+User: December 31, 2023, 10:25 amTime1703996759
+Message: {"After Re Route Assign Session List":["agent_item_queue:1004:2","agent_item_queue:1001:2","agent_item_queue:1002:2","agent_item_queue:1001:3","agent_item_queue:1002:1","agent_item_queue:1001:1"],"0":523,"1":"\/var\/www\/html\/social-project-v2\/social-back\/app\/Services\/SocialMessageService.php"}
+----------------------------------------------------END OF SEGMENT--------------------------------------------------------------------------

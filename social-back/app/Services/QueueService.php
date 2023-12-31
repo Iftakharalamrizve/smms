@@ -55,9 +55,16 @@ class QueueService
      * @param string $queueName The name of the queue.
      * @return mixed|null The data from the queue, or null if the queue is empty.
      */
-    public function getDataInQueue($queueName)
+    public function getDataInQueue($queueName, $ignoreAgent = null)
     {
-        return $this->queueServiceRepository->queueLeftPop($queueName);
+        $agent = $this->queueServiceRepository->queueLeftPop($queueName);
+        if(isset($ignoreAgent) && $agent){
+            if($agent == $ignoreAgent){
+                $this->queueServiceRepository->queueLeftPush($queueName, $agent);
+                return null;
+            }
+        }
+        return $agent;
     }
 
 
@@ -267,7 +274,8 @@ class QueueService
                 }
             }
         }
-        $agent = $this->getDataInQueue($this->agentQueueName);
+        $agent = $this->getDataInQueue($this->agentQueueName, $this->ignoreAgent);
+        HelperService::generateApiRequestResponseLog(["Ignore Agent"=> $this->ignoreAgent,'Current Agent'=> $agent,__LINE__,__FILE__]);
         if ($agent) {
             return "{$this->agentItemQueueName}:{$agent}:1";
         } else {

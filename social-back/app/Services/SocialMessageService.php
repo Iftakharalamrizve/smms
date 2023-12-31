@@ -293,6 +293,9 @@ class SocialMessageService
             'read_status' => $saveItem['read_status'],
             'un_read_count' => 1
         ];
+
+        // before broadcast need to check this session in re route process
+        
         
         // Check the message state and broadcast the previous state.
         broadcast(new AgentChatRoomEvent($lastItem->assign_agent, $messageData));
@@ -495,10 +498,11 @@ class SocialMessageService
         $reRouteSessionList = [];
         foreach ($currentAllSessionList as $item) {
             $assignedAgentKeyArray = explode(':', $item);
+            HelperService::generateApiRequestResponseLog(["Every Single Item"=>$assignedAgentKeyArray,__LINE__,__FILE__]);
             $itemSessionInfoList = $this->queueServiceRepository->queueListRange($item, 0, -1);
-            
+            HelperService::generateApiRequestResponseLog(["itemSessionInfoList"=>$itemSessionInfoList,__LINE__,__FILE__]);
             $currentSessionId = count($itemSessionInfoList) > 0 ? $itemSessionInfoList[0] : null;
-
+            HelperService::generateApiRequestResponseLog(["$currentSessionId"=>$currentSessionId,__LINE__,__FILE__]);
             if ($currentSessionId) {
                 $autoReRouteStatus = HelperService::currentSessionReRouteStatus($assignedAgentKeyArray[1], $currentSessionId);
 
@@ -512,7 +516,7 @@ class SocialMessageService
         HelperService::generateApiRequestResponseLog([$reRouteSessionList]);
         foreach ($reRouteSessionList as $key => $sessionList) {
             HelperService::generateApiRequestResponseLog(['BroadCast Item' => [$key,$sessionList],__LINE__,__FILE__]);
-            broadcast(new AgentChatRoomEvent($key,$sessionList,'agent_re_route_event')); 
+            broadcast(new AgentChatRoomEvent($key,$sessionList,'agent_re_route_event'));  // free or remove item from frontend
             foreach($sessionList as $listItem){
                 HelperService::generateApiRequestResponseLog(["Before Free Session List" => Redis::keys($this->agentItemQueueName . ':*'),'Before Re Route Session Id'=>$listItem,__LINE__,__FILE__]);
                 $this->freeAgentSession($listItem, $key);

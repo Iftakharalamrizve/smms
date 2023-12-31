@@ -40,11 +40,13 @@ export default function Message() {
         async function connectWithChannel() {
           if(socketInstance){
             socketInstance.private(`social_chat_room.`+currentAgentId)
-            .listen('.agent_chat_room_event', (event) => {
-                dispatch(setMessageSession(event))
+            .listen('.agent_chat_room_event', async (event) => {
+                console.log("social_chat_room",event);
+                await dispatch(setMessageSession(event))
             })
-            .listen('.agent_re_route_event', (event) => {
-                dispatch(reRouteSession(event));
+            .listen('.agent_re_route_event', async (event) => {
+                console.log("agent_re_route_event",event);
+                await dispatch(reRouteSession(event));
             })
             .listenForWhisper('typing', (e) => {
                 

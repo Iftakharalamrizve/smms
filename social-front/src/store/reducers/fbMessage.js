@@ -12,6 +12,7 @@ const FbMessage = createSlice({
   initialState,
   reducers: {
     setMessageSession(state, action) {
+      console.log("From Set Message",action);
       const {
         message_text,
         page_id,
@@ -84,22 +85,44 @@ const FbMessage = createSlice({
         };
       }
     },
-    reRouteSession(state, action) {
-
+    reRouteSession: (state, action) => {
       const reRouteSessionList = action.payload;
-      console.log("Re Route Session List",reRouteSessionList);
-      const currentAssignSessionList = { ...state };
-      console.log("currentAssignSessionList",currentAssignSessionList.assignSessionList);
-      reRouteSessionList.map((sessionId,index)=>{
-        for (const pageId in currentAssignSessionList.assignSessionList) {
-          if (currentAssignSessionList.assignSessionList[pageId][sessionId]) {
-            console.log("Find Session",pageId,sessionId);
-            const { [sessionId]: removedItem, ...rest } = currentAssignSessionList.assignSessionList[pageId];
-            currentAssignSessionList.assignSessionList[pageId] = rest;
-          }
-        }
-      });
-    },
+      
+      // Create a deep copy of state.assignSessionList using spread operator
+      const stateData = { ...state.assignSessionList };
+      
+      console.log("Re Route", reRouteSessionList);
+      console.log("Before Re Route", stateData);
+    
+      // reRouteSessionList.forEach((sessionId) => {
+        // delete state.assignSessionList['104980981082367'][sessionId];
+        // for (const pageId in stateData) {
+        //   if (stateData[pageId][sessionId]) {
+        //     console.log(stateData[pageId][sessionId], stateData);
+        //     console.log("Page Id", pageId);
+        //     console.log("Find Session ", sessionId);
+    
+        //     // Create a deep copy of the inner object using spread operator
+        //     const updatedPage = { ...stateData[pageId] };
+            
+        //     // Delete the specified session from the copied object
+        //     delete updatedPage[sessionId];
+    
+        //     // Update the state with the new object
+        //     stateData[pageId] = updatedPage;
+        //     console.log(updatedPage);
+        //   }
+        // }
+      // });
+    
+      // console.log("After Re Route", stateData);
+    
+      // Update the state with the new deep-copied object
+     return {
+      ...state,
+      assignSessionList:{}
+     }
+    }
   },
   extraReducers: (builder) => {
     builder.addCase(currentUserMessageSessionList.fulfilled, (state, action) => {
