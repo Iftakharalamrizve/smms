@@ -50,7 +50,7 @@ class MessageBroker extends Command
                 if($messageOperationInfo['status']){
                     $this->warn('Re Route Message Assign queue'.$messageOperationInfo['agent']);
                 }else{
-                    $this->error('Agent Is Not Free ');
+                    $this->error('Re Route Agent Is Not Free ');
                 }
             }else{
                 $queueMessageItem = $queueService->messageQueueLength();

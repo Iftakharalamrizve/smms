@@ -370,7 +370,6 @@ class SocialMessageService
             // If an agent key is available, handle the assigned SMS.
             if ($agentKey) {
                 $this->handleAssignedSms($saveItem, $agentKey, $sessionId, $messageData);
-                HelperService::generateApiRequestResponseLog(['generated Session id when assign agent----------------'=>[$agentKey, $sessionId]]);
                 return response()->json(['message' => 'New SMS Broadcast Successful' . "Agent Id:" . $agentKey . "Session ID: " . $sessionId]);
             }
 
@@ -498,11 +497,8 @@ class SocialMessageService
         $reRouteSessionList = [];
         foreach ($currentAllSessionList as $item) {
             $assignedAgentKeyArray = explode(':', $item);
-            HelperService::generateApiRequestResponseLog(["Every Single Item"=>$assignedAgentKeyArray,__LINE__,__FILE__]);
             $itemSessionInfoList = $this->queueServiceRepository->queueListRange($item, 0, -1);
-            HelperService::generateApiRequestResponseLog(["itemSessionInfoList"=>$itemSessionInfoList,__LINE__,__FILE__]);
             $currentSessionId = count($itemSessionInfoList) > 0 ? $itemSessionInfoList[0] : null;
-            HelperService::generateApiRequestResponseLog(["$currentSessionId"=>$currentSessionId,__LINE__,__FILE__]);
             if ($currentSessionId) {
                 $autoReRouteStatus = HelperService::currentSessionReRouteStatus($assignedAgentKeyArray[1], $currentSessionId);
 
@@ -513,18 +509,12 @@ class SocialMessageService
             }
         }
 
-        HelperService::generateApiRequestResponseLog([$reRouteSessionList]);
         foreach ($reRouteSessionList as $key => $sessionList) {
-            HelperService::generateApiRequestResponseLog(['BroadCast Item' => [$key,$sessionList],__LINE__,__FILE__]);
-            broadcast(new AgentChatRoomEvent($key,$sessionList,'agent_re_route_event'));  // free or remove item from frontend
+            broadcast(new AgentChatRoomEvent($key,$sessionList,'agent_re_route_event'));
             foreach($sessionList as $listItem){
-                HelperService::generateApiRequestResponseLog(["Before Free Session List" => Redis::keys($this->agentItemQueueName . ':*'),'Before Re Route Session Id'=>$listItem,__LINE__,__FILE__]);
                 $this->freeAgentSession($listItem, $key);
-                HelperService::generateApiRequestResponseLog(["After Free Session List" => Redis::keys($this->agentItemQueueName . ':*'),'After Free Session List Session Id'=>$listItem,__LINE__,__FILE__]);
                 $reRouteItem = $this->socialMessageRepository->getSpecificMessage(['session_id'=>$listItem]);
                 $this->messageAssignAndStoreOnQueue($reRouteItem,false, null, true, $key); 
-                HelperService::generateApiRequestResponseLog(["After Re Route Assign Session List" => Redis::keys($this->agentItemQueueName . ':*'),__LINE__,__FILE__]);
-
             }
         }
     }

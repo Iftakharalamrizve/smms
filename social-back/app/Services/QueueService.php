@@ -275,7 +275,6 @@ class QueueService
             }
         }
         $agent = $this->getDataInQueue($this->agentQueueName, $this->ignoreAgent);
-        HelperService::generateApiRequestResponseLog(["Ignore Agent"=> $this->ignoreAgent,'Current Agent'=> $agent,__LINE__,__FILE__]);
         if ($agent) {
             return "{$this->agentItemQueueName}:{$agent}:1";
         } else {

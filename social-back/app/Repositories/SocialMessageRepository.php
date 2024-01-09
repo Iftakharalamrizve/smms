@@ -21,7 +21,21 @@ class SocialMessageRepository
 
     public function getSpecificMessage($condtionArray)
     {
-        return SocialMessage::where($condtionArray)->first();
+        return SocialMessage::where($condtionArray)->latest()->first();
+        if ($item) {
+            // Update the item
+            $item->update([
+                'sms_state' => 'RRQueue',
+            ]);
+        
+            $item->refresh();
+        
+            // Return the updated item
+            return $item;
+        } else {
+            // Handle the case when no item is found
+            return null;
+        }
     }
 
     /**
